@@ -1,9 +1,7 @@
 # Informatiemodel
 
 Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de
-registratie. In dit schema is te zien dat het model bestaat uit drie lagen. <mark>~~Op het niveau van
-het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via een
-pandID en/of adresID.~~</mark>
+registratie. In dit schema is te zien dat het model bestaat uit drie lagen.
 
 ![](ers-media/Informatiemodel.png)
 
@@ -16,7 +14,7 @@ geschiedenis wordt gehecht. Registratie betekent dat aan het object regels kunne
 verbonden waar een beschermende werking van uitgaat. Registratie kan ook betekenen dat
 de objectinformatie context geeft voor het toepassen van deze regelgeving.
 
-<mark>Zie [[[#objecttype-erfgoedobject]]] voor detailinformatie.</mark>
+Zie [[[#objecttype-erfgoedobject]]] voor detailinformatie.
 
 ## ErfgoedOmgeving
 
@@ -25,7 +23,7 @@ waarde ontlenen. De bescherming van het ErfgoedObject heeft omgekeerd ook beteke
 voor de bescherming van de omgeving. Dit kan nader zijn uitgewerkt in de regels. Voor één
 ErfgoedObject geldt dat er meerdere ErfgoedOmgevingen relevant kunnen zijn.
 
-<mark>Zie [[[#objecttype-erfgoedomgeving]]] voor detailinformatie.</mark>
+Zie [[[#objecttype-erfgoedomgeving]]] voor detailinformatie.
 
 ## ErfgoedDeelobject
 
@@ -33,11 +31,10 @@ ErfgoedObjecten kunnen één of meerdere ErfgoedDeelobjecten hebben. Deze deelob
 beschrijven bijvoorbeeld een bepaald onderdeel in detail. ErfgoedDeelobjecten ontlenen hun
 bescherming aan de bescherming van het ErfgoedObject als geheel.
 
-<mark>Zie [[[#objecttype-erfgoeddeelobject]]] voor detailinformatie.</mark>
+Zie [[[#objecttype-erfgoeddeelobject]]] voor detailinformatie.
 
 ## Situering
-<mark>
 Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via een pandID en/of adresID.</mark>
 
-<mark>Zie [[[#objecttype-situering]]] voor detailinformatie.</mark>
+Zie [[[#objecttype-situering]]] voor detailinformatie.
 
