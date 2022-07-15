@@ -281,7 +281,7 @@
 | ---- | ---- |
 | **Naam** | annotatieJaarBegin |
 | **Herkomst** | ERS |
-| **Definitie** | Opmerking betreffende de precisie van de gegeven jaartal voor de start van de materi&#235;le levensduur (het ontstaan van de erfgoed waarde)<br />Indien leeg verwijst het jaarBegin met voldoende zekerheid naar het jaar waarin de bouw/verbouw is opgeleverd. |
+| **Definitie** | Opmerking betreffende de precisie van het gegeven jaartal voor de start van de materi&#235;le levensduur (het ontstaan van de erfgoed waarde)<br />Indien leeg verwijst het jaarBegin met voldoende zekerheid naar het jaar waarin de bouw/verbouw is opgeleverd. |
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Niet altijd is het jaartal exact bekend; soms is alleen een tijdvak te duiden of een geschatte periode voor/na een bepaald jaar. Soms is alleen het jaartal van het ontwerp bekend, of van de verleende vergunning.<br />Met een (standaard) annotatie is aan te geven welk moment en met welke precisie het bouwjaar gegeven is.<br />De duur van de bouw is minder relevant als gegeven. Daarom is gekozen voor één bouwjaar ipv begin-einde. Bij voorkeur verwijst het jaartal naar de oplevering van het bouwwerk (of de afronding van de verbouwing). |
 | **Datum opname** | 20191001 |
