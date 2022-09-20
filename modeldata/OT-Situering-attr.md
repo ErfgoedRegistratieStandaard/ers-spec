@@ -21,8 +21,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Actueel: huidig, geldig adres<br />Actueel/Bij: object is gelegen 'bij dit adres'<br />Actueel/Tegenover: object is gelegen 'tegenover dit adres'<br />Actueel/Via: object kan worden betreden 'via dit adres' |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
 #### betreftAdres
@@ -34,7 +32,5 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar ID in de BAG<br />De aanlevering kan bestaan uit een ID uit de BAG, maar kan ook het feitelijke adres (in tekst) bevatten. Door het systeem wordt het bijbehorende ID dan opgezocht. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 

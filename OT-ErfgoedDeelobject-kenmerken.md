@@ -1,7 +1,5 @@
 ### Kenmerken
 
-<mark>TODO: Laten zien welke attribuutsoorten de Registratiekenmerken, de Locatiekenmerken resp. de Waardekenmerken zijn. (Bijv. via MIM gegevensgroep?).</mark>
-
 #### Registratiekenmerken
 
 De **registratiekenmerken** van een ErfgoedDeelobject zijn vergelijkbaar met die van een

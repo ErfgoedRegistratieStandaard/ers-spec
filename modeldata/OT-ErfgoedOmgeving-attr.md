@@ -8,8 +8,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
 
@@ -22,8 +20,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek (nog te bepalen welke formaten worden geaccepteerd) of GML |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
@@ -36,8 +32,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
 #### beschrijving
@@ -49,8 +43,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
-| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |

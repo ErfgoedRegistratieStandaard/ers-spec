@@ -7,5 +7,4 @@ Ze is gebaseerd op een inventarisatie van registraties van 9 gemeenten plus de r
 door de Rijksdienst Cultureel Erfgoed. Deze publicatie is de uitkomst van een pilot waarin de
 omzetting van een aantal gemeentelijke registraties naar deze standaard is getoetst. De
 standaard staat open voor feedback en vragen. De website van de FGM (contactpagina De
-DataBeet) biedt daartoe de mogelijkheid. <mark>Een uitgebreide beschrijving van de velden is daar
-ook te downloaden.</mark>
+DataBeet) biedt daartoe de mogelijkheid.

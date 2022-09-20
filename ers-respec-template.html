@@ -18,6 +18,15 @@
 
 <section><h2>Objecttype IM_ERS_Object</h2>
 
+De objecttypen [ErfgoedOmgeving](#objecttype-erfgoedomgeving), [ErfgoedObject](#objecttype-erfgoedobject) en [ErfgoedDeelobject](#objecttype-erfgoeddeelobject) zijn geo-objecttypen conform NEN 3610. Het abstracte objecttype IM_ERS_Object legt de verbinding naar NEN 3610 door aan al deze objecten een NEN3610ID toe te kennen. Daarmee zijn objecten (d.w.z. instanties van deze objecttypen) uniek identificeerbaar binnen het domein van NEN 3610.
+
+Daarnaast worden via het IM_ERS_Object attributen toegevoegd die gebruikt worden om de formele historie van een object vast te leggen. De formele historie beschrijft de historie van een object in de registratie. In aanvulling daarop wordt voor ErfgoedObjecten en ErfgoedDeelobjecten de materiële historie van objecten (de historie van een object in de werkelijkheid) bijgehouden. Daarvoor worden beginJaar en eindJaar gehanteerd (zie de beschrijving van de attribuutsoorten aldaar), waarmee het al dan  niet bestaan van (de cultuurhistorische waarde van) een object wordt gemarkeerd. Als een object bijvoorbeeld gesloopt is, bestaat het in beginsel nog steeds in de registratie houden maar wordt materieel een eindjaar toegekend.  Tegelijkertijd wijzigt de aardRegistratie in dat geval naar 'historisch'. 
+
+Bij de beschrijving van de attribuutsoorten van de objecttypen in deze standaard is middels 'Indicatie formele historie' vastgelegd of wijzigingen in de waarde van het attribuut leiden tot een nieuwe (gewijzigde) versie van het object. In de oude versie wordt dan de eindRegistratie ingevuld en dezelfde tijd wordt ingevuld bij de tijdstipRegistratie van de nieuwe versie. Materiële historie speelt alleen op niveau van het ErfgoedObject en ErfgoedDeelobject als geheel, en niet op attribuutniveau.
+
+Voor meer informatie over formele (en materiële) historie, zie ook paragraaf _7.2.5 Temporele kenmerken en versies_ in NEN 3610.
+
+
 ![](ers-media/IM_ERS_Object.png)
 
 <div data-include-format="markdown" data-include="modeldata/OT-IM_ERS_Object.md" data-include-replace="true"></div>

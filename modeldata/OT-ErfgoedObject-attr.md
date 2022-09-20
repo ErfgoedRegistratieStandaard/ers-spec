@@ -8,7 +8,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwachte waarde: op grond van context is de verwachting dat er nog onbekende cultuurhistorische waarde aanwezig is<br />aanwezige waarde: de waarde is bekend, geïnventariseerd en/of gewaardeerd, maar op dit moment niet als zodanig beschermd<br />beschermde waarde: het ErfgoedObject heeft een in werking zijnde beschermde status (beschermdAls)<br />historische waarde: het ErfgoedObject is in werkelijkheid niet meer aanwezig maar is wel van belang vanwege sporen op locatie of in de structuur van de omgeving |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
@@ -21,7 +20,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | een ErfgoedObject heeft maximaal 1 beschermde status.<br />Bij de overgang van In procedure naar definitief wordt de aanwijzingsdatum gevuld.<br />Bij NietAanwijzen en Afvoeren wordt de status verwijderd; ook aardRegistratie dient dan te worden aangepast. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -35,7 +33,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | wanneer een status wordt 'overgenomen' door het Rijk (wat soms gebeurt bij monumenten) dan ontstaat een situatie van afvoeren van de ene lijst en opvoeren op de andere lijst. De bescherming als Rijksmonument gaat 'boven' de bescherming als Gemeentelijk monument. De betreffende datumvelden worden overschreven zodat deze betrekking hebben op de 'hoogst' beschermde status. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -49,7 +46,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -63,7 +59,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verplicht indien sprake is van een beschermende werking |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -77,7 +72,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -91,7 +85,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verplicht indien hiermee de geregistreerde beschermende werking is opgeheven |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -105,7 +98,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verplicht in combinatie met datumNietAanwijzen en datumAfvoeren<br />ook te gebruiken om de gegevens van een eerder doorlopen procedure vast te leggen, indien van toepassing |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -119,7 +111,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar het identificerende nr in de landelijke voorziening;<br />verplicht indien het een Gemeentelijk Monument betreft.<br />Het besluit verwijst naar de betreffende percelen (werkingsgebied); die koppeling wordt (vooralsnog) onderhouden in de Wkpb |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
@@ -132,7 +123,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verplicht bij gemeentelijk monumenten en rijksmonumenten<br />bij gemeentelijk monumenten wordt door het systeem een gemeentecode toegevoegd bij rijksmonumenten wordt het nummer voorafgegaan door een landelijke code |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -146,8 +136,7 @@
 | **Herkomst definitie** |  |
 | **Toelichting** | Onderzoek naar de juistheid van de registratie. Dit kan zijn nav een interne terugmelding bij de gemeente, of (toekomst) nav een terugmelding door de landelijke service.<br />Default: nee |
 | **Datum opname** |  |
-| **Indicatie materiële historie** |  |
-| **Indicatie formele historie** |  |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** |  |
 
@@ -160,7 +149,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Dit veld wordt voornamelijk gebruikt om te controleren welke velden er wel/niet ingevuld moeten zijn. Zo zal voor een gebouw een BAG-ID geregistreerd kunnen zijn; voor andere types is dat niet het geval.<br /><br />Pand(en): een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet<br />Bouwwerk: kan diverse verschijningsvormen aannemen variërend van bruggen tot poortjes, van fonteinen tot muziekkoepels<br />Beeldhouwkunst: ruimtelijk beeld in de openbare ruimte, dat als kunstvorm is gemaakt <br />Park/terrein: aangelegd gebied met een bepaalde functie in de openbare ruimte<br />Gezicht/gebied: gebied met een bijzonder cultuurhistorisch karakter of structuur<br /><br />Nota Bene: een ErfgoedObject behoort tot één objectType. Wanneer sprake is van samenhang tussen objecten met verschillende objectTypes kan dat met behulp van ErfgoedOmgeving (bijvoorbeeld type Complex) worden vastgelegd. Dus een pand met een tuin wordt niet als één ErfgoedObject beschreven. Hier gelden 2 opties:<br />1 pand en 1 park/terrein, samen onder 1 ErfgoedOmgeving, omgevingstype Complex<br />of: 1 pand met 1 ErfgoedOmgeving, omgevingstype Biotoop, waarin de ruimere contour inclusief tuin is begrepen (vgl Klassen Functioneel gebied: begrensd en benoemd gebied dat door een functionele eenheid wordt<br />beschreven. Vb: bedrijventerrein, bungalowpark, plantsoen, begraafplaats,<br />jachthaven, windmolenpark, recreatiegebied.) |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
@@ -174,7 +162,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls<br />bij aanlevering als gisbestand is de geometrie formaatspecifiek (nog te bepalen welke formaten worden geaccepteerd) of GML<br />Indien Betreft >BAGpand is gevuld, is de geometrie gelijk aan de BAGpandcountour zal de geometrie worden opgehaald uit de BAG; deze hoeft hier dan niet ingevuld te worden. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -188,7 +175,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Waar is de contour op gebaseerd? Bijvoorbeeld een historische kaart, de BGT, handwerk, etc. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -202,7 +188,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls<br />bij aanlevering als gisbestand is de geometrie formaatspecifiek.<br />MULTIPOINT wordt niet geaccepteerd<br />bij aanlevering van een contour kan een puntcoördinaat worden afgeleid; afzonderlijk aanleveren is dan niet verplicht |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
@@ -215,7 +200,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar de landelijke PandIdentificatie; verplicht indien het ErfgoedObject van het type Pand is; tenzij de pandcontour in de BAG onjuist is (bijvoorbeeld te ruim is ten opzichte het oorspronkelijke historische pand dat is aangewezen). In dat geval dient een eigen 'maatwerk' contour te worden aangeleverd.<br /><br />een ErfgoedObject kan naar meerdere BAGPanden verwijzen. De BAGPanden vormen samen één contour die geldt voor het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 1..* |
 | **Authentiek** | Overig |
@@ -230,7 +214,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar de landelijke BGTIdentificatie; kan alleen gebruikt worden indien het erfgoedobject niet van het type Pand is |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -245,7 +228,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vb:<br />Dorpsstraat 5 (oude nummering)<br />Aweg 2-20 (even) en Bweg 1-5 (oneven) |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -260,6 +242,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | het begin van de levensduur van het deelobject wordt bepaald door het ontstaan van de erfgoedwaarde. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 
@@ -272,6 +255,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | het einde van de levensduur van het deelobject wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beeindiging van de levensduur kan de registratie nog voortduren. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -298,6 +282,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Niet altijd is het jaartal exact bekend; soms is alleen een tijdvak te duiden of een geschatte periode voor/na een bepaald jaar. Soms is alleen het jaartal van het ontwerp bekend, of van de verleende vergunning.<br />Met een (standaard) annotatie is aan te geven welk moment en met welke precisie het bouwjaar gegeven is.<br />De duur van de bouw is minder relevant als gegeven. Daarom is gekozen voor één bouwjaar ipv begin-einde. Bij voorkeur verwijst het jaartal naar de oplevering van het bouwwerk (of de afronding van de verbouwing). |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -311,7 +296,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | cultuurhistorische naam; bij voorkeur de naam die aansluit bij de oorspronkelijke functie |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -326,7 +310,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | voor Rijksmonumenten wordt hier de registeromschrijving bedoeld |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -340,7 +323,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** |  |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -355,7 +337,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -370,8 +351,7 @@
 | **Herkomst definitie** |  |
 | **Toelichting** |  |
 | **Datum opname** |  |
-| **Indicatie materiële historie** |  |
-| **Indicatie formele historie** |  |
+| **Indicatie formele historie** | Ja |
 | **Authentiek** |  |
 
 #### opdrachtgeverBouw
@@ -383,7 +363,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -398,7 +377,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -413,7 +391,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -428,7 +405,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vb: bungalow, grachtenhuis, hofjeswoning, villa, woonblok ontleend aan RCE indeling woningen en woningbouwcomplexen; alleen indien afwijkend van het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -443,7 +419,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vb: chaletstijl, nieuwe bouwen, art nouveau, modernisme; alleen indien afwijkend van het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |

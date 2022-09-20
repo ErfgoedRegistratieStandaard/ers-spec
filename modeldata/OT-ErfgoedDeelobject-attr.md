@@ -8,7 +8,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vgl Klassen Functioneel gebied: begrensd en benoemd gebied dat door een functionele eenheid wordt beschreven. Vb: bedrijventerrein, bungalowpark, plantsoen, begraafplaats, jachthaven, windmolenpark, recreatiegebied. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
@@ -22,8 +21,7 @@
 | **Herkomst definitie** |  |
 | **Toelichting** |  |
 | **Datum opname** |  |
-| **Indicatie materiële historie** |  |
-| **Indicatie formele historie** |  |
+| **Indicatie formele historie** | Ja |
 | **Authentiek** |  |
 
 #### contour
@@ -50,7 +48,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** |  |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -64,7 +61,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek. MULTIPOINT wordt niet geaccepteerd. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 
@@ -77,7 +73,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar de landelijke PandIdentificatie; alleen mogelijk indien het DeelErfgoedObject van het type Pand is; tenzij de pandcontour in de BAG onjuist is (bijvoorbeeld te ruim is ten opzichte het oorspronkelijke historische pand dat is aangewezen). In dat geval kan een eigen 'maatwerk' contour te worden aangeleverd.<br /><br />Het verwijzen naar een BAGpand(en) is op het niveau van DeelErfgoedObject niet verplicht; het aanleveren van een contour is ook niet verplicht. als een BAGPand wordt aangeleverd dan wordt de contour van dit pand automatisch overgenomen. |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -92,7 +87,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | verwijzing naar de landelijke BGTIdentificatie; kan alleen gebruikt worden indien het DeelErfgoedObject niet van het type Pand is |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -107,6 +101,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | het begin van de levensduur van het deelobject wordt bepaald door het ontstaan van de erfgoedwaarde. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 
@@ -119,6 +114,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | het einde van de levensduur van het deelobject wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beeindiging van de levensduur kan de registratie nog voortduren. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -132,6 +128,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Niet altijd is het jaartal exact bekend; soms is alleen een tijdvak te duiden of een geschatte periode voor/na een bepaald jaar. Met een (standaard) annotatie is aan te geven welk moment en met welke precisie het bouwjaar gegeven is. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -145,6 +142,7 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | Niet altijd is het jaartal exact bekend; soms is alleen een tijdvak te duiden of een geschatte periode voor/na een bepaald jaar. Met een (standaard) annotatie is aan te geven welk moment en met welke precisie het bouwjaar gegeven is. |
 | **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
@@ -158,7 +156,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | cultuurhistorische naam; bij voorkeur de naam die aansluit bij de oorspronkelijke functie |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -173,7 +170,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** |  |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -188,7 +184,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -203,7 +198,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -218,7 +212,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
@@ -233,7 +226,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | alleen indien afwijkend (nader specificerend) tov het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -248,7 +240,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vb: bungalow, grachtenhuis, hofjeswoning, villa, woonblok ontleend aan RCE indeling woningen en woningbouwcomplexen; alleen indien afwijkend van het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
@@ -263,7 +254,6 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** | vb: chaletstijl, nieuwe bouwen, art nouveau, modernisme; alleen indien afwijkend van het ErfgoedObject |
 | **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |

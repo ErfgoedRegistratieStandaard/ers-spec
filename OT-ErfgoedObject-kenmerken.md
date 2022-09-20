@@ -1,7 +1,5 @@
 ### Kenmerken
 
-<mark>TODO: Laten zien welke attribuutsoorten de Registratiekenmerken, de Locatiekenmerken resp. de Waardekenmerken zijn. (Bijv. via MIM gegevensgroep?).</mark>
-
 #### Registratiekenmerken
 
 Deze leggen vast vanaf wanneer een object is geregistreerd, wanneer de registratie is
