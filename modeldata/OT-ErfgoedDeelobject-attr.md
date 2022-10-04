@@ -17,7 +17,7 @@
 | ---- | ---- |
 | **Naam** | aanwezig |
 | **Herkomst** |  |
-| **Definitie** |  |
+| **Definitie** | Duiding van de trefkans of zekerheid dat beschreven deelobject van waarde is. |
 | **Herkomst definitie** |  |
 | **Toelichting** |  |
 | **Datum opname** |  |
