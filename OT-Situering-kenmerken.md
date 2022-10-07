@@ -2,7 +2,7 @@
 
 #### Registratiekenmerken
 
-De **registratiekenmerken** van een Situering beperken zich tot een uniek id. Feitelijk dient dit id uniek te zijn per ErfgoedObject.
+De **registratiekenmerken** van een Situering beperken zich tot een uniek id.
 
 #### Locatiekenmerken
 
