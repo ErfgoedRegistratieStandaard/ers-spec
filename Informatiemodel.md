@@ -1,7 +1,6 @@
 # Informatiemodel
 
-Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de
-registratie. In dit schema is te zien dat het model bestaat uit drie lagen.
+Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de registratie. In dit schema is te zien dat het model bestaat uit drie lagen.
 
 ![](ers-media/Informatiemodel.png)
 
@@ -34,7 +33,7 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.
 Zie [[[#objecttype-erfgoeddeelobject]]] voor detailinformatie.
 
 ## Situering
-Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via een pandID en/of adresID.</mark>
+Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via adresID en een eventueel een aanduiding van de relatie (situering) van dit adres ten opzichte van het object.</mark>
 
 Zie [[[#objecttype-situering]]] voor detailinformatie.
 
