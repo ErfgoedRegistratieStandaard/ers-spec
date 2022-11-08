@@ -47,6 +47,7 @@
 | **Toelichting** | dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
@@ -60,6 +61,7 @@
 | **Toelichting** | verplicht indien sprake is van een beschermende werking |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
@@ -73,6 +75,7 @@
 | **Toelichting** | verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
@@ -86,6 +89,7 @@
 | **Toelichting** | verplicht indien hiermee de geregistreerde beschermende werking is opgeheven |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
@@ -99,8 +103,8 @@
 | **Toelichting** | verplicht in combinatie met datumNietAanwijzen en datumAfvoeren<br />ook te gebruiken om de gegevens van een eerder doorlopen procedure vast te leggen, indien van toepassing |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### grondslag
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -113,6 +117,7 @@
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
 
 #### monumentnummer
 | **Attribuutsoort-eigenschap** | **Waarde** |
