@@ -1,9 +1,9 @@
-﻿## OorspronkelijkeFunctieCBS
+﻿## ThemaCultuurhistorie
 | **Enumeratie-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | OorspronkelijkeFunctieCBS |
+| **Naam** | ThemaCultuurhistorie |
 | **Definitie** | Indeling naar vorm en functie die leidend zijn geweest in het ontwerp en de realisatie van het object. |
-### Enumeratiewaarden OorspronkelijkeFunctieCBS
+### Enumeratiewaarden ThemaCultuurhistorie
 | **Enumeratiewaarde** | **Code** | **Definitie** |
 | ---- | ---- | ---- |
 | verkeer en vervoer |  | wegen en paden, koetshuizen en stallen, bruggen, tunnels, werven en havens, (spoor)wegen en stations en vlieghavens |
