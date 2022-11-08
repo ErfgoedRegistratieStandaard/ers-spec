@@ -6,9 +6,9 @@
 ### Enumeratiewaarden ErfgoedDeelobjectType
 | **Enumeratiewaarde** | **Code** | **Definitie** |
 | ---- | ---- | ---- |
-| beeldhouwwerk |  | Ruimtelijk beeld in de openbare ruimte, dat als kunstvorm is gemaakt. |
-| bouwwerk |  | Kan diverse verschijningsvormen aannemen vari&#235;rend van bruggen tot poortjes, van fonteinen tot muziekkoepels<br /> |
-| constructief deel (restant) |  |  |
-| constructief deel (toegevoegd) |  |  |
-| interieur |  |  |
-| pand(en) |  | Een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet. |
+| aanleg |  | een structurele ingreep of ontwerp van (een deel) van het object |
+| beeldhouwwerk |  | kunstobject dat als kunstvorm is gemaakt of een functioneel object met kunstzinnige, esthetische vormgeving |
+| bouwwerk |  | gebouwd object, onroerend van aard, anders dan een pand |
+| constructie |  | het deel van een object dat zorgt voor de sterkte, stijfheid en stabiliteit |
+| interieur |  | inrichting en aankleding van een pand of bouwwerk |
+| pand(en) |  | een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet. |

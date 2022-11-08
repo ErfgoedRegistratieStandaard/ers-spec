@@ -6,6 +6,9 @@
 ### Enumeratiewaarden Aanwezigheid
 | **Enumeratiewaarde** | **Code** | **Definitie** |
 | ---- | ---- | ---- |
-| aanwezig |  |  |
-| hoge trefkans |  |  |
-| onbekend |  |  |
+| deels intact |  | delen nog aanwezig, delen verdwenen of verstoord |
+| herkenbaar |  | in het landschap, in de constructie is de historische aanwezigheid te herkennen, mogelijk relicten aanwezig |
+| intact |  | min of meer in geheel nog aanwezig |
+| verschoven |  | in aanleg is het ErfgoedObject inmiddels veranderd |
+| verplaatst |  | het object is fysiek verplaatst of herbouwd elders |
+| verdwenen |  | het object is niet meer aanwezig |

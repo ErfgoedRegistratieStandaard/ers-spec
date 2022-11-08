@@ -153,6 +153,18 @@
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
 
+#### aanwezig
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | aanwezig |
+| **Herkomst** | ERS |
+| **Definitie** | Duiding van de trefkans of zekerheid dat beschreven object van waarde is. |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
+| **Datum opname** | 20221006 |
+| **Indicatie formele historie** | Ja |
+| **Authentiek** | Overig |
+
 #### contour
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
@@ -424,17 +436,16 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### oorspronkelijkeFunctieCBS
+#### themaCultuurhistorie
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | oorspronkelijkeFunctieCBS |
+| **Naam** | themaCultuurhistorie |
 | **Herkomst** | ERS |
-| **Definitie** | Indeling naar vorm en functie die leidend zijn geweest in het ontwerp en de realisatie van het object. |
+| **Definitie** | categorisering van de oorspronkelijke functie in relatie tot maatschappelijk gebruik en ruimtelijke situering. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | indeling gebaseerd op CBS-categorieën 'oorspronkelijke functie' |
-| **Datum opname** | 20191001 |
-| **Indicatie materiële historie** | Ja |
+| **Toelichting** | indeling naar thema's ten behoeve van de presentatie van Erfgoedobjecten in herkenbare maatschappelijke thematiek en bijbehorende cultuurhistorische verhalen. |
+| **Datum opname** | 20221006 |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
 
