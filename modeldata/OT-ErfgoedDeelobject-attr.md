@@ -89,8 +89,8 @@
 | **Toelichting** | het begin van de levensduur van het deelobject wordt bepaald door het ontstaan van de erfgoedwaarde. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
 
 #### jaarEind
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -104,7 +104,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### annotatieJaarBegin
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -118,7 +117,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### annotatieJaarEind
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -132,7 +130,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### naam
 | **Attribuutsoort-eigenschap** | **Waarde** |

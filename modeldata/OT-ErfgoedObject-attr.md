@@ -243,27 +243,26 @@
 | ---- | ---- |
 | **Naam** | jaarBegin |
 | **Herkomst** | ERS |
-| **Definitie** | Jaartal begin materi&#235;le levensduur van het deelobject |
+| **Definitie** | Jaartal begin materi&#235;le levensduur van het object |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | het begin van de levensduur van het deelobject wordt bepaald door het ontstaan van de erfgoedwaarde. |
+| **Toelichting** | Het begin van de levensduur van het object wordt bepaald door het ontstaan van de erfgoedwaarde. Theoretisch hoeft dit niet hetzelfde moment te zijn als het begin van de levensduur van het object zelf. Denk bijvoorbeeld aan een belangrijke verbouwing aan een pand dat daarvoor weinig waarde had. Of een woonhuis dat cultuurhistorische waarde heeft vanwege een bijzondere bewoner. In deze situaties wordt in de praktijk meestal toch het ontstaan van het object als begin van de levensduur gekozen, maar er kan van worden afgeweken.<br /><br />Anderzijds komt het voor dat een object in oorsprong ouder is, maar dat de precieze ontstaansgeschiedenis niet bekend is. Of dat onduidelijk is hoeveel waarde uit het vroege begin nog aanwezig is. Het jaarBegin kan een ijkpunt zijn in deze ontstaansgeschiedenis. In annotatieJaarBegin kan deze nuance worden aangegeven (in de kern ouder). |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
 
 #### jaarEind
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | jaarEind |
 | **Herkomst** | ERS |
-| **Definitie** | Jaartal einde materi&#235;le levensduur van het deelobject |
+| **Definitie** | Jaartal einde materi&#235;le levensduur van het object |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | het einde van de levensduur van het deelobject wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beeindiging van de levensduur kan de registratie nog voortduren. |
+| **Toelichting** | Het einde van de levensduur van het object wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beëindiging van de levensduur kan de registratie nog voortduren; aardRegistratie hoort dan de waarde 'historisch' te krijgen.<br /><br />Een bijzondere omstandigheid doet zich voor bij cultuurhistorische waarden die betrekking hebben op restanten, relicten of zelfs een compleet verdwenen object dat alleen nog herkenbaar is in bijvoorbeeld het landschap. Sommige kenmerken van de registratie hebben dan betrekking op het object dat er materieel gezien niet (of bijna niet) meer is. Denk bijvoorbeeld aan oorspronkelijke functie. Het veld jaarEind wordt alleen gevuld in combinatie met aardRegistratie is 'historisch'. Zolang er nog bescherming rust op het object blijft het jaarEind leeg (aardRegistratie is 'beschermd'). |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### annotatieJaarBegin
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -276,7 +275,6 @@
 | **Datum opname** | 20191001 |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### annotatieJaarEind
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -290,7 +288,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### naam
 | **Attribuutsoort-eigenschap** | **Waarde** |
