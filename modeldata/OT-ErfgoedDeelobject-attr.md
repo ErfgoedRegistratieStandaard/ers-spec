@@ -12,18 +12,6 @@
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
 
-#### aanwezig
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | aanwezig |
-| **Herkomst** |  |
-| **Definitie** | Duiding van de trefkans of zekerheid dat beschreven deelobject van waarde is. |
-| **Herkomst definitie** |  |
-| **Toelichting** |  |
-| **Datum opname** |  |
-| **Indicatie formele historie** | Ja |
-| **Authentiek** |  |
-
 #### contour
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
@@ -173,6 +161,19 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
+
+#### aanwezig
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | aanwezig |
+| **Herkomst** |  |
+| **Definitie** | Kwalificatie van de materi&#235;le aanwezigheid van het ErfgoedDeelobject |
+| **Herkomst definitie** |  |
+| **Toelichting** | Kwalificatie die de actuele staat van het ErfgoedDeelobject relativeert en dient als aangrijpingspunt voor duiding van de aanwezige waarde. De contour van een verdwenen, verplaatst of verschoven ErfgoedDeelobject toont de oorspronkelijk locatie. |
+| **Datum opname** |  |
+| **Indicatie formele historie** | Ja |
+| **Authentiek** |  |
 | **Mogelijk geen waarde** | Ja |
 
 #### architectOntwerp

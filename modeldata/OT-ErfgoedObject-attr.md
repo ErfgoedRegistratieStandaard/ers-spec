@@ -4,9 +4,9 @@
 | ---- | ---- |
 | **Naam** | aardRegistratie |
 | **Herkomst** | ERS |
-| **Definitie** | Wijze waarop de cultuurhistorische waarde van het ErfgoedObject beleidsmatig betekenis heeft.<br />Aanlevering verplicht. |
+| **Definitie** | Verwijzing naar de materi&#235;le levensduur en bescherming van het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verwachte waarde: op grond van context is de verwachting dat er nog onbekende cultuurhistorische waarde aanwezig is<br />aanwezige waarde: de waarde is bekend, geïnventariseerd en/of gewaardeerd, maar op dit moment niet als zodanig beschermd<br />beschermde waarde: het ErfgoedObject heeft een in werking zijnde beschermde status (beschermdAls)<br />historische waarde: het ErfgoedObject is in werkelijkheid niet meer aanwezig maar is wel van belang vanwege sporen op locatie of in de structuur van de omgeving |
+| **Toelichting** | Deze informatie is van belang voor de beleidsmatige betekenis van de registratie. Bijvoorbeeld om een antwoord te vinden op de mate van bescherming en de mate van zekerheid omtrent de aanwezigheid van cultuurhistorische waarden. Zie ook de toelichting onder Registratiekenmerken. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -147,23 +147,11 @@
 | **Herkomst** | ERS |
 | **Definitie** | Typering van de fysieke verschijningsvorm van het object<br />Dit veld is verplicht. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | Dit veld wordt voornamelijk gebruikt om te controleren welke velden er wel/niet ingevuld moeten zijn. Zo zal voor een gebouw een BAG-ID geregistreerd kunnen zijn; voor andere types is dat niet het geval.<br /><br />Pand(en): een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet<br />Bouwwerk: kan diverse verschijningsvormen aannemen variërend van bruggen tot poortjes, van fonteinen tot muziekkoepels<br />Beeldhouwkunst: ruimtelijk beeld in de openbare ruimte, dat als kunstvorm is gemaakt <br />Park/terrein: aangelegd gebied met een bepaalde functie in de openbare ruimte<br />Gezicht/gebied: gebied met een bijzonder cultuurhistorisch karakter of structuur<br /><br />Nota Bene: een ErfgoedObject behoort tot één objectType. Wanneer sprake is van samenhang tussen objecten met verschillende objectTypes kan dat met behulp van ErfgoedOmgeving (bijvoorbeeld type Complex) worden vastgelegd. Dus een pand met een tuin wordt niet als één ErfgoedObject beschreven. Hier gelden 2 opties:<br />1 pand en 1 park/terrein, samen onder 1 ErfgoedOmgeving, omgevingstype Complex<br />of: 1 pand met 1 ErfgoedOmgeving, omgevingstype Biotoop, waarin de ruimere contour inclusief tuin is begrepen (vgl Klassen Functioneel gebied: begrensd en benoemd gebied dat door een functionele eenheid wordt<br />beschreven. Vb: bedrijventerrein, bungalowpark, plantsoen, begraafplaats,<br />jachthaven, windmolenpark, recreatiegebied.) |
+| **Toelichting** | Met het type van een ErfgoedObject kan bijvoorbeeld een grove legenda worden gemaakt voor het weergeven van terreinen, gebouwd erfgoed en losse elementen. Het onderscheid tussen panden en bouwwerken is van belang omdat alleen type=pand een koppeling kan hebben met een of meer pandID's in de BAG. Een bouwwerk daarentegen heeft altijd een maatwerkcontour en is niet adresseerbaar. Verder is met park/terrein versus gebied beoogd om grotere cultuurhistorische gebieden te kunnen onderscheiden van een specifieke aanleg/inrichting, zoals bijvoorbeeld een begraafplaats of een tuin.<br /><br />Nota Bene: een ErfgoedObject behoort tot één objectType. Wanneer sprake is van samenhang tussen objecten met verschillende objectTypes kan dat met behulp van ErfgoedOmgeving (bijvoorbeeld type Complex) worden vastgelegd. Dus een pand met een tuin wordt niet als één ErfgoedObject beschreven. Hier gelden 2 opties:<br />1 pand en 1 park/terrein, samen onder 1 ErfgoedOmgeving, omgevingstype Complex<br />of: 1 pand met 1 ErfgoedOmgeving, omgevingstype Biotoop, waarin de ruimere contour inclusief tuin is begrepen |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Indicatie classificerend** | Ja |
-
-#### aanwezig
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | aanwezig |
-| **Herkomst** | ERS |
-| **Definitie** | Duiding van de trefkans of zekerheid dat beschreven object van waarde is. |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
-| **Datum opname** | 20221006 |
-| **Indicatie formele historie** | Ja |
-| **Authentiek** | Overig |
 
 #### contour
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -337,6 +325,19 @@
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
+
+#### aanwezig
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | aanwezig |
+| **Herkomst** | ERS |
+| **Definitie** | Kwalificatie van de materi&#235;le aanwezigheid van het ErfgoedObject |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | Kwalificatie die de actuele staat van het ErfgoedObject relativeert en dient als aangrijpingspunt voor duiding en eventuele bescherming van de (nog) aanwezige waarde. Als de waarde van attribuutsoort aardRegistratie gelijk is aan historisch, dan dient (indien gevuld) attribuutsoort aanwezig de waarde verdwenen, verplaatst of verschoven te hebben (en vise versa). De contour van een verdwenen, verplaatst of verschoven ErfgoedObject toont de oorspronkelijk locatie. |
+| **Datum opname** | 20221006 |
+| **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
