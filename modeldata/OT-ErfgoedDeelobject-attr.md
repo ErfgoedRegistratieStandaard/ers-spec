@@ -40,10 +40,10 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### puntcoördinaten
+#### puntCoördinaten
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | puntcoördinaten |
+| **Naam** | puntCoördinaten |
 | **Herkomst** | ERS |
 | **Definitie** | De X- en Y-co&#246;rdinaat die als co&#246;rdinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel |
 | **Herkomst definitie** | ERS |
@@ -217,10 +217,10 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### oospronkelijkeFunctie
+#### oorspronkelijkeFunctie
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | oospronkelijkeFunctie |
+| **Naam** | oorspronkelijkeFunctie |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar functie(s) die leidend zijn geweest in het ontwerp en de realisatie van het object. |
 | **Herkomst definitie** | ERS |

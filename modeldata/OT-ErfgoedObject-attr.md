@@ -184,10 +184,10 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### puntcoördinaten
+#### puntCoördinaten
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | puntcoördinaten |
+| **Naam** | puntCoördinaten |
 | **Herkomst** | ERS |
 | **Definitie** | De X- en Y-co&#246;rdinaat die als co&#246;rdinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel |
 | **Herkomst definitie** | ERS |
@@ -332,19 +332,6 @@
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 
-#### verwachteBouwhistWaarde
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | verwachteBouwhistWaarde |
-| **Herkomst** | ERS |
-| **Definitie** | Een signalering voor de mogelijke aanwezigheid van bouwhistorische waarden |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | Het aantonen van de verwachte bouwhistorische waarde vereist nader onderzoek of toegang. Bij niet aantreffen wordt de waarde nee. |
-| **Datum opname** | 20191001 |
-| **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
-| **Authentiek** | Overig |
-
 #### aanwezig
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
@@ -357,6 +344,19 @@
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
+
+#### verwachteBouwhistWaarde
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | verwachteBouwhistWaarde |
+| **Herkomst** | ERS |
+| **Definitie** | Een signalering voor de mogelijke aanwezigheid van bouwhistorische waarden |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | Het aantonen van de verwachte bouwhistorische waarde vereist nader onderzoek of toegang. Bij niet aantreffen wordt de waarde nee. |
+| **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
 
 #### architectOntwerp
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -371,18 +371,6 @@
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
-
-#### aanwezig
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | aanwezig |
-| **Herkomst** |  |
-| **Definitie** |  |
-| **Herkomst definitie** |  |
-| **Toelichting** |  |
-| **Datum opname** |  |
-| **Indicatie formele historie** | Ja |
-| **Authentiek** |  |
 
 #### opdrachtgeverBouw
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -412,10 +400,10 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### oospronkelijkeFunctie
+#### oorspronkelijkeFunctie
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | oospronkelijkeFunctie |
+| **Naam** | oorspronkelijkeFunctie |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar functie(s) die leidend zijn geweest in het ontwerp en de realisatie van het object. |
 | **Herkomst definitie** | ERS |
