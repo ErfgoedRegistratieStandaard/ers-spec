@@ -301,18 +301,18 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### redengevendeOmschrijving
+#### toelichtingWaarde
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | redengevendeOmschrijving |
+| **Naam** | toelichtingWaarde |
 | **Herkomst** | ERS |
-| **Definitie** | De historische omschrijving, behorend bij het aanwijzingsbesluit <br />Verplicht in combinatie met status monument |
+| **Definitie** | Een toelichting op de cultuurhistorische waardering en/of de beschermde status van een ErgoedObject. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | voor Rijksmonumenten wordt hier de registeromschrijving bedoeld |
+| **Toelichting** | Deze kan bestaan uit een herhaling, samenvatting van of verwijzing naar de redengevende omschrijving. Of bevat een korte toelichting op waardekenmerken in het algemeen en/of waarderingsuitkomsten. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### beschrijving
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -326,7 +326,19 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
+
+#### verwachteBouwhistWaarde
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | verwachteBouwhistWaarde |
+| **Herkomst** | ERS |
+| **Definitie** | Een signalering voor de mogelijke aanwezigheid van bouwhistorische waarden |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | Het aantonen van de verwachte bouwhistorische waarde vereist nader onderzoek of toegang. Bij niet aantreffen wordt de waarde nee. |
+| **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
 
 #### aanwezig
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -449,4 +461,43 @@
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
+
+#### fysischLandschap
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | fysischLandschap |
+| **Herkomst** | ERS |
+| **Definitie** | Indeling naar stijlperiode of stroming |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | combineren met Type is 'gebied' |
+| **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
+
+#### cultuurLandschap
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | cultuurLandschap |
+| **Herkomst** | ERS |
+| **Definitie** | Indeling naar stijlperiode of stroming |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | combineren met Type is 'gebied' |
+| **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
+
+#### toelichtingLandschap
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | toelichtingLandschap |
+| **Herkomst** | ERS |
+| **Definitie** |  |
+| **Herkomst definitie** | ERS |
+| **Toelichting** |  |
+| **Datum opname** | 20191001 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
 

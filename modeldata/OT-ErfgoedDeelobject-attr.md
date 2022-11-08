@@ -161,7 +161,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### aanwezig
 | **Attribuutsoort-eigenschap** | **Waarde** |
