@@ -163,22 +163,22 @@
 | ---- | ---- |
 | **Naam** | contour |
 | **Herkomst** | ERS |
-| **Definitie** | Ruimtelijke contour en ligging van het object in het<br />Rijksdriehoekstelsel (bovenaanzicht, zo-als in de BAG).<br />Aanlevering van een contour is zeer wenselijk (doch nog niet verplicht) |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls<br />bij aanlevering als gisbestand is de geometrie formaatspecifiek (nog te bepalen welke formaten worden geaccepteerd) of GML<br />Indien Betreft >BAGpand is gevuld, is de geometrie gelijk aan de BAGpandcountour zal de geometrie worden opgehaald uit de BAG; deze hoeft hier dan niet ingevuld te worden. |
+| **Definitie** | de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedObject. |
+| **Herkomst definitie** | BAG |
+| **Toelichting** | Een samengesteld geometriegegevenstype waarbij wordt afgedwongen dat voor de geometrie een keuze gemaakt moet worden tussen een vlak (Polygon) of een multivlak (MultiPolygon), conform ISO/IEC 13249-3:2016. Deze standaard beschrijft de vastlegging in WKT-formaat.<br />Alleen geometrieën die voldoen aan het Simple Features profile conform ISO 19125-1:2004 zijn toegestaan.<br /><br />Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. Wanneer de bron voor een geometrie beperkt is tot een punt of een lijn, kan deze als vlak worden geregistreerd door een buffer toe te voegen. Daarbij wordt de breedte van de buffer geschat. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
 
-#### broncontour
+#### bronContour
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | broncontour |
+| **Naam** | bronContour |
 | **Herkomst** | ERS |
-| **Definitie** | Toelichting op de herkomst van de contour.<br />Verplicht als een contour wordt aangeleverd. |
+| **Definitie** | De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | Waar is de contour op gebaseerd? Bijvoorbeeld een historische kaart, de BGT, handwerk, etc. |
+| **Toelichting** | De contour van een ErfgoedObject kan zijn overgenomen uit de BAG of de BGT. Voor ErfgoedObjecten met type=pand(en) geniet het overnemen van de pandgeometrie uit de BAG de nadrukkelijke voorkeur. Er kunnen redenen zijn om een BAG-contour niet over te nemen; in dat geval is sprake van een maatwerkcontour. Ook voor alle ErfgoedObjecten die niet het type=pand(en) hebben, is een maatwerkcontour van toepassing. Wanneer bij de vastlegging gebruik is gemaakt van een buffer om een punt of lijn-geometrie, wordt dit ook in de bronContour vermeld. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -189,9 +189,9 @@
 | ---- | ---- |
 | **Naam** | puntCoördinaten |
 | **Herkomst** | ERS |
-| **Definitie** | De X- en Y-co&#246;rdinaat die als co&#246;rdinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel |
+| **Definitie** | de geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls<br />bij aanlevering als gisbestand is de geometrie formaatspecifiek.<br />MULTIPOINT wordt niet geaccepteerd<br />bij aanlevering van een contour kan een puntcoördinaat worden afgeleid; afzonderlijk aanleveren is dan niet verplicht |
+| **Toelichting** | de puntcoördinaten worden vastgelegd in WKT-formaat conform ISO/IEC 13249-3:2016. Dit betekent dat het veld als volgt is opgebouwd: POINT (x-coördinaat y-coördinaat). Bijvoorbeeld: POINT (136840.123 455874.123) voor de Dom in Utrecht. Multipoints zijn niet toegestaan. Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -201,9 +201,9 @@
 | ---- | ---- |
 | **Naam** | betreftPand |
 | **Herkomst** | ERS |
-| **Definitie** | Alleen gevuld indien het object een pand is (conform de definitie van een pand in de BAG) |
+| **Definitie** | Verwijzing naar een of meer Panden in de BAG. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verwijzing naar de landelijke PandIdentificatie; verplicht indien het ErfgoedObject van het type Pand is; tenzij de pandcontour in de BAG onjuist is (bijvoorbeeld te ruim is ten opzichte het oorspronkelijke historische pand dat is aangewezen). In dat geval dient een eigen 'maatwerk' contour te worden aangeleverd.<br /><br />een ErfgoedObject kan naar meerdere BAGPanden verwijzen. De BAGPanden vormen samen één contour die geldt voor het ErfgoedObject |
+| **Toelichting** | Het veld betreftPand is verplicht voor ErfgoedObjecten met type=pand(en). Panden kunnen in de Basisregistratie Adressen en Gebouwen (BAG) worden gevonden aan de hand van het unieke id van het Pand. ErfgoedObjecten van het type pand(en) vallen per definitie samen met één of meer Panden in de BAG.<br /><br />Een Pand is in de BAG als volgt gedefinieerd: de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is. Er is sprake van een bouwkundig-constructief zelfstandige eenheid, als het slopen ervan redelijkerwijs geen aangrenzende bouwkundige constructies doet instorten. Bij eventuele doorbraken van panden worden de pandbegrenzingen in de BAG niet aangepast. Deze definities worden door het Erfgoedobject met type=pand(en) overgenomen.<br /><br />Een Pand in de BAG heeft als eigenschap bouwjaar. Dit bouwjaar wordt niet per definitie overgenomen als jaarBegin van het ErfgoedObject. Dit is vanwege onvoldoende zekerheid over de kwaliteit van dit gegeven in de BAG.<br />Aan de hand van een Pand in de BAG kunnen gerelateerde adressen (Nummeraanduidingen) worden gevonden. Zie hierover de toelichting bij objectklasse Situering en attribuutsoort situering.<br /><br />Een Pand in de BAG heeft een Geometrie. Zie hierover de toelichting bij attribuutsoort contour. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 1..* |

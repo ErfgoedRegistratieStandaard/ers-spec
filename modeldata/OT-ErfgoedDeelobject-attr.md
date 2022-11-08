@@ -17,22 +17,21 @@
 | ---- | ---- |
 | **Naam** | contour |
 | **Herkomst** | ERS |
-| **Definitie** | Ruimtelijke contour en ligging van het object in het Rijksdriehoekstelsel (bovenaanzicht, zoals in de BAG) |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek. |
+| **Definitie** | de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedDeelObject. |
+| **Herkomst definitie** | BAG |
+| **Toelichting** | Een samengesteld geometriegegevenstype waarbij wordt afgedwongen dat voor de geometrie een keuze gemaakt moet worden tussen een vlak (Polygon) of een multivlak (MultiPolygon), conform ISO/IEC 13249-3:2016. Deze standaard beschrijft de vastlegging in WKT-formaat.<br />Alleen geometrieën die voldoen aan het Simple Features profile conform ISO 19125-1:2004 zijn toegestaan.<br /><br />Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. Wanneer de bron voor een geometrie beperkt is tot een punt of een lijn, kan deze als vlak worden geregistreerd door een buffer toe te voegen. Daarbij wordt de breedte van de buffer geschat. |
 | **Datum opname** | 20191001 |
 | **Indicatie materiële historie** | Ja |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### broncontour
+#### bronContour
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | broncontour |
+| **Naam** | bronContour |
 | **Herkomst** | ERS |
-| **Definitie** | Toelichting op de contour. Waar is deze op gebaseerd? Bijvoorbeeld een historische kaart, de BGT, etc. |
+| **Definitie** | De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is. |
 | **Herkomst definitie** | ERS |
 | **Toelichting** |  |
 | **Datum opname** | 20191001 |
@@ -45,9 +44,9 @@
 | ---- | ---- |
 | **Naam** | puntCoördinaten |
 | **Herkomst** | ERS |
-| **Definitie** | De X- en Y-co&#246;rdinaat die als co&#246;rdinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel |
+| **Definitie** | De geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek. MULTIPOINT wordt niet geaccepteerd. |
+| **Toelichting** | de puntcoördinaten worden vastgelegd in WKT-formaat conform ISO/IEC 13249-3:2016. Dit betekent dat het veld als volgt is opgebouwd: POINT (x-coördinaat y-coördinaat). Bijvoorbeeld: POINT (136840.123 455874.123) voor de Dom in Utrecht. Multipoints zijn niet toegestaan. Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
