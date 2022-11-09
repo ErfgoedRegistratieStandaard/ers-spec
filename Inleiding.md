@@ -5,7 +5,7 @@ De Erfgoed Registratie standaard is ontwikkeld in opdracht van de [Federatie Gro
 
 Bij het uitwerken van de standaard is gebruik gemaakt van de beschrijvingsregels uit de [de MIM-standaard](https://docs.geostandaarden.nl/mim/mim/). We lichten eerst het informatiemodel toe en geven daarna een beschrijving van de entiteiten ('Objecttypen') van het informatiemodel. Vervolgens worden de gebruikte  keuzelijsten uitgewerkt ('Enumeraties'), en de open lijsten ('Codelijsten'). Het verschil tussen beiden is dat nieuwe waarden in de keuzelijsten leiden tot een aanpassing van de standaard, terwijl codelijsten buiten de standaard om kunnen worden aangepast of aangevuld.
 
-Een paar begrippen uit de MIM-standaard zijn handig om hier kort uit te leggen. 
+Een paar begrippen uit de MIM-standaard zijn handig te weten. 
 
 **authentiek gegeven**: Een kenmerk is authentiek indien de juistheid (hoogwaardige kwaliteit) van het gegeven gewaarborgd wordt via formele inwinningsprocessen en wettelijk regelingen. De waarde refereert aan het inwinningsproces of de regeling in questie, bijvoorbeeld de basisregistratie. Een authentiek gegeven in de Erfgoed Registratie standaard (indien van toepassing) heeft waarde 'Overig'. Dat betekent dat het gegeven hoogwaardige kwaliteit heeft op basis van de eigen (domeinspecifieke) inwinningsprocessen van de erfgoedregistratie. 
 
@@ -13,7 +13,8 @@ Een paar begrippen uit de MIM-standaard zijn handig om hier kort uit te leggen.
 
 **mogelijk geen waarde**: Een kenmerk heeft 'mogelijk geen waarde' wanneer niet op voorhand zeker is dat de waarde bekend is en ook of er wel een waarde is. Dit behoeft enige toelichting in combinatie met het de vraag of het gaat om een verplicht gegeven of een optioneel gegeven.
 
-Een **verplicht gegeven** heeft kardinaliteit 1..1 of 1..n (tenminste 1 waarde, max 1 respectievelijk n waarden). In combinatie met 'mogelijk geen waarde' kan dit veld toch leeg zijn, ook al is het verplicht. De waarde is niet bekend. Staat dit niet aangegeven dan moet het veld een waarde hebben. Bijvoorbeeld de identificatie van een Object.
+Een **verplicht gegeven** heeft kardinaliteit 1..1 of 1..n (tenminste 1 waarde, max 1 respectievelijk n waarden). In combinatie met 'mogelijk geen waarde' kan dit veld toch leeg zijn, ook al is het verplicht. De waarde is niet bekend. Denk bijvoorbeeld aan bouwjaar (jaarBegin): elk object heeft een ontstaansmoment, een beginjaar. Maar niet altijd is de waarde bekend.
+Staat 'mogelijk geen waarde' niet vermeld, dan móet het veld een waarde hebben. Bijvoorbeeld de identificatie van een Object.
 
 Een **optioneel gegeven** heeft kardinaliteit 0..1 of 0..n (kan leeg zijn, heeft max 1 respectievelijk n waarden). In combinatie met 'mogelijk geen waarde' moeten we ons realiseren dat een leeg veld kán betekenen dat de waarde onbekend is. Denk bijvoorbeeld aan verschillende cultuurhistorische kenmerken zoals architect. Het is goed mogelijk dat er geen architect was. Maar ook dat we de naam van de architect niet weten.
 Staat 'mogelijk geen waarde' niet vermeld, dan betekent een leeg veld dat er echt geen waarde is. Bijvoorbeeld de einddatum van een Object: als deze leeg is, mag men ervan uitgaan dat het Object er echt nog is en niet is gesloopt of verdwenen.
