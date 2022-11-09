@@ -5,7 +5,7 @@
 | **Naam** | identificatie |
 | **Herkomst** | ERS |
 | **Definitie** | attribuut voor unieke identificatie volgens NEN 3610 |
-| **Herkomst definitie** | ERS |
+| **Herkomst definitie** | NEN3610 |
 | **Toelichting** | Door het systeem wordt aan de identificatie een Namespace toegevoegd.<br />Namespace: een unieke verwijzing naar de registratie die de identificatie uitdeelt (de bronhouder). Deze lijst van registraties wordt beheerd binnen de context van NEN 3610.<br /><br />Binnen Nederland zal deze namespace vrijwel altijd met ‘NL’ beginnen.<br />Lokaal id: unieke identificatiecode binnen de registratie van de bronhouder. Deze is verplicht omdat een nieuwe aanlevering (update) altijd per object herleidbaar moet zijn naar de eerdere aanlevering.<br /><br />Ook records die gegevens over Rijksmonumenten bevatten krijgen de Namespace van de aanleverende partij (betreffende gemeente). |
 | **Datum opname** | 20191001 |
 | **Authentiek** | Overig |
