@@ -2,13 +2,13 @@
 
 #### Registratiekenmerken
 
-De **registratiekenmerken** van een ErfgoedOmgeving zijn vergelijkbaar met die van een
-ErfgoedObject.
+Onder **registratiekenmerken** van een ErfgoedOmgeving valt enkel het type.
 
 #### Locatiekenmerken
 
 Voor de ErfgoedOmgeving is alleen een contour gedefinieerd als **locatiekenmerk**. Deze is
 verplicht voor bepaalde typen ErfgoedOmgeving, zoals de biotoop en de zichtlijn.
+Het type Complex heeft in beginsel geen contour; het complex is bepaald door de som van de gekoppelde Erfgoedobjecten.
 
 #### Waardekenmerken
 
