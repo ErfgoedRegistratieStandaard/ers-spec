@@ -1,6 +1,7 @@
 # Informatiemodel
 
-Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de registratie. In dit schema is te zien dat het model bestaat uit drie lagen.
+Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de registratie. 
+In dit schema is te zien dat het model bestaat uit drie lagen.
 
 ![](ers-media/Informatiemodel.png)
 
@@ -37,3 +38,11 @@ Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistra
 
 Zie [[[#objecttype-situering]]] voor detailinformatie.
 
+## MIM-model
+Een aantal begrippen uit MIM-standaard lichten wij hieronder toe. 
+
+**authentiek gegeven**: Een kenmerk is authentiek indien de juistheid (hoogwaardige kwaliteit) van het gegeven gewaarborgd wordt via formele inwinningsprocessen en wettelijk regelingen. De waarde refereert aan het inwinningsproces of de regeling in questie, bijvoorbeeld de basisregistratie. Een authentiek gegeven in de Erfgoed Registratie standaard heeft waarde 'Overig'. Dat betekent dat het gegeven hoogwaardige kwaliteit heeft op basis van de eigen (domeinspecifieke) inwinningsprocessen van de erfgoedstandaard.
+
+**classificerend**: Een kenmerk is classificerend wanneer het een objecttype indeelt in subtypen. In de erfgoedstandaard geldt dit voor attribuutsoort 'type'. Dit komt voor bij zowel objecten als deelobjecten en omgevingen. De waardelijsten (ennumeraties) van de drie niveaus verschillen enigszins; een efgoeddeelobject kent een iets andere indeling naar types dan het erfgoedobject. En een omgeving kent heel eigen subtypen.
+
+**mogelijk geen waarde**: Een kenmerk heeft 'mogelijk geen waarde' wanneer niet op voorhand zeker is dat de waarde bekend is en ook of er wel een waarde is. Dit behoeft enige toelichting in combinatie met het de vraag of het gaat om een verplicht gegeven of een optioneel gegeven...
