@@ -5,6 +5,7 @@ In dit schema is te zien dat het model bestaat uit drie lagen. Op elk van de dri
 
 Zie [[[#objecttype-im_ers_object]]] voor detailinformatie.
 
+
 ![](ers-media/Informatiemodel.png)
 
 ## ErfgoedObject
@@ -14,6 +15,10 @@ waarde bijvoorbeeld op grond van hun schoonheid of door het belang dat aan hun g
 verbonden waar een beschermende werking van uitgaat. Registratie kan ook betekenen dat de objectinformatie context geeft voor het toepassen van deze regelgeving.</mark>
 
 Zie [[[#objecttype-erfgoedobject]]] voor detailinformatie.
+
+Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via adresID en een eventueel een aanduiding van de relatie (situering) van dit adres ten opzichte van het object.</mark>
+
+Zie [[[#objecttype-situering]]] voor detailinformatie.
 
 ## ErfgoedOmgeving
 
@@ -26,8 +31,3 @@ Zie [[[#objecttype-erfgoedomgeving]]] voor detailinformatie.
 ErfgoedObjecten kunnen één of meerdere ErfgoedDeelobjecten hebben. Deze deelobjecten beschrijven bijvoorbeeld een bepaald onderdeel in detail. ErfgoedDeelobjecten ontlenen hun bescherming aan de bescherming van het ErfgoedObject als geheel.</mark>
 
 Zie [[[#objecttype-erfgoeddeelobject]]] voor detailinformatie.
-
-## Situering
-Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via adresID en een eventueel een aanduiding van de relatie (situering) van dit adres ten opzichte van het object.</mark>
-
-Zie [[[#objecttype-situering]]] voor detailinformatie.
