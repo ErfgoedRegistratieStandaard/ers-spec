@@ -3,7 +3,7 @@
 Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de registratie. 
 In dit schema is te zien dat het model bestaat uit drie lagen. Op elk van de drie lagen ligt een relatie naar het objecttype IM_ERS_Object.</mark>
 
-Zie [[[#objecttype-erfgoedobject]]] voor detailinformatie.
+Zie [[[#objecttype-im_ers_object]]] voor detailinformatie.
 
 ![](ers-media/Informatiemodel.png)
 
