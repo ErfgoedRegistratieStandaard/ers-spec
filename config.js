@@ -173,11 +173,12 @@ var respecConfig =
       publisher:  "",
       company:    "",
     },
-    "NEN3610":
+    "NEN 3610":
     {
       title:      "NEN-3610 Basismodel geo-informatie",
-      href:       "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
-      date:       "Mei 2016",
+      href:       "https://www.nen.nl/nen-3610-2022-nl-296137",
+      date:       "Juni 2022",
+	  status:	  "NEN 3610:2022 nl",
       publisher:  "NEN",
     },
 	 "GeoJSON":
@@ -196,6 +197,22 @@ var respecConfig =
       status:     "",
       company:    "",
     },
+	 "MIM":
+	{
+	  title:      "MIM - Metamodel Informatie Modellering",
+	  href:       "https://docs.geostandaarden.nl/mim/def-st-mim-20220217/",
+	  date:       "17 februari 2022",
+	  status:     "versie 1.1.1",
+	  publisher:  "Geonovum",	  
+	},
+	 "BAG":
+	{
+		title:    "Catalogus Basisregistratie Adressen en Gebouwen",
+		href:     "https://www.geobasisregistraties.nl/documenten/publicatie/2018/03/12/catalogus-2018",
+		date:     "1 juli 2018",
+		status:   "definitieve versie 1.0",
+		publisher: "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",		
+	},
   },
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
   previousPublishDate: "2019-09-11",    	    // Format is "YYYY-MM-DD"
