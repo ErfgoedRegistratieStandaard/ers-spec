@@ -16,9 +16,9 @@
 | ---- | ---- |
 | **Naam** | beschermdAls |
 | **Herkomst** | ERS |
-| **Definitie** | Beschermde status van het ErfgoedObject<br /><br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
+| **Definitie** | Beschermde status van het ErfgoedObject<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | een ErfgoedObject heeft maximaal 1 beschermde status.<br />Bij de overgang van In procedure naar definitief wordt de aanwijzingsdatum gevuld.<br />Bij NietAanwijzen en Afvoeren wordt de status verwijderd; ook aardRegistratie dient dan te worden aangepast. |
+| **Toelichting** | Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die _niet_ als beschermd staan geregistreerd.<br />Een ErfgoedObject heeft maximaal 1 beschermde status.<br />Bij de overgang van In procedure naar definitief wordt de aanwijzingsdatum gevuld.<br />Bij NietAanwijzen en Afvoeren wordt de status verwijderd; ook aardRegistratie dient dan te worden aangepast. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -31,7 +31,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Bevoegd gezag dat de status toekent<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | wanneer een status wordt 'overgenomen' door het Rijk (wat soms gebeurt bij monumenten) dan ontstaat een situatie van afvoeren van de ene lijst en opvoeren op de andere lijst. De bescherming als Rijksmonument gaat 'boven' de bescherming als Gemeentelijk monument. De betreffende datumvelden worden overschreven zodat deze betrekking hebben op de 'hoogst' beschermde status. |
+| **Toelichting** | Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die _niet_ als beschermd staan geregistreerd.<br />Wanneer een status wordt 'overgenomen' door het Rijk (wat soms gebeurt bij monumenten) dan ontstaat een situatie van afvoeren van de ene lijst en opvoeren op de andere lijst. De bescherming als Rijksmonument gaat 'boven' de bescherming als Gemeentelijk monument. De betreffende datumvelden worden overschreven zodat deze betrekking hebben op de 'hoogst' beschermde status. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -44,7 +44,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop voor het object de procedure tot aanwijzing als monument is gestart en de beschermde status in werking treedt |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt |
+| **Toelichting** | Dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
@@ -58,7 +58,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop het object is aangewezen als monument cq de beschermende status in werking treedt |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verplicht indien sprake is van een beschermende werking |
+| **Toelichting** | Verplicht indien sprake is van een beschermende werking |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
@@ -72,7 +72,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop als onderdeel van de procedure is besloten tot niet aanwijzen |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven |
+| **Toelichting** | Verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
@@ -86,7 +86,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop de beschermde status van het object is opgeheven middels een besluit |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verplicht indien hiermee de geregistreerde beschermende werking is opgeheven |
+| **Toelichting** | Verplicht indien hiermee de geregistreerde beschermende werking is opgeheven |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
@@ -98,9 +98,9 @@
 | ---- | ---- |
 | **Naam** | toelichtingProcedure |
 | **Herkomst** | ERS |
-| **Definitie** | Aantekening van de beschermde status die is opgeheven met eventueel een toelichting op de reden van be&#235;indiging |
+| **Definitie** | Aantekening met betrekking tot de doorlopen of beoogde procedure tot bescherming van het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verplicht in combinatie met datumNietAanwijzen en datumAfvoeren<br />ook te gebruiken om de gegevens van een eerder doorlopen procedure vast te leggen, indien van toepassing |
+| **Toelichting** | Verplicht in combinatie met datumNietAanwijzen en datumAfvoeren waarbij de beschermde status die is opgeheven wordt vermeld, met eventueel een toelichting op de reden van beëindiging. Ook te gebruiken om een eerder doorlopen procedure vast te leggen, of om relevante inventarisatienummers en dergelijke te noteren. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
@@ -113,7 +113,7 @@
 | **Herkomst** | ERS |
 | **Definitie** | Verwijzing naar het identificerende nummer waarmee dit object is aangewezen als gemeentelijk monument |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verwijzing naar het identificerende nr in de landelijke voorziening;<br />verplicht indien het een Gemeentelijk Monument betreft.<br />Het besluit verwijst naar de betreffende percelen (werkingsgebied); die koppeling wordt (vooralsnog) onderhouden in de Wkpb |
+| **Toelichting** | Verwijzing naar het identificerende nummer (id) in de landelijke voorziening. Dit veld is verplicht indien het een Gemeentelijk Monument betreft. Op dit moment is echter nog onvoldoende duidelijk hoe en waar de nummer na ingang van de omgevingswet wordt beheerd (kadaster, DSO). Daarom is het veld in de praktijk nog niet vaak gevuld. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -124,9 +124,9 @@
 | ---- | ---- |
 | **Naam** | monumentnummer |
 | **Herkomst** | ERS |
-| **Definitie** | Nummer, toegekend door de bronhouder van monumentregistraties (gemeente of RCE) |
+| **Definitie** | Uniek nummer of unieke code, toegekend door de bronhouder van de monumentregistratie (Rijk, Provincie of Gemeente).<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | verplicht bij gemeentelijk monumenten en rijksmonumenten<br />bij gemeentelijk monumenten wordt door het systeem een gemeentecode toegevoegd bij rijksmonumenten wordt het nummer voorafgegaan door een landelijke code |
+| **Toelichting** | Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die _niet_ als beschermd staan geregistreerd. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
@@ -139,7 +139,7 @@
 | **Herkomst** |  |
 | **Definitie** | Hiermee wordt aangegeven dat een onderzoek wordt uitgevoerd naar de juistheid van een of meer gegevens van het betreffende object |
 | **Herkomst definitie** |  |
-| **Toelichting** | Onderzoek naar de juistheid van de registratie. Dit kan zijn nav een interne terugmelding bij de gemeente, of (toekomst) nav een terugmelding door de landelijke service.<br />Default: nee |
+| **Toelichting** | Onderzoek naar de juistheid van de registratie. Dit kan zijn naar aanleiding van een interne terugmelding bij de gemeente, of naar aanleiding van een signalering uit een controle met een landelijke service. |
 | **Datum opname** |  |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
