@@ -2,7 +2,7 @@
 | **Enumeratie-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | ErfgoedDeelobjectType |
-| **Definitie** | Typering van de fysieke verschijningsvorm van een deelobject zoals constructief deel van het gebouw of element dat op/aan/in het object is verbonden (kunst, interieur).<br /> |
+| **Definitie** | Typering van de fysieke verschijningsvorm van een deelobject.<br /> |
 ### Enumeratiewaarden ErfgoedDeelobjectType
 | **Enumeratiewaarde** | **Code** | **Definitie** |
 | ---- | ---- | ---- |
@@ -11,4 +11,6 @@
 | bouwwerk |  | gebouwd object, onroerend van aard, anders dan een pand |
 | constructie |  | het deel van een object dat zorgt voor de sterkte, stijfheid en stabiliteit |
 | interieur |  | inrichting en aankleding van een pand of bouwwerk |
-| pand(en) |  | een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet. |
+| opgaand groen |  | bossen en andere beplantingen zijnde een groep bomen en struiken, of solitair groen element. |
+| pand(en) |  | een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet, of een aantal van dergelijke gebouwen samen. |
+| park/terrein |  | aangelegd gebied met een bepaalde functie in de openbare ruimte |
