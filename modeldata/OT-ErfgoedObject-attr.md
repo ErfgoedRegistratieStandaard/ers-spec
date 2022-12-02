@@ -77,7 +77,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### datumAfvoeren
 | **Attribuutsoort-eigenschap** | **Waarde** |
@@ -91,7 +90,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### toelichtingProcedure
 | **Attribuutsoort-eigenschap** | **Waarde** |
