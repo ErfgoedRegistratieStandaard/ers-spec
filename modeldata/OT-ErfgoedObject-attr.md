@@ -206,9 +206,8 @@
 | **Toelichting** | Het veld betreftPand is verplicht voor ErfgoedObjecten met type=pand(en). Panden kunnen in de Basisregistratie Adressen en Gebouwen (BAG) worden gevonden aan de hand van het unieke id van het Pand. ErfgoedObjecten van het type pand(en) vallen per definitie samen met één of meer Panden in de BAG.<br /><br />Een Pand is in de BAG als volgt gedefinieerd: de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is. Er is sprake van een bouwkundig-constructief zelfstandige eenheid, als het slopen ervan redelijkerwijs geen aangrenzende bouwkundige constructies doet instorten. Bij eventuele doorbraken van panden worden de pandbegrenzingen in de BAG niet aangepast. Deze definities worden door het Erfgoedobject met type=pand(en) overgenomen.<br /><br />Een Pand in de BAG heeft als eigenschap bouwjaar. Dit bouwjaar wordt niet per definitie overgenomen als jaarBegin van het ErfgoedObject. Dit is vanwege onvoldoende zekerheid over de kwaliteit van dit gegeven in de BAG.<br />Aan de hand van een Pand in de BAG kunnen gerelateerde adressen (Nummeraanduidingen) worden gevonden. Zie hierover de toelichting bij objectklasse Situering en attribuutsoort situering.<br /><br />Een Pand in de BAG heeft een Geometrie. Zie hierover de toelichting bij attribuutsoort contour. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 1..* |
+| **Kardinaliteit** | 0..* |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### betreftBGT
 | **Attribuutsoort-eigenschap** | **Waarde** |
