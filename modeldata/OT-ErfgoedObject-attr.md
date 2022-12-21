@@ -182,10 +182,10 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### u
+#### puntCoördinaten
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
-| **Naam** | u |
+| **Naam** | puntCoördinaten |
 | **Herkomst** | ERS |
 | **Definitie** | de geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt. |
 | **Herkomst definitie** | ERS |
