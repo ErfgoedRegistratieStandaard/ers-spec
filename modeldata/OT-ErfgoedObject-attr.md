@@ -480,22 +480,9 @@
 | ---- | ---- |
 | **Naam** | cultuurLandschap |
 | **Herkomst** | ERS |
-| **Definitie** | Indeling naar stijlperiode of stroming |
+| **Definitie** | Nadere onderverdeling binnen een ontginningstype. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | combineren met Type is 'gebied' |
-| **Datum opname** | 20191001 |
-| **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
-| **Authentiek** | Overig |
-
-#### toelichtingLandschap
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | toelichtingLandschap |
-| **Herkomst** | ERS |
-| **Definitie** |  |
-| **Herkomst definitie** | ERS |
-| **Toelichting** |  |
+| **Toelichting** | Specificatie van een gebied of terrein, aan de hand van landschappelijke kenmerken (reliëf, begroeiing, openheid, verkaveling, leeftijd enz). Cultuurlandschappen zijn vaak gerelateerd aan één ontginningstype. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
