@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.2.4">
+<meta name="generator" content="ReSpec 32.6.1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -89,6 +89,14 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+</style>
+<style data-emotion="css">
+
+</style>
+<style type="text/css">
+ 
+      @import url('https://fonts.bunny.net/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+      
 </style>
 <meta name="description" content="Erfgoedregistratie Standaard, versie 1.0.">
 <style>
@@ -207,11 +215,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "",
       "company": ""
     },
-    "NEN3610": {
+    "NEN 3610": {
       "title": "NEN-3610 Basismodel geo-informatie",
-      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
-      "date": "Mei 2016",
-      "publisher": "NEN"
+      "href": "https://www.nen.nl/nen-3610-2022-nl-296137",
+      "date": "Juni 2022",
+      "status": "NEN 3610:2022 nl",
+      "publisher": "NEN",
+      "id": "nen 3610"
     },
     "GeoJSON": {
       "title": "GeoJSON",
@@ -226,19 +236,35 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "",
       "status": "",
       "company": ""
+    },
+    "MIM": {
+      "title": "MIM - Metamodel Informatie Modellering",
+      "href": "https://docs.geostandaarden.nl/mim/def-st-mim-20220217/",
+      "date": "17 februari 2022",
+      "status": "versie 1.1.1",
+      "publisher": "Geonovum",
+      "id": "mim"
+    },
+    "BAG": {
+      "title": "Catalogus Basisregistratie Adressen en Gebouwen",
+      "href": "https://www.geobasisregistraties.nl/documenten/publicatie/2018/03/12/catalogus-2018",
+      "date": "1 juli 2018",
+      "status": "definitieve versie 1.0",
+      "publisher": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "id": "bag"
     }
   },
   "previousPublishDate": "2019-09-11",
   "previousMaturity": "GN-CV",
   "maxTocLevel": 4,
-  "publishISODate": "2022-09-20T00:00:00.000Z",
-  "generatedSubtitle": "20 september 2022"
+  "publishISODate": "2023-01-24T00:00:00.000Z",
+  "generatedSubtitle": "24 januari 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>    
 	<body class="h-entry informative"><div class="head">
     
     <h1 id="title" class="title">Erfgoed Registratie Standaard</h1> 
-    <p id="w3c-state"> <time class="dt-published" datetime="2022-09-20">20 september 2022</time></p>
+    <p id="w3c-state"> <time class="dt-published" datetime="2023-01-24">24 januari 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -272,69 +298,93 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <p class="copyright">
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
     ©
-    2022
+    2023
     
-    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/">World Wide Web Consortium</a>.
+    <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
     <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
     <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
   </p>
     <hr title="Separator for header">
   </div><section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Erfgoedregistratie Standaard, <strong>versie 1.0</strong>.</p>
-<p>Werkgroep De Data-Beet heeft in opdracht van het Bestuurlijk Platform Erfgoed (BPE) en in de lijn met haar visie deze Erfgoedregistratie Standaard ontwikkeld.</p>
+<p>Werkgroep De Data-Beet heeft in opdracht van het Bestuurlijk Platform Erfgoed (BPE) en in de lijn met haar visie deze Erfgoedregistratie Standaard ontwikkeld.
+Het doel van de werkgroep is dat gemeenten betrouwbare erfgoedinformatie toegankelijk hebben voor uitwisseling met derden. Dit begint met de definitie van een schema waarmee de minimale eisen aan een erfgoedregistratie zijn vastgelegd. Bij het definiëren van de standaard zijn  onder andere deze drie vraagstukken belangrijk:</p>
+<ol>
+<li>Registratie reikwijdte (wat stellen we verplicht of optioneel, wat valt er wel en niet onder Erfgoed)</li>
+<li>Locatie (hoe wordt de relatie tot stelsel basisregistratie gelegd, welke betekenis heeft een geometrische contour, hoe om te gaan met de omgeving)</li>
+<li>Contextinformatie (welke kenmerken van het erfgoed van relevant om de waarde van het erfgoed te beschrijven en te begrijpen)</li>
+</ol>
+<p>Op elk van deze vragen poogt de Erfgoedregistratie Standaard een antwoord te formuleren.</p>
+<p>Bij het formuleren van deze antwoorden heeft de werkgroep zich gebaseerd op de volgende visie, geïnspireerd door de doelen van de Omgevingswet:
+“Benader cultureel erfgoed als één thema in één informatieproduct. De gebruiker/initiatiefnemer moet eenduidige informatie krijgen over cultureel erfgoed.”</p>
+<p>Dat betekent:</p>
+<ul>
+<li>Benader Erfgoed in brede zin (niet alleen monumenten, ook cultuurhistorische waarden)</li>
+<li>Presenteer Erfgoed op kaart in drie lagen:<ul>
+<li>Omgeving/biotoop</li>
+<li>Object</li>
+<li>Specifieke waarden (deelobject)</li>
+</ul>
+</li>
+<li>Bied context met aanvullende informatie over locatie, aard, historie, en waarde</li>
+</ul>
+<p>Binnen deze visie is het belangrijk dat door alle gemeenten één taal wordt gesproken over het erfgoed. Regels kunnen per gemeente verschillen, maar de informatie over erfgoed wordt op eenzelfde wijze in een kaart weergegeven met uitwisselbare open data.</p>
 </section>
 <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
       This document is merely a <abbr title="World Wide Web Consortium">W3C</abbr>-internal
        document. It has no official standing
       of any kind and does not represent consensus of the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-    </p><p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel"><bdi class="secno">2. </bdi>Informatiemodel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#erfgoedobject"><bdi class="secno">2.1 </bdi>ErfgoedObject</a></li><li class="tocline"><a class="tocxref" href="#erfgoedomgeving"><bdi class="secno">2.2 </bdi>ErfgoedOmgeving</a></li><li class="tocline"><a class="tocxref" href="#erfgoeddeelobject"><bdi class="secno">2.3 </bdi>ErfgoedDeelobject</a></li><li class="tocline"><a class="tocxref" href="#situering"><bdi class="secno">2.4 </bdi>Situering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttypen"><bdi class="secno">3. </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-im_ers_object"><bdi class="secno">3.1 </bdi>Objecttype IM_ERS_Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">3.1.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten"><bdi class="secno">3.1.2 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">3.1.2.1 </bdi>identificatie</a></li><li class="tocline"><a class="tocxref" href="#tijdstipregistratie"><bdi class="secno">3.1.2.2 </bdi>tijdstipRegistratie</a></li><li class="tocline"><a class="tocxref" href="#eindregistratie"><bdi class="secno">3.1.2.3 </bdi>eindRegistratie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoedobject"><bdi class="secno">3.2 </bdi>Objecttype ErfgoedObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-0"><bdi class="secno">3.2.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken"><bdi class="secno">3.2.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken"><bdi class="secno">3.2.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken"><bdi class="secno">3.2.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken"><bdi class="secno">3.2.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-0"><bdi class="secno">3.2.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aardregistratie"><bdi class="secno">3.2.3.1 </bdi>aardRegistratie</a></li><li class="tocline"><a class="tocxref" href="#beschermdals"><bdi class="secno">3.2.3.2 </bdi>beschermdAls</a></li><li class="tocline"><a class="tocxref" href="#beschermddoor"><bdi class="secno">3.2.3.3 </bdi>beschermdDoor</a></li><li class="tocline"><a class="tocxref" href="#datuminprocedure"><bdi class="secno">3.2.3.4 </bdi>datumInProcedure</a></li><li class="tocline"><a class="tocxref" href="#datumaanwijzing"><bdi class="secno">3.2.3.5 </bdi>datumAanwijzing</a></li><li class="tocline"><a class="tocxref" href="#datumnietaanwijzen"><bdi class="secno">3.2.3.6 </bdi>datumNietAanwijzen</a></li><li class="tocline"><a class="tocxref" href="#datumafvoeren"><bdi class="secno">3.2.3.7 </bdi>datumAfvoeren</a></li><li class="tocline"><a class="tocxref" href="#toelichtingprocedure"><bdi class="secno">3.2.3.8 </bdi>toelichtingProcedure</a></li><li class="tocline"><a class="tocxref" href="#grondslag"><bdi class="secno">3.2.3.9 </bdi>grondslag</a></li><li class="tocline"><a class="tocxref" href="#monumentnummer"><bdi class="secno">3.2.3.10 </bdi>monumentnummer</a></li><li class="tocline"><a class="tocxref" href="#inonderzoek"><bdi class="secno">3.2.3.11 </bdi>inOnderzoek</a></li><li class="tocline"><a class="tocxref" href="#type"><bdi class="secno">3.2.3.12 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#contour"><bdi class="secno">3.2.3.13 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#broncontour"><bdi class="secno">3.2.3.14 </bdi>broncontour</a></li><li class="tocline"><a class="tocxref" href="#puntcoordinaten"><bdi class="secno">3.2.3.15 </bdi>puntcoördinaten</a></li><li class="tocline"><a class="tocxref" href="#betreftpand"><bdi class="secno">3.2.3.16 </bdi>betreftPand</a></li><li class="tocline"><a class="tocxref" href="#betreftbgt"><bdi class="secno">3.2.3.17 </bdi>betreftBGT</a></li><li class="tocline"><a class="tocxref" href="#toelichtingadressering"><bdi class="secno">3.2.3.18 </bdi>toelichtingAdressering</a></li><li class="tocline"><a class="tocxref" href="#jaarbegin"><bdi class="secno">3.2.3.19 </bdi>jaarBegin</a></li><li class="tocline"><a class="tocxref" href="#jaareind"><bdi class="secno">3.2.3.20 </bdi>jaarEind</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaarbegin"><bdi class="secno">3.2.3.21 </bdi>annotatieJaarBegin</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaareind"><bdi class="secno">3.2.3.22 </bdi>annotatieJaarEind</a></li><li class="tocline"><a class="tocxref" href="#naam"><bdi class="secno">3.2.3.23 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#redengevendeomschrijving"><bdi class="secno">3.2.3.24 </bdi>redengevendeOmschrijving</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">3.2.3.25 </bdi>beschrijving</a></li><li class="tocline"><a class="tocxref" href="#architectontwerp"><bdi class="secno">3.2.3.26 </bdi>architectOntwerp</a></li><li class="tocline"><a class="tocxref" href="#aanwezig"><bdi class="secno">3.2.3.27 </bdi>aanwezig</a></li><li class="tocline"><a class="tocxref" href="#opdrachtgeverbouw"><bdi class="secno">3.2.3.28 </bdi>opdrachtgeverBouw</a></li><li class="tocline"><a class="tocxref" href="#uitvoerendkunstenaar"><bdi class="secno">3.2.3.29 </bdi>uitvoerendKunstenaar</a></li><li class="tocline"><a class="tocxref" href="#oospronkelijkefunctie"><bdi class="secno">3.2.3.30 </bdi>oospronkelijkeFunctie</a></li><li class="tocline"><a class="tocxref" href="#gebouwtype"><bdi class="secno">3.2.3.31 </bdi>gebouwtype</a></li><li class="tocline"><a class="tocxref" href="#bouwstijl"><bdi class="secno">3.2.3.32 </bdi>bouwstijl</a></li><li class="tocline"><a class="tocxref" href="#oorspronkelijkefunctiecbs"><bdi class="secno">3.2.3.33 </bdi>oorspronkelijkeFunctieCBS</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoedomgeving"><bdi class="secno">3.3 </bdi>Objecttype ErfgoedOmgeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-1"><bdi class="secno">3.3.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-0"><bdi class="secno">3.3.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-0"><bdi class="secno">3.3.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-0"><bdi class="secno">3.3.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken-0"><bdi class="secno">3.3.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-1"><bdi class="secno">3.3.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type-0"><bdi class="secno">3.3.3.1 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#contour-0"><bdi class="secno">3.3.3.2 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#naam-0"><bdi class="secno">3.3.3.3 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-0"><bdi class="secno">3.3.3.4 </bdi>beschrijving</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoeddeelobject"><bdi class="secno">3.4 </bdi>Objecttype ErfgoedDeelobject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-2"><bdi class="secno">3.4.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-1"><bdi class="secno">3.4.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-1"><bdi class="secno">3.4.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-1"><bdi class="secno">3.4.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken-1"><bdi class="secno">3.4.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-2"><bdi class="secno">3.4.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type-1"><bdi class="secno">3.4.3.1 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#aanwezig-0"><bdi class="secno">3.4.3.2 </bdi>aanwezig</a></li><li class="tocline"><a class="tocxref" href="#contour-1"><bdi class="secno">3.4.3.3 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#broncontour-0"><bdi class="secno">3.4.3.4 </bdi>broncontour</a></li><li class="tocline"><a class="tocxref" href="#puntcoordinaten-0"><bdi class="secno">3.4.3.5 </bdi>puntcoördinaten</a></li><li class="tocline"><a class="tocxref" href="#betreftpand-0"><bdi class="secno">3.4.3.6 </bdi>betreftPand</a></li><li class="tocline"><a class="tocxref" href="#betreftbgt-0"><bdi class="secno">3.4.3.7 </bdi>betreftBGT</a></li><li class="tocline"><a class="tocxref" href="#jaarbegin-0"><bdi class="secno">3.4.3.8 </bdi>jaarBegin</a></li><li class="tocline"><a class="tocxref" href="#jaareind-0"><bdi class="secno">3.4.3.9 </bdi>jaarEind</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaarbegin-0"><bdi class="secno">3.4.3.10 </bdi>annotatieJaarBegin</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaareind-0"><bdi class="secno">3.4.3.11 </bdi>annotatieJaarEind</a></li><li class="tocline"><a class="tocxref" href="#naam-1"><bdi class="secno">3.4.3.12 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-1"><bdi class="secno">3.4.3.13 </bdi>beschrijving</a></li><li class="tocline"><a class="tocxref" href="#architectontwerp-0"><bdi class="secno">3.4.3.14 </bdi>architectOntwerp</a></li><li class="tocline"><a class="tocxref" href="#opdrachtgeverbouw-0"><bdi class="secno">3.4.3.15 </bdi>opdrachtgeverBouw</a></li><li class="tocline"><a class="tocxref" href="#uitvoerendkunstenaar-0"><bdi class="secno">3.4.3.16 </bdi>uitvoerendKunstenaar</a></li><li class="tocline"><a class="tocxref" href="#oospronkelijkefunctie-0"><bdi class="secno">3.4.3.17 </bdi>oospronkelijkeFunctie</a></li><li class="tocline"><a class="tocxref" href="#gebouwtype-0"><bdi class="secno">3.4.3.18 </bdi>gebouwtype</a></li><li class="tocline"><a class="tocxref" href="#bouwstijl-0"><bdi class="secno">3.4.3.19 </bdi>bouwstijl</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-situering"><bdi class="secno">3.5 </bdi>Objecttype Situering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-3"><bdi class="secno">3.5.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-2"><bdi class="secno">3.5.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-2"><bdi class="secno">3.5.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-2"><bdi class="secno">3.5.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken-2"><bdi class="secno">3.5.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-3"><bdi class="secno">3.5.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie-0"><bdi class="secno">3.5.3.1 </bdi>identificatie</a></li><li class="tocline"><a class="tocxref" href="#situering-0"><bdi class="secno">3.5.3.2 </bdi>situering</a></li><li class="tocline"><a class="tocxref" href="#betreftadres"><bdi class="secno">3.5.3.3 </bdi>betreftAdres</a></li></ol></li></ol></li></ol></li></ol></nav>
+    </p><p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel"><bdi class="secno">2. </bdi>Informatiemodel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#erfgoedobject"><bdi class="secno">2.1 </bdi>ErfgoedObject</a></li><li class="tocline"><a class="tocxref" href="#erfgoedomgeving"><bdi class="secno">2.2 </bdi>ErfgoedOmgeving</a></li><li class="tocline"><a class="tocxref" href="#erfgoeddeelobject"><bdi class="secno">2.3 </bdi>ErfgoedDeelobject</a></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttypen"><bdi class="secno">3. </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-im_ers_object"><bdi class="secno">3.1 </bdi>Objecttype IM_ERS_Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">3.1.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten"><bdi class="secno">3.1.2 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">3.1.2.1 </bdi>identificatie</a></li><li class="tocline"><a class="tocxref" href="#bronhouder"><bdi class="secno">3.1.2.2 </bdi>bronhouder</a></li><li class="tocline"><a class="tocxref" href="#tijdstipregistratie"><bdi class="secno">3.1.2.3 </bdi>tijdstipRegistratie</a></li><li class="tocline"><a class="tocxref" href="#eindregistratie"><bdi class="secno">3.1.2.4 </bdi>eindRegistratie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoedobject"><bdi class="secno">3.2 </bdi>Objecttype ErfgoedObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-0"><bdi class="secno">3.2.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken"><bdi class="secno">3.2.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken"><bdi class="secno">3.2.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken"><bdi class="secno">3.2.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken"><bdi class="secno">3.2.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-0"><bdi class="secno">3.2.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aardregistratie"><bdi class="secno">3.2.3.1 </bdi>aardRegistratie</a></li><li class="tocline"><a class="tocxref" href="#beschermdals"><bdi class="secno">3.2.3.2 </bdi>beschermdAls</a></li><li class="tocline"><a class="tocxref" href="#beschermddoor"><bdi class="secno">3.2.3.3 </bdi>beschermdDoor</a></li><li class="tocline"><a class="tocxref" href="#datuminprocedure"><bdi class="secno">3.2.3.4 </bdi>datumInProcedure</a></li><li class="tocline"><a class="tocxref" href="#datumaanwijzing"><bdi class="secno">3.2.3.5 </bdi>datumAanwijzing</a></li><li class="tocline"><a class="tocxref" href="#datumnietaanwijzen"><bdi class="secno">3.2.3.6 </bdi>datumNietAanwijzen</a></li><li class="tocline"><a class="tocxref" href="#datumafvoeren"><bdi class="secno">3.2.3.7 </bdi>datumAfvoeren</a></li><li class="tocline"><a class="tocxref" href="#toelichtingprocedure"><bdi class="secno">3.2.3.8 </bdi>toelichtingProcedure</a></li><li class="tocline"><a class="tocxref" href="#grondslag"><bdi class="secno">3.2.3.9 </bdi>grondslag</a></li><li class="tocline"><a class="tocxref" href="#monumentnummer"><bdi class="secno">3.2.3.10 </bdi>monumentnummer</a></li><li class="tocline"><a class="tocxref" href="#inonderzoek"><bdi class="secno">3.2.3.11 </bdi>inOnderzoek</a></li><li class="tocline"><a class="tocxref" href="#type"><bdi class="secno">3.2.3.12 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#contour"><bdi class="secno">3.2.3.13 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#broncontour"><bdi class="secno">3.2.3.14 </bdi>bronContour</a></li><li class="tocline"><a class="tocxref" href="#puntcoordinaten"><bdi class="secno">3.2.3.15 </bdi>puntCoördinaten</a></li><li class="tocline"><a class="tocxref" href="#betreftpand"><bdi class="secno">3.2.3.16 </bdi>betreftPand</a></li><li class="tocline"><a class="tocxref" href="#betreftbgt"><bdi class="secno">3.2.3.17 </bdi>betreftBGT</a></li><li class="tocline"><a class="tocxref" href="#toelichtingadressering"><bdi class="secno">3.2.3.18 </bdi>toelichtingAdressering</a></li><li class="tocline"><a class="tocxref" href="#jaarbegin"><bdi class="secno">3.2.3.19 </bdi>jaarBegin</a></li><li class="tocline"><a class="tocxref" href="#jaareind"><bdi class="secno">3.2.3.20 </bdi>jaarEind</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaarbegin"><bdi class="secno">3.2.3.21 </bdi>annotatieJaarBegin</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaareind"><bdi class="secno">3.2.3.22 </bdi>annotatieJaarEind</a></li><li class="tocline"><a class="tocxref" href="#naam"><bdi class="secno">3.2.3.23 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#toelichtingwaarde"><bdi class="secno">3.2.3.24 </bdi>toelichtingWaarde</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">3.2.3.25 </bdi>beschrijving</a></li><li class="tocline"><a class="tocxref" href="#aanwezig"><bdi class="secno">3.2.3.26 </bdi>aanwezig</a></li><li class="tocline"><a class="tocxref" href="#verwachtebouwhistwaarde"><bdi class="secno">3.2.3.27 </bdi>verwachteBouwhistWaarde</a></li><li class="tocline"><a class="tocxref" href="#architectontwerp"><bdi class="secno">3.2.3.28 </bdi>architectOntwerp</a></li><li class="tocline"><a class="tocxref" href="#opdrachtgeverbouw"><bdi class="secno">3.2.3.29 </bdi>opdrachtgeverBouw</a></li><li class="tocline"><a class="tocxref" href="#uitvoerendkunstenaar"><bdi class="secno">3.2.3.30 </bdi>uitvoerendKunstenaar</a></li><li class="tocline"><a class="tocxref" href="#oorspronkelijkefunctie"><bdi class="secno">3.2.3.31 </bdi>oorspronkelijkeFunctie</a></li><li class="tocline"><a class="tocxref" href="#gebouwtype"><bdi class="secno">3.2.3.32 </bdi>gebouwtype</a></li><li class="tocline"><a class="tocxref" href="#bouwstijl"><bdi class="secno">3.2.3.33 </bdi>bouwstijl</a></li><li class="tocline"><a class="tocxref" href="#fysischlandschap"><bdi class="secno">3.2.3.34 </bdi>fysischLandschap</a></li><li class="tocline"><a class="tocxref" href="#fysischdeellandschap"><bdi class="secno">3.2.3.35 </bdi>fysischDeelLandschap</a></li><li class="tocline"><a class="tocxref" href="#themacultuurhistorie"><bdi class="secno">3.2.3.36 </bdi>themaCultuurhistorie</a></li><li class="tocline"><a class="tocxref" href="#cultuurlandschap"><bdi class="secno">3.2.3.37 </bdi>cultuurLandschap</a></li><li class="tocline"><a class="tocxref" href="#ontginning"><bdi class="secno">3.2.3.38 </bdi>ontginning</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoedomgeving"><bdi class="secno">3.3 </bdi>Objecttype ErfgoedOmgeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-1"><bdi class="secno">3.3.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-0"><bdi class="secno">3.3.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-0"><bdi class="secno">3.3.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-0"><bdi class="secno">3.3.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken-0"><bdi class="secno">3.3.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-1"><bdi class="secno">3.3.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type-0"><bdi class="secno">3.3.3.1 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#contour-0"><bdi class="secno">3.3.3.2 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#naam-0"><bdi class="secno">3.3.3.3 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-0"><bdi class="secno">3.3.3.4 </bdi>beschrijving</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-erfgoeddeelobject"><bdi class="secno">3.4 </bdi>Objecttype ErfgoedDeelobject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-2"><bdi class="secno">3.4.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-1"><bdi class="secno">3.4.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-1"><bdi class="secno">3.4.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-1"><bdi class="secno">3.4.2.2 </bdi>Locatiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#waardekenmerken-1"><bdi class="secno">3.4.2.3 </bdi>Waardekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-2"><bdi class="secno">3.4.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type-1"><bdi class="secno">3.4.3.1 </bdi>type</a></li><li class="tocline"><a class="tocxref" href="#contour-1"><bdi class="secno">3.4.3.2 </bdi>contour</a></li><li class="tocline"><a class="tocxref" href="#broncontour-0"><bdi class="secno">3.4.3.3 </bdi>bronContour</a></li><li class="tocline"><a class="tocxref" href="#puntcoordinaten-0"><bdi class="secno">3.4.3.4 </bdi>puntCoördinaten</a></li><li class="tocline"><a class="tocxref" href="#betreftpand-0"><bdi class="secno">3.4.3.5 </bdi>betreftPand</a></li><li class="tocline"><a class="tocxref" href="#betreftbgt-0"><bdi class="secno">3.4.3.6 </bdi>betreftBGT</a></li><li class="tocline"><a class="tocxref" href="#jaarbegin-0"><bdi class="secno">3.4.3.7 </bdi>jaarBegin</a></li><li class="tocline"><a class="tocxref" href="#jaareind-0"><bdi class="secno">3.4.3.8 </bdi>jaarEind</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaarbegin-0"><bdi class="secno">3.4.3.9 </bdi>annotatieJaarBegin</a></li><li class="tocline"><a class="tocxref" href="#annotatiejaareind-0"><bdi class="secno">3.4.3.10 </bdi>annotatieJaarEind</a></li><li class="tocline"><a class="tocxref" href="#naam-1"><bdi class="secno">3.4.3.11 </bdi>naam</a></li><li class="tocline"><a class="tocxref" href="#beschrijving-1"><bdi class="secno">3.4.3.12 </bdi>beschrijving</a></li><li class="tocline"><a class="tocxref" href="#aanwezig-0"><bdi class="secno">3.4.3.13 </bdi>aanwezig</a></li><li class="tocline"><a class="tocxref" href="#architectontwerp-0"><bdi class="secno">3.4.3.14 </bdi>architectOntwerp</a></li><li class="tocline"><a class="tocxref" href="#opdrachtgeverbouw-0"><bdi class="secno">3.4.3.15 </bdi>opdrachtgeverBouw</a></li><li class="tocline"><a class="tocxref" href="#uitvoerendkunstenaar-0"><bdi class="secno">3.4.3.16 </bdi>uitvoerendKunstenaar</a></li><li class="tocline"><a class="tocxref" href="#oorspronkelijkefunctie-0"><bdi class="secno">3.4.3.17 </bdi>oorspronkelijkeFunctie</a></li><li class="tocline"><a class="tocxref" href="#gebouwtype-0"><bdi class="secno">3.4.3.18 </bdi>gebouwtype</a></li><li class="tocline"><a class="tocxref" href="#bouwstijl-0"><bdi class="secno">3.4.3.19 </bdi>bouwstijl</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#objecttype-situering"><bdi class="secno">3.5 </bdi>Objecttype Situering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie-3"><bdi class="secno">3.5.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#kenmerken-2"><bdi class="secno">3.5.2 </bdi>Kenmerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#registratiekenmerken-2"><bdi class="secno">3.5.2.1 </bdi>Registratiekenmerken</a></li><li class="tocline"><a class="tocxref" href="#locatiekenmerken-2"><bdi class="secno">3.5.2.2 </bdi>Locatiekenmerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuutsoorten-3"><bdi class="secno">3.5.3 </bdi>Attribuutsoorten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie-0"><bdi class="secno">3.5.3.1 </bdi>identificatie</a></li><li class="tocline"><a class="tocxref" href="#situering"><bdi class="secno">3.5.3.2 </bdi>situering</a></li><li class="tocline"><a class="tocxref" href="#betreftadres"><bdi class="secno">3.5.3.3 </bdi>betreftAdres</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties"><bdi class="secno">4. </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanwezigheid"><bdi class="secno">4.1 </bdi>Aanwezigheid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-aanwezigheid"><bdi class="secno">4.1.1 </bdi>Enumeratiewaarden Aanwezigheid</a></li></ol></li><li class="tocline"><a class="tocxref" href="#beschermdestatus"><bdi class="secno">4.2 </bdi>BeschermdeStatus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-beschermdestatus"><bdi class="secno">4.2.1 </bdi>Enumeratiewaarden BeschermdeStatus</a></li></ol></li><li class="tocline"><a class="tocxref" href="#beschermendeinstantie"><bdi class="secno">4.3 </bdi>BeschermendeInstantie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-beschermendeinstantie"><bdi class="secno">4.3.1 </bdi>Enumeratiewaarden BeschermendeInstantie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#erfgoeddeelobjecttype"><bdi class="secno">4.4 </bdi>ErfgoedDeelobjectType</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-erfgoeddeelobjecttype"><bdi class="secno">4.4.1 </bdi>Enumeratiewaarden ErfgoedDeelobjectType</a></li></ol></li><li class="tocline"><a class="tocxref" href="#erfgoedobjecttype"><bdi class="secno">4.5 </bdi>ErfgoedObjectType</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-erfgoedobjecttype"><bdi class="secno">4.5.1 </bdi>Enumeratiewaarden ErfgoedObjectType</a></li></ol></li><li class="tocline"><a class="tocxref" href="#erfgoedomgevingtype"><bdi class="secno">4.6 </bdi>ErfgoedOmgevingType</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-erfgoedomgevingtype"><bdi class="secno">4.6.1 </bdi>Enumeratiewaarden ErfgoedOmgevingType</a></li></ol></li><li class="tocline"><a class="tocxref" href="#jaarannotatie"><bdi class="secno">4.7 </bdi>JaarAnnotatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-jaarannotatie"><bdi class="secno">4.7.1 </bdi>Enumeratiewaarden JaarAnnotatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#themacultuurhistorie-0"><bdi class="secno">4.8 </bdi>ThemaCultuurhistorie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-themacultuurhistorie"><bdi class="secno">4.8.1 </bdi>Enumeratiewaarden ThemaCultuurhistorie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#registratieaard"><bdi class="secno">4.9 </bdi>Registratieaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-registratieaard"><bdi class="secno">4.9.1 </bdi>Enumeratiewaarden Registratieaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#situeringswijze"><bdi class="secno">4.10 </bdi>Situeringswijze</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeratiewaarden-situeringswijze"><bdi class="secno">4.10.1 </bdi>Enumeratiewaarden Situeringswijze</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten"><bdi class="secno">5. </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bouwstijl-1"><bdi class="secno">5.1 </bdi>Bouwstijl</a></li><li class="tocline"><a class="tocxref" href="#cultuurlandschap-0"><bdi class="secno">5.2 </bdi>Cultuurlandschap</a></li><li class="tocline"><a class="tocxref" href="#functie"><bdi class="secno">5.3 </bdi>Functie</a></li><li class="tocline"><a class="tocxref" href="#gebouwtype-1"><bdi class="secno">5.4 </bdi>Gebouwtype</a></li><li class="tocline"><a class="tocxref" href="#ontginning-0"><bdi class="secno">5.5 </bdi>Ontginning</a></li><li class="tocline"><a class="tocxref" href="#subfysiologie"><bdi class="secno">5.6 </bdi>SubFysiologie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
 <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
-<p>De Erfgoed Registratie standaard is ontwikkeld in opdracht van de <a href="https://monumentengemeenten.nl/">Federatie Grote
-Monumentengemeenten</a> door de werkgroep 
-<a href="https://monumentengemeenten.nl/werkgroepen-2/werkgroep-data-beet/">De DataBeet</a>. 
-Ze is gebaseerd op een inventarisatie van registraties van 9 gemeenten plus de registratie van Rijksmonumenten
-door de Rijksdienst Cultureel Erfgoed. Deze publicatie is de uitkomst van een pilot waarin de
-omzetting van een aantal gemeentelijke registraties naar deze standaard is getoetst. De
-standaard staat open voor feedback en vragen. De website van de FGM (contactpagina De
-DataBeet) biedt daartoe de mogelijkheid.</p>
+<p>De Erfgoed Registratie standaard is ontwikkeld in opdracht van de <a href="https://monumentengemeenten.nl/">Federatie Grote Monumentengemeenten</a> door de werkgroep 
+<a href="https://monumentengemeenten.nl/werkgroepen-2/werkgroep-data-beet/">De DataBeet</a>. Ze is gebaseerd op een inventarisatie van registraties van 9 gemeenten plus de registratie van Rijksmonumenten door de Rijksdienst Cultureel Erfgoed. Deze publicatie is de uitkomst van een pilot waarin de omzetting van een aantal gemeentelijke registraties naar deze standaard is getoetst. De standaard staat open voor feedback en vragen. De website van de FGM (contactpagina De DataBeet) biedt daartoe de mogelijkheid.</p>
+<p>Bij het uitwerken van de standaard is gebruik gemaakt van de beschrijvingsregels uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim" title="MIM - Metamodel Informatie Modellering">MIM</a></cite>]. We lichten eerst het informatiemodel toe en geven daarna een beschrijving van de entiteiten ('Objecttypen') van het informatiemodel. Vervolgens worden de gebruikte  keuzelijsten uitgewerkt ('Enumeraties'), en de open lijsten ('Codelijsten'). Het verschil tussen beiden is dat nieuwe waarden in de keuzelijsten leiden tot een aanpassing van de standaard, terwijl codelijsten buiten de standaard om kunnen worden aangepast of aangevuld.</p>
+<p>Een paar begrippen uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim" title="MIM - Metamodel Informatie Modellering">MIM</a></cite>] zijn handig te weten. </p>
+<p><strong>authentiek gegeven</strong>: Een kenmerk is authentiek indien de juistheid (hoogwaardige kwaliteit) van het gegeven gewaarborgd wordt via formele inwinningsprocessen en wettelijk regelingen. De waarde refereert aan het inwinningsproces of de regeling in questie, bijvoorbeeld de basisregistratie. Een authentiek gegeven in de Erfgoed Registratie standaard (indien van toepassing) heeft waarde 'Overig'. Dat betekent dat het gegeven hoogwaardige kwaliteit heeft op basis van de eigen (domeinspecifieke) inwinningsprocessen van de erfgoedregistratie. </p>
+<p><strong>classificerend</strong>: Een kenmerk is classificerend wanneer het een objecttype indeelt in subtypen. In de erfgoedstandaard geldt dit voor attribuutsoort 'type'. Dit komt voor bij zowel objecten als deelobjecten en omgevingen. De keuzelijsten (enumeraties) op de drie niveaus verschillen enigszins; een efgoeddeelobject kent een iets andere indeling naar subtypen dan het erfgoedobject. En een omgeving kent heel eigen subtypen.</p>
+<p><strong>mogelijk geen waarde</strong>: Een kenmerk heeft 'mogelijk geen waarde' wanneer niet op voorhand zeker is dat de waarde bekend is en ook of er wel een waarde is. Dit behoeft enige toelichting in combinatie met het de vraag of het gaat om een verplicht gegeven of een optioneel gegeven.</p>
+<p>Een <strong>verplicht gegeven</strong> heeft kardinaliteit 1..1 of 1..n (tenminste 1 waarde, max 1 respectievelijk n waarden). In combinatie met 'mogelijk geen waarde' kan dit veld toch leeg zijn, ook al is het verplicht. De waarde is niet bekend. Denk bijvoorbeeld aan bouwjaar (jaarBegin): elk object heeft een ontstaansmoment, een beginjaar. Maar niet altijd is de waarde bekend. 
+Staat 'mogelijk geen waarde' niet vermeld, dan móet het veld een waarde hebben. Bijvoorbeeld de identificatie van een Object.</p>
+<p>Een <strong>optioneel gegeven</strong> heeft kardinaliteit 0..1 of 0..n (kan leeg zijn, heeft max 1 respectievelijk n waarden). In combinatie met 'mogelijk geen waarde' moeten we ons realiseren dat een leeg veld kán betekenen dat de waarde onbekend is. Denk bijvoorbeeld aan verschillende cultuurhistorische kenmerken zoals architect. Het is goed mogelijk dat er geen architect was. Maar ook dat we de naam van de architect niet weten.
+Staat 'mogelijk geen waarde' niet vermeld, dan betekent een leeg veld dat er echt geen waarde is. Bijvoorbeeld de einddatum van een Object: als deze leeg is, mag men ervan uitgaan dat het Object er echt nog is en niet is gesloopt of verdwenen.</p>
+<p>NOTA BENE: In enkele gevallen is gekozen voor een verplicht gegeven voor velden die ook ook écht leeg kunnen zijn. De verplichting geldt in deze gevallen alleen als het Object beschermd is.  Dit geldt voor: beschermdAls, beschermdDoor, monumentnummer en grondslag. Eigenlijk zijn dit dus optionele velden, met 'Mogelijk geen waarde' = nee. Maar vanwege het belang van de verplichting in combinatie met aardRegistratie=beschermd, is gekozen voor de modellering 'verplicht' in combinatie met 'Mogelijk geen waarde'.</p>
 </section>
 <section id="informatiemodel"><div class="header-wrapper"><h2 id="x2-informatiemodel"><bdi class="secno">2. </bdi>Informatiemodel</h2><a class="self-link" href="#informatiemodel" aria-label="Permalink for Section 2."></a></div>
-<p>Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de
-registratie. In dit schema is te zien dat het model bestaat uit drie lagen.</p>
+<p>Het informatiemodel beschrijft de logische relaties tussen de belangrijkste entiteiten van de registratie. 
+In dit schema is te zien dat het model bestaat uit drie lagen. Op elk van de drie lagen ligt een relatie naar het objecttype IM_ERS_Object.</p>
+<p>Zie <a href="#objecttype-im_ers_object" data-matched-text="[[[#objecttype-im_ers_object]]]" class="sec-ref"><bdi class="secno">3.1 </bdi>Objecttype IM_ERS_Object</a> voor detailinformatie.</p>
 <p><img src="ers-media/Informatiemodel.png" alt="" height="547" width="892"></p>
 <section id="erfgoedobject"><div class="header-wrapper"><h3 id="x2-1-erfgoedobject"><bdi class="secno">2.1 </bdi>ErfgoedObject</h3><a class="self-link" href="#erfgoedobject" aria-label="Permalink for Section 2.1"></a></div>
-<p>Gebouwen, andere bouwwerken zoals bruggen of sculpturen, alsook parken en andere
-bovengrondse structuren kunnen zijn geregistreerd als ErfgoedObject. Dit vanwege hun
-waarde bijvoorbeeld op grond van hun schoonheid of door het belang dat aan hun
-geschiedenis wordt gehecht. Registratie betekent dat aan het object regels kunnen zijn
-verbonden waar een beschermende werking van uitgaat. Registratie kan ook betekenen dat
-de objectinformatie context geeft voor het toepassen van deze regelgeving.</p>
+<p>Gebouwen, andere bouwwerken zoals bruggen of sculpturen, alsook parken en andere bovengrondse structuren kunnen zijn geregistreerd als ErfgoedObject. Dit vanwege hun
+waarde bijvoorbeeld op grond van hun schoonheid of door het belang dat aan hun geschiedenis wordt gehecht. Registratie betekent dat aan het object regels kunnen zijn
+verbonden waar een beschermende werking van uitgaat. Registratie kan ook betekenen dat de objectinformatie context geeft voor het toepassen van deze regelgeving.</p>
 <p>Zie <a href="#objecttype-erfgoedobject" data-matched-text="[[[#objecttype-erfgoedobject]]]" class="sec-ref"><bdi class="secno">3.2 </bdi>Objecttype ErfgoedObject</a> voor detailinformatie.</p>
+<p>Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via adresID en een eventueel een aanduiding van de relatie (situering) van dit adres ten opzichte van het object.</p>
+<p>Zie <a href="#objecttype-situering" data-matched-text="[[[#objecttype-situering]]]" class="sec-ref"><bdi class="secno">3.5 </bdi>Objecttype Situering</a> voor detailinformatie.</p>
 </section><section id="erfgoedomgeving"><div class="header-wrapper"><h3 id="x2-2-erfgoedomgeving"><bdi class="secno">2.2 </bdi>ErfgoedOmgeving</h3><a class="self-link" href="#erfgoedomgeving" aria-label="Permalink for Section 2.2"></a></div>
-<p>ErfgoedObjecten kunnen deel uitmaken van een omgeving, waaraan zij ook een bepaalde
-waarde ontlenen. De bescherming van het ErfgoedObject heeft omgekeerd ook betekenis
-voor de bescherming van de omgeving. Dit kan nader zijn uitgewerkt in de regels. Voor één
-ErfgoedObject geldt dat er meerdere ErfgoedOmgevingen relevant kunnen zijn.</p>
+<p>ErfgoedObjecten kunnen deel uitmaken van een omgeving, waaraan zij ook een bepaalde waarde ontlenen. De bescherming van het ErfgoedObject heeft omgekeerd ook betekenis voor de bescherming van de omgeving. Dit kan nader zijn uitgewerkt in de regels. Voor één ErfgoedObject geldt dat er meerdere ErfgoedOmgevingen relevant kunnen zijn.</p>
 <p>Zie <a href="#objecttype-erfgoedomgeving" data-matched-text="[[[#objecttype-erfgoedomgeving]]]" class="sec-ref"><bdi class="secno">3.3 </bdi>Objecttype ErfgoedOmgeving</a> voor detailinformatie.</p>
 </section><section id="erfgoeddeelobject"><div class="header-wrapper"><h3 id="x2-3-erfgoeddeelobject"><bdi class="secno">2.3 </bdi>ErfgoedDeelobject</h3><a class="self-link" href="#erfgoeddeelobject" aria-label="Permalink for Section 2.3"></a></div>
-<p>ErfgoedObjecten kunnen één of meerdere ErfgoedDeelobjecten hebben. Deze deelobjecten
-beschrijven bijvoorbeeld een bepaald onderdeel in detail. ErfgoedDeelobjecten ontlenen hun
-bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
+<p>ErfgoedObjecten kunnen één of meerdere ErfgoedDeelobjecten hebben. Deze deelobjecten beschrijven bijvoorbeeld een bepaald onderdeel in detail. ErfgoedDeelobjecten ontlenen hun bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
 <p>Zie <a href="#objecttype-erfgoeddeelobject" data-matched-text="[[[#objecttype-erfgoeddeelobject]]]" class="sec-ref"><bdi class="secno">3.4 </bdi>Objecttype ErfgoedDeelobject</a> voor detailinformatie.</p>
-</section><section id="situering"><div class="header-wrapper"><h3 id="x2-4-situering"><bdi class="secno">2.4 </bdi>Situering</h3><a class="self-link" href="#situering" aria-label="Permalink for Section 2.4"></a></div>
-<p>Op het niveau van het ErfgoedObject ligt tevens een relatie met de Basisregistratie Gebouwen (BAG), via een pandID en/of adresID.</p>
-<p>Zie <a href="#objecttype-situering" data-matched-text="[[[#objecttype-situering]]]" class="sec-ref"><bdi class="secno">3.5 </bdi>Objecttype Situering</a> voor detailinformatie.</p>
 </section></section>
 
 <section id="objecttypen"><div class="header-wrapper"><h2 id="x3-objecttypen"><bdi class="secno">3. </bdi>Objecttypen</h2><a class="self-link" href="#objecttypen" aria-label="Permalink for Section 3."></a></div>
 <section id="objecttype-im_ers_object"><div class="header-wrapper"><h3 id="x3-1-objecttype-im_ers_object"><bdi class="secno">3.1 </bdi>Objecttype IM_ERS_Object</h3><a class="self-link" href="#objecttype-im_ers_object" aria-label="Permalink for Section 3.1"></a></div>
 
-<p>De objecttypen <a href="#objecttype-erfgoedomgeving">ErfgoedOmgeving</a>, <a href="#objecttype-erfgoedobject">ErfgoedObject</a> en <a href="#objecttype-erfgoeddeelobject">ErfgoedDeelobject</a> zijn geo-objecttypen conform NEN 3610. Het abstracte objecttype IM_ERS_Object legt de verbinding naar NEN 3610 door aan al deze objecten een NEN3610ID toe te kennen. Daarmee zijn objecten (d.w.z. instanties van deze objecttypen) uniek identificeerbaar binnen het domein van NEN 3610.</p>
-<p>Daarnaast worden via het IM_ERS_Object attributen toegevoegd die gebruikt worden om de formele historie van een object vast te leggen. De formele historie beschrijft de historie van een object in de registratie. In aanvulling daarop wordt voor ErfgoedObjecten en ErfgoedDeelobjecten de materiële historie van objecten (de historie van een object in de werkelijkheid) bijgehouden. Daarvoor worden beginJaar en eindJaar gehanteerd (zie de beschrijving van de attribuutsoorten aldaar), waarmee het al dan  niet bestaan van (de cultuurhistorische waarde van) een object wordt gemarkeerd. Als een object bijvoorbeeld gesloopt is, bestaat het in beginsel nog steeds in de registratie houden maar wordt materieel een eindjaar toegekend.  Tegelijkertijd wijzigt de aardRegistratie in dat geval naar 'historisch'. </p>
+<p>De objecttypen <a href="#objecttype-erfgoedomgeving">ErfgoedOmgeving</a>, <a href="#objecttype-erfgoedobject">ErfgoedObject</a> en <a href="#objecttype-erfgoeddeelobject">ErfgoedDeelobject</a> zijn geo-objecttypen conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen 3610" title="NEN-3610 Basismodel geo-informatie">NEN 3610</a></cite>]. Het abstracte objecttype IM_ERS_Object legt de verbinding naar [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen 3610" title="NEN-3610 Basismodel geo-informatie">NEN 3610</a></cite>] door aan al deze objecten een NEN3610ID toe te kennen. Daarmee zijn objecten (d.w.z. instanties van deze objecttypen) uniek identificeerbaar binnen het domein van [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen 3610" title="NEN-3610 Basismodel geo-informatie">NEN 3610</a></cite>].</p>
+<p>Een NEN3610ID is opgebouwd uit drie delen: een namespace, lokaalID en versienummer. De volgende richtlijnen gelden voor het vullen van het NEN3610ID voor erfgoedregistratieobjecten:</p>
+<ul>
+<li>De namespace wordt uitgegeven door ERS</li>
+<li>De gemeente is de bronhouder voor de erfgoedregistratieobjecten. Als lokale identifier wordt een objectnummer gehanteerd dat is samengesteld conform de [<cite><a class="bibref" data-link-type="biblio" href="#bib-bag" title="Catalogus Basisregistratie Adressen en Gebouwen">BAG</a></cite>]. Het objectnummer bestaat uit een zestiencijferige code die start met vier numerieke posities met de gemeentecode, zoals gepubliceerd in <strong>Tabel 33 Gemeententabel</strong> van de <a href="https://publicaties.rvig.nl/">Rijksdienst voor Identiteitsgegevens</a>. De gemeentecode wordt toegekend op basis van de gemeente die bronhouder is voor het erfgoedregistratieobject. Het tweede deel van het zestiencijferige objectnummer bestaat uit twee numerieke posities met de code <strong>08</strong>, die het objecttype 'erfgoedobject' aanduidt (over het gebruik van deze 'vrije' code is afstemming geweest met de BAG). Het derde deel van het zestiencijferige objectnummer bestaat uit tien numerieke posities met een binnen de gemeente uniek volgnummer. Indien een objectvolgnummer uit minder dan tien posities bestaat, dan wordt deze aangevuld met voorloopnullen. (Zie voor de opbouw van een objectnummer conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-bag" title="Catalogus Basisregistratie Adressen en Gebouwen">BAG</a></cite>] ook paragraaf 3.7 in de <a href="https://www.geobasisregistraties.nl/binaries/basisregistraties-ienm/documenten/publicatie/2018/03/12/catalogus-2018/Catalogus-BAG-2018.pdf">Catalogus BAG (PDF)</a>))</li>
+<li>Het versienummer wordt gebruikt ten behoeve van formele historie. Als een object in een aanlevering een gewijzigde versie is van een object in een voorgaande levering, dan dient deze hetzelfde lokaalID te hebben, maar een hoger versienummer. Versienummers zijn gehele getallen, die bij voorkeur starten met 1 en bij elke wijziging door de bronhouder dienen te worden opgehoogd met minimaal 1. Het versienummer is verplicht, met uitzondering van de eerste versie van een object dat wordt aangeleverd. Als een versienummer ontbreekt dan is dat dus ook een indicatie dat er geen eerdere versies van het object zijn aangeleverd.</li>
+</ul>
+<p>Daarnaast worden via het IM_ERS_Object attributen toegevoegd die gebruikt worden om de formele historie van een object vast te leggen. De formele historie beschrijft de historie van een object in de registratie. In aanvulling daarop wordt voor ErfgoedObjecten en ErfgoedDeelobjecten de materiële historie van objecten (de historie van een object in de werkelijkheid) bijgehouden. Daarvoor worden beginJaar en eindJaar gehanteerd (zie de beschrijving van de attribuutsoorten aldaar), waarmee het al dan  niet bestaan van (de cultuurhistorische waarde van) een object wordt gemarkeerd. Als een object bijvoorbeeld gesloopt is, bestaat het in beginsel nog steeds in de registratie maar wordt materieel een eindjaar toegekend. Tegelijkertijd wijzigt de aardRegistratie in dat geval naar 'historisch'. </p>
 <p>Bij de beschrijving van de attribuutsoorten van de objecttypen in deze standaard is middels 'Indicatie formele historie' vastgelegd of wijzigingen in de waarde van het attribuut leiden tot een nieuwe (gewijzigde) versie van het object. In de oude versie wordt dan de eindRegistratie ingevuld en dezelfde tijd wordt ingevuld bij de tijdstipRegistratie van de nieuwe versie. Materiële historie speelt alleen op niveau van het ErfgoedObject en ErfgoedDeelobject als geheel, en niet op attribuutniveau.</p>
-<p>Voor meer informatie over formele (en materiële) historie, zie ook paragraaf <em>7.2.5 Temporele kenmerken en versies</em> in NEN 3610.</p>
+<p>Voor meer informatie over formele (en materiële) historie, zie ook paragraaf <em>8.3 Temporele kenmerken en versies</em> in [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen 3610" title="NEN-3610 Basismodel geo-informatie">NEN 3610</a></cite>].</p>
+
+
 <p><img src="ers-media/IM_ERS_Object.png" alt="" height="421" width="892"></p>
 <section id="definitie"><div class="header-wrapper"><h4 id="x3-1-1-definitie"><bdi class="secno">3.1.1 </bdi>Definitie</h4><a class="self-link" href="#definitie" aria-label="Permalink for Section 3.1.1"></a></div>
 <table>
@@ -394,7 +444,7 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
-<td>ERS</td>
+<td>NEN3610</td>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
@@ -413,7 +463,48 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="tijdstipregistratie"><div class="header-wrapper"><h5 id="x3-1-2-2-tijdstipregistratie"><bdi class="secno">3.1.2.2 </bdi>tijdstipRegistratie</h5><a class="self-link" href="#tijdstipregistratie" aria-label="Permalink for Section 3.1.2.2"></a></div>
+</section><section id="bronhouder"><div class="header-wrapper"><h5 id="x3-1-2-2-bronhouder"><bdi class="secno">3.1.2.2 </bdi>bronhouder</h5><a class="self-link" href="#bronhouder" aria-label="Permalink for Section 3.1.2.2"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>bronhouder</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Naam van de gemeente die de bronhouder is voor het object.</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>De (naam van de) bronhouder kan wijzigen als gevolg van gemeentelijke herindelingen.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221202</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="tijdstipregistratie"><div class="header-wrapper"><h5 id="x3-1-2-3-tijdstipregistratie"><bdi class="secno">3.1.2.3 </bdi>tijdstipRegistratie</h5><a class="self-link" href="#tijdstipregistratie" aria-label="Permalink for Section 3.1.2.3"></a></div>
 <table>
 <thead>
 <tr>
@@ -450,7 +541,7 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
 <td>Overig</td>
 </tr>
 </tbody></table>
-</section><section id="eindregistratie"><div class="header-wrapper"><h5 id="x3-1-2-3-eindregistratie"><bdi class="secno">3.1.2.3 </bdi>eindRegistratie</h5><a class="self-link" href="#eindregistratie" aria-label="Permalink for Section 3.1.2.3"></a></div>
+</section><section id="eindregistratie"><div class="header-wrapper"><h5 id="x3-1-2-4-eindregistratie"><bdi class="secno">3.1.2.4 </bdi>eindRegistratie</h5><a class="self-link" href="#eindregistratie" aria-label="Permalink for Section 3.1.2.4"></a></div>
 <table>
 <thead>
 <tr>
@@ -496,7 +587,7 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
   
 <section id="objecttype-erfgoedobject"><div class="header-wrapper"><h3 id="x3-2-objecttype-erfgoedobject"><bdi class="secno">3.2 </bdi>Objecttype ErfgoedObject</h3><a class="self-link" href="#objecttype-erfgoedobject" aria-label="Permalink for Section 3.2"></a></div>
 
-<p><img src="ers-media/ErfgoedObject.png" alt="" height="5068" width="2280"></p>
+<p><img src="ers-media/ErfgoedObject.png" alt="" height="1308" width="2083"></p>
 <section id="definitie-0"><div class="header-wrapper"><h4 id="x3-2-1-definitie"><bdi class="secno">3.2.1 </bdi>Definitie</h4><a class="self-link" href="#definitie-0" aria-label="Permalink for Section 3.2.1"></a></div>
 <table>
 <thead>
@@ -533,52 +624,24 @@ bescherming aan de bescherming van het ErfgoedObject als geheel.</p>
 </section>
 <section id="kenmerken"><div class="header-wrapper"><h4 id="x3-2-2-kenmerken"><bdi class="secno">3.2.2 </bdi>Kenmerken</h4><a class="self-link" href="#kenmerken" aria-label="Permalink for Section 3.2.2"></a></div>
 <section id="registratiekenmerken"><div class="header-wrapper"><h5 id="x3-2-2-1-registratiekenmerken"><bdi class="secno">3.2.2.1 </bdi>Registratiekenmerken</h5><a class="self-link" href="#registratiekenmerken" aria-label="Permalink for Section 3.2.2.1"></a></div>
-<p>Deze leggen vast vanaf wanneer een object is geregistreerd, wanneer de registratie is
-gewijzigd (versies van registraties) en welke aard de registratie heeft.</p>
-<p>De aard van een registratie vertelt iets over de beleidsmatige betekenis van het object: gaat
-het om een verwachte cultuurhistorische waarde, een aanwezige, een beschermde of een
-historische waarde. Dit betekent dat er ook registraties kunnen zijn van cultuurhistorische
-waarden die worden vermoed, maar niet zeker zijn. En van waarden die er ooit waren, maar
-inmiddels niet meer bestaan. De aard van een registratie kan in de loop van de tijd wijzigen.
+<p>Deze leggen vast vanaf wanneer een object is geregistreerd, wanneer de registratie is gewijzigd (versies van registraties) en welke aard de registratie heeft.</p>
+<p>De aard van een registratie vertelt iets over de beleidsmatige betekenis van het object: gaat het om een verwachte cultuurhistorische waarde, een aanwezige, een beschermde of een historische waarde. Dit betekent dat er ook registraties kunnen zijn van cultuurhistorische waarden die worden vermoed, maar niet zeker zijn. En van waarden die er ooit waren, maar inmiddels niet meer bestaan. De aard van een registratie kan in de loop van de tijd wijzigen.
 Onderstaand schema toont de mogelijke overgangen:
 <img src="ers-media/Overgangen.png" alt="" height="230" width="667"></p>
-<p>De overgangen hoeven niet stuk voor stuk doorlopen te worden; er kunnen ook stappen
-worden overgeslagen.
+<p>De overgangen hoeven niet stuk voor stuk doorlopen te worden; er kunnen ook stappen worden overgeslagen.
 Is de aard van de registratie een beschermde waarde, dan is een reeks attributen verplicht.
-Deze attributen gaan bijvoorbeeld over de datum waarop de bescherming in werking trad en
-welk bevoegd gezag daartoe besloot.</p>
-<p>De overgang naar historisch is interessant. Dit betekent dat de cultuurhistorische waarde
-zoals door het record is beschreven er niet meer is. Er is een belangrijke relatie met het veld
-jaarEind, dat het einde van de materiële levensduur van het object markeert. Dit veld hoort
-gevuld te zijn in combinatie met aardRegistratie historisch.</p>
-<p>Dat de cultuurhistorische waarde is vernietigd kan betekenen dat het object er niet meer is,
-maar dat hoeft niet. Er kan dus nog een actuele koppeling met een bestaand pand en een
-bestaand adres zijn. Is het fysieke object er helemaal niet meer, dan dienen deze
-koppelingen te worden verwijderd.</p>
-<p>Als een object beschermd is en de waarde wordt (of blijkt) vernietigd, dan wordt de
-bescherming doorgaans opgeheven. Ook kan het zijn dat een procedure is gestart, maar
-eindigt in het besluit niet aan te wijzen. De velden die de bescherming vastleggen worden op
-dat moment geschoond. Aan de datumvelden is te zien dat het object eerder wel
-bescherming genoot; een toelichting hierop (zoals welke bescherming dit betrof) is verplicht.</p>
-<p>Een apart geval betreft waarden die verwacht worden en na inventarisatie niet aanwezig
-blijken. Ook dan zal de ooit ‘verwachte’ waarde niet blijken uit de actuele registratie: de
-registratie van het betreffende object wordt beëindigd met een datumEindeRegistratieID.</p>
+Deze attributen gaan bijvoorbeeld over de datum waarop de bescherming in werking trad en welk bevoegd gezag daartoe besloot.</p>
+<p>De overgang naar historisch is interessant. Dit betekent dat de cultuurhistorische waarde zoals door het record is beschreven er niet meer is. Er is een belangrijke relatie met het veld jaarEind, dat het einde van de materiële levensduur van het object markeert. Dit veld hoort gevuld te zijn in combinatie met aardRegistratie historisch.</p>
+<p>Dat de cultuurhistorische waarde is vernietigd kan betekenen dat het object er niet meer is, maar dat hoeft niet. Er kan dus nog een actuele koppeling met een bestaand pand en een bestaand adres zijn. Is het fysieke object er helemaal niet meer, dan dienen deze koppelingen te worden verwijderd.</p>
+<p>Als een object beschermd is en de waarde wordt (of blijkt) vernietigd, dan wordt de bescherming doorgaans opgeheven. Ook kan het zijn dat een procedure is gestart, maar eindigt in het besluit niet aan te wijzen. De velden die de bescherming vastleggen worden op dat moment geschoond. Aan de datumvelden is te zien dat het object eerder wel bescherming genoot; een toelichting hierop (zoals welke bescherming dit betrof) is verplicht.</p>
+<p>Een apart geval betreft waarden die verwacht worden en na inventarisatie niet aanwezig blijken. In dat geval kan de aanduiding 'niet aangetroffen' worden genoteerd als alternatief voor het beëindigen van de registratie.</p>
 </section><section id="locatiekenmerken"><div class="header-wrapper"><h5 id="x3-2-2-2-locatiekenmerken"><bdi class="secno">3.2.2.2 </bdi>Locatiekenmerken</h5><a class="self-link" href="#locatiekenmerken" aria-label="Permalink for Section 3.2.2.2"></a></div>
-<p>Om de locatie van een object te kennen zijn zowel geometrie als adresgegevens van
-belang. De geometrie en de adressen hebben een vergelijkbare functie: ze dienen de
+<p>Om de locatie van een object te kennen zijn zowel geometrie als adresgegevens van belang. De geometrie en de adressen hebben een vergelijkbare functie: ze dienen de
 kenbaarheid van het object.</p>
-<p>De registratie gaat ervan uit dat een bescherming rust op een object. Dit object kan in de
-loop van de tijd wijzigen; de bescherming blijft rusten op het object als geheel. Dat betekent
-dat de contour in de loop van de tijd kan wijzigen. De contour is dus niet bedoeld om precies
-te begrenzen wat er wel of niet beschermd is.</p>
-<p>Met behulp van landelijke basisregistraties kunnen de locatiegegevens (contour en adres)
-actueel blijven. Een wijziging in de basisregistratie zal niet altijd geautomatiseerd kunnen
-worden verwerkt; dat hangt af van de aard van de wijziging.</p>
+<p>De registratie gaat ervan uit dat een bescherming rust op een object. Dit object kan in de loop van de tijd wijzigen; de bescherming blijft rusten op het object als geheel. Dat betekent dat de contour in de loop van de tijd kan wijzigen. De contour is dus niet bedoeld om precies te begrenzen wat er wel of niet beschermd is.</p>
+<p>Met behulp van landelijke basisregistraties kunnen de locatiegegevens (contour en adres) actueel blijven. Een wijziging in de basisregistratie zal niet altijd geautomatiseerd kunnen worden verwerkt; dat hangt af van de aard van de wijziging.</p>
 </section><section id="waardekenmerken"><div class="header-wrapper"><h5 id="x3-2-2-3-waardekenmerken"><bdi class="secno">3.2.2.3 </bdi>Waardekenmerken</h5><a class="self-link" href="#waardekenmerken" aria-label="Permalink for Section 3.2.2.3"></a></div>
-<p>Deze kenmerken beschrijven inhoudelijk de cultuurhistorische waarde van het object. De
-standaard maakt daarbij gebruik van tekst velden en van lijsten. De lijsten zijn bij voorkeur
-afgeleid van nationale termenlijsten. Het beheer op deze lijsten zal in de toekomst verder
-vorm moeten krijgen.</p>
+<p>Deze kenmerken beschrijven inhoudelijk de cultuurhistorische waarde van het object. De standaard maakt daarbij gebruik van tekst velden en van lijsten. De lijsten zijn bij voorkeur afgeleid van nationale termenlijsten. Het beheer op deze lijsten zal in de toekomst verder vorm moeten krijgen.</p>
 </section></section>
 <section id="attribuutsoorten-0"><div class="header-wrapper"><h4 id="x3-2-3-attribuutsoorten"><bdi class="secno">3.2.3 </bdi>Attribuutsoorten</h4><a class="self-link" href="#attribuutsoorten-0" aria-label="Permalink for Section 3.2.3"></a></div>
 <section id="aardregistratie"><div class="header-wrapper"><h5 id="x3-2-3-1-aardregistratie"><bdi class="secno">3.2.3.1 </bdi>aardRegistratie</h5><a class="self-link" href="#aardregistratie" aria-label="Permalink for Section 3.2.3.1"></a></div>
@@ -599,7 +662,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Wijze waarop de cultuurhistorische waarde van het ErfgoedObject beleidsmatig betekenis heeft.<br>Aanlevering verplicht.</td>
+<td>Verwijzing naar de materiële levensduur en bescherming van het ErfgoedObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -607,7 +670,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verwachte waarde: op grond van context is de verwachting dat er nog onbekende cultuurhistorische waarde aanwezig is<br>aanwezige waarde: de waarde is bekend, geïnventariseerd en/of gewaardeerd, maar op dit moment niet als zodanig beschermd<br>beschermde waarde: het ErfgoedObject heeft een in werking zijnde beschermde status (beschermdAls)<br>historische waarde: het ErfgoedObject is in werkelijkheid niet meer aanwezig maar is wel van belang vanwege sporen op locatie of in de structuur van de omgeving</td>
+<td>Deze informatie is van belang voor de beleidsmatige betekenis van de registratie. Bijvoorbeeld om een antwoord te vinden op de mate van bescherming en de mate van zekerheid omtrent de aanwezigheid van cultuurhistorische waarden. Zie ook de toelichting onder Registratiekenmerken.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -640,7 +703,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Beschermde status van het ErfgoedObject<br><br>Verplicht gevuld in combinatie met aardRegistratie=beschermd</td>
+<td>Beschermde status van het ErfgoedObject<br>Verplicht gevuld in combinatie met aardRegistratie=beschermd</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -648,7 +711,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>een ErfgoedObject heeft maximaal 1 beschermde status.<br>Bij de overgang van In procedure naar definitief wordt de aanwijzingsdatum gevuld.<br>Bij NietAanwijzen en Afvoeren wordt de status verwijderd; ook aardRegistratie dient dan te worden aangepast.</td>
+<td>Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die <em>niet</em> als beschermd staan geregistreerd.<br>Een ErfgoedObject heeft maximaal 1 beschermde status.<br>Bij de overgang van In procedure naar definitief wordt de aanwijzingsdatum gevuld.<br>Bij NietAanwijzen en Afvoeren wordt de status verwijderd; ook aardRegistratie dient dan te worden aangepast.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -693,7 +756,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>wanneer een status wordt 'overgenomen' door het Rijk (wat soms gebeurt bij monumenten) dan ontstaat een situatie van afvoeren van de ene lijst en opvoeren op de andere lijst. De bescherming als Rijksmonument gaat 'boven' de bescherming als Gemeentelijk monument. De betreffende datumvelden worden overschreven zodat deze betrekking hebben op de 'hoogst' beschermde status.</td>
+<td>Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die <em>niet</em> als beschermd staan geregistreerd.<br>Wanneer een status wordt 'overgenomen' door het Rijk (wat soms gebeurt bij monumenten) dan ontstaat een situatie van afvoeren van de ene lijst en opvoeren op de andere lijst. De bescherming als Rijksmonument gaat 'boven' de bescherming als Gemeentelijk monument. De betreffende datumvelden worden overschreven zodat deze betrekking hebben op de 'hoogst' beschermde status.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -738,7 +801,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt</td>
+<td>Dient gevuld indien vanaf de start van de procedure de beschermende werking intreedt</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -747,6 +810,10 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Indicatie formele historie</strong></td>
 <td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
@@ -783,7 +850,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verplicht indien sprake is van een beschermende werking</td>
+<td>Verplicht indien sprake is van een beschermende werking</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -792,6 +859,10 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Indicatie formele historie</strong></td>
 <td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
@@ -828,7 +899,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven</td>
+<td>Verplicht indien vanaf de start van de procedure de beschermende werking intrad en deze met dit besluit wordt opgeheven</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -839,12 +910,12 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Authentiek</strong></td>
-<td>Overig</td>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
 </tr>
 </tbody></table>
 </section><section id="datumafvoeren"><div class="header-wrapper"><h5 id="x3-2-3-7-datumafvoeren"><bdi class="secno">3.2.3.7 </bdi>datumAfvoeren</h5><a class="self-link" href="#datumafvoeren" aria-label="Permalink for Section 3.2.3.7"></a></div>
@@ -873,7 +944,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verplicht indien hiermee de geregistreerde beschermende werking is opgeheven</td>
+<td>Verplicht indien hiermee de geregistreerde beschermende werking is opgeheven</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -884,12 +955,12 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Authentiek</strong></td>
-<td>Overig</td>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
 </tr>
 </tbody></table>
 </section><section id="toelichtingprocedure"><div class="header-wrapper"><h5 id="x3-2-3-8-toelichtingprocedure"><bdi class="secno">3.2.3.8 </bdi>toelichtingProcedure</h5><a class="self-link" href="#toelichtingprocedure" aria-label="Permalink for Section 3.2.3.8"></a></div>
@@ -910,7 +981,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Aantekening van de beschermde status die is opgeheven met eventueel een toelichting op de reden van beëindiging</td>
+<td>Aantekening met betrekking tot de doorlopen of beoogde procedure tot bescherming van het ErfgoedObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -918,7 +989,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verplicht in combinatie met datumNietAanwijzen en datumAfvoeren<br>ook te gebruiken om de gegevens van een eerder doorlopen procedure vast te leggen, indien van toepassing</td>
+<td>Verplicht in combinatie met datumNietAanwijzen en datumAfvoeren waarbij de beschermde status die is opgeheven wordt vermeld, met eventueel een toelichting op de reden van beëindiging. Ook te gebruiken om een eerder doorlopen procedure vast te leggen, of om relevante inventarisatienummers en dergelijke te noteren.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -929,12 +1000,12 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Authentiek</strong></td>
-<td>Overig</td>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
 </tr>
 </tbody></table>
 </section><section id="grondslag"><div class="header-wrapper"><h5 id="x3-2-3-9-grondslag"><bdi class="secno">3.2.3.9 </bdi>grondslag</h5><a class="self-link" href="#grondslag" aria-label="Permalink for Section 3.2.3.9"></a></div>
@@ -963,7 +1034,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verwijzing naar het identificerende nr in de landelijke voorziening;<br>verplicht indien het een Gemeentelijk Monument betreft.<br>Het besluit verwijst naar de betreffende percelen (werkingsgebied); die koppeling wordt (vooralsnog) onderhouden in de Wkpb</td>
+<td>Verwijzing naar het identificerende nummer (id) in de landelijke voorziening. Dit veld is verplicht indien het een Gemeentelijk Monument betreft. Op dit moment is echter nog onvoldoende duidelijk hoe en waar de nummer na ingang van de omgevingswet wordt beheerd (kadaster, DSO). Daarom is het veld in de praktijk nog niet vaak gevuld.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -976,6 +1047,10 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
+</tr>
+<tr>
+<td><strong>Mogelijk geen waarde</strong></td>
+<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="monumentnummer"><div class="header-wrapper"><h5 id="x3-2-3-10-monumentnummer"><bdi class="secno">3.2.3.10 </bdi>monumentnummer</h5><a class="self-link" href="#monumentnummer" aria-label="Permalink for Section 3.2.3.10"></a></div>
@@ -996,7 +1071,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Nummer, toegekend door de bronhouder van monumentregistraties (gemeente of RCE)</td>
+<td>Uniek nummer of unieke code, toegekend door de bronhouder van de monumentregistratie (Rijk, Provincie of Gemeente).<br>Verplicht gevuld in combinatie met aardRegistratie=beschermd</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1004,7 +1079,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verplicht bij gemeentelijk monumenten en rijksmonumenten<br>bij gemeentelijk monumenten wordt door het systeem een gemeentecode toegevoegd bij rijksmonumenten wordt het nummer voorafgegaan door een landelijke code</td>
+<td>Mogelijk geen waarde is alleen van toepassing bij ErfgoedObjecten die <em>niet</em> als beschermd staan geregistreerd.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1049,7 +1124,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Onderzoek naar de juistheid van de registratie. Dit kan zijn nav een interne terugmelding bij de gemeente, of (toekomst) nav een terugmelding door de landelijke service.<br>Default: nee</td>
+<td>Onderzoek naar de juistheid van de registratie. Dit kan zijn naar aanleiding van een interne terugmelding bij de gemeente, of naar aanleiding van een signalering uit een controle met een landelijke service.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1094,7 +1169,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Dit veld wordt voornamelijk gebruikt om te controleren welke velden er wel/niet ingevuld moeten zijn. Zo zal voor een gebouw een BAG-ID geregistreerd kunnen zijn; voor andere types is dat niet het geval.<br><br>Pand(en): een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet<br>Bouwwerk: kan diverse verschijningsvormen aannemen variërend van bruggen tot poortjes, van fonteinen tot muziekkoepels<br>Beeldhouwkunst: ruimtelijk beeld in de openbare ruimte, dat als kunstvorm is gemaakt <br>Park/terrein: aangelegd gebied met een bepaalde functie in de openbare ruimte<br>Gezicht/gebied: gebied met een bijzonder cultuurhistorisch karakter of structuur<br><br>Nota Bene: een ErfgoedObject behoort tot één objectType. Wanneer sprake is van samenhang tussen objecten met verschillende objectTypes kan dat met behulp van ErfgoedOmgeving (bijvoorbeeld type Complex) worden vastgelegd. Dus een pand met een tuin wordt niet als één ErfgoedObject beschreven. Hier gelden 2 opties:<br>1 pand en 1 park/terrein, samen onder 1 ErfgoedOmgeving, omgevingstype Complex<br>of: 1 pand met 1 ErfgoedOmgeving, omgevingstype Biotoop, waarin de ruimere contour inclusief tuin is begrepen (vgl Klassen Functioneel gebied: begrensd en benoemd gebied dat door een functionele eenheid wordt<br>beschreven. Vb: bedrijventerrein, bungalowpark, plantsoen, begraafplaats,<br>jachthaven, windmolenpark, recreatiegebied.)</td>
+<td>Met het type van een ErfgoedObject kan bijvoorbeeld een grove legenda worden gemaakt voor het weergeven van terreinen, gebouwd erfgoed en losse elementen. Het onderscheid tussen panden en bouwwerken is van belang omdat alleen type=pand een koppeling kan hebben met een of meer pandID's in de BAG. Een bouwwerk daarentegen heeft altijd een maatwerkcontour en is niet adresseerbaar. Verder is met park/terrein versus gebied beoogd om grotere cultuurhistorische gebieden te kunnen onderscheiden van een specifieke aanleg/inrichting, zoals bijvoorbeeld een begraafplaats of een tuin.<br><br>Nota Bene: een ErfgoedObject behoort tot één objectType. Wanneer sprake is van samenhang tussen objecten met verschillende objectTypes kan dat met behulp van ErfgoedOmgeving (bijvoorbeeld type Complex) worden vastgelegd. Dus een pand met een tuin wordt niet als één ErfgoedObject beschreven. Hier gelden 2 opties:<br>1 pand en 1 park/terrein, samen onder 1 ErfgoedOmgeving, omgevingstype Complex<br>of: 1 pand met 1 ErfgoedOmgeving, omgevingstype Biotoop, waarin de ruimere contour inclusief tuin is begrepen</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1131,60 +1206,15 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Ruimtelijke contour en ligging van het object in het<br>Rijksdriehoekstelsel (bovenaanzicht, zo-als in de BAG).<br>Aanlevering van een contour is zeer wenselijk (doch nog niet verplicht)</td>
+<td>de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
-<td>ERS</td>
+<td>BAG</td>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>mogelijk formaat: wkt bij aanlevering als xml of xls<br>bij aanlevering als gisbestand is de geometrie formaatspecifiek (nog te bepalen welke formaten worden geaccepteerd) of GML<br>Indien Betreft &gt;BAGpand is gevuld, is de geometrie gelijk aan de BAGpandcountour zal de geometrie worden opgehaald uit de BAG; deze hoeft hier dan niet ingevuld te worden.</td>
-</tr>
-<tr>
-<td><strong>Datum opname</strong></td>
-<td>20191001</td>
-</tr>
-<tr>
-<td><strong>Indicatie formele historie</strong></td>
-<td>Ja</td>
-</tr>
-<tr>
-<td><strong>Kardinaliteit</strong></td>
-<td>0..1</td>
-</tr>
-<tr>
-<td><strong>Authentiek</strong></td>
-<td>Overig</td>
-</tr>
-</tbody></table>
-</section><section id="broncontour"><div class="header-wrapper"><h5 id="x3-2-3-14-broncontour"><bdi class="secno">3.2.3.14 </bdi>broncontour</h5><a class="self-link" href="#broncontour" aria-label="Permalink for Section 3.2.3.14"></a></div>
-<table>
-<thead>
-<tr>
-<th><strong>Attribuutsoort-eigenschap</strong></th>
-<th><strong>Waarde</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Naam</strong></td>
-<td>broncontour</td>
-</tr>
-<tr>
-<td><strong>Herkomst</strong></td>
-<td>ERS</td>
-</tr>
-<tr>
-<td><strong>Definitie</strong></td>
-<td>Toelichting op de herkomst van de contour.<br>Verplicht als een contour wordt aangeleverd.</td>
-</tr>
-<tr>
-<td><strong>Herkomst definitie</strong></td>
-<td>ERS</td>
-</tr>
-<tr>
-<td><strong>Toelichting</strong></td>
-<td>Waar is de contour op gebaseerd? Bijvoorbeeld een historische kaart, de BGT, handwerk, etc.</td>
+<td>Een samengesteld geometriegegevenstype waarbij wordt afgedwongen dat voor de geometrie een keuze gemaakt moet worden tussen een vlak (Polygon) of een multivlak (MultiPolygon), conform ISO/IEC 13249-3:2016. Deze standaard beschrijft de vastlegging in WKT-formaat.<br>Alleen geometrieën die voldoen aan het Simple Features profile conform ISO 19125-1:2004 zijn toegestaan.<br><br>Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. Wanneer de bron voor een geometrie beperkt is tot een punt of een lijn, kan deze als vlak worden geregistreerd door een buffer toe te voegen. Daarbij wordt de breedte van de buffer geschat.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1203,7 +1233,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="puntcoordinaten"><div class="header-wrapper"><h5 id="x3-2-3-15-puntcoordinaten"><bdi class="secno">3.2.3.15 </bdi>puntcoördinaten</h5><a class="self-link" href="#puntcoordinaten" aria-label="Permalink for Section 3.2.3.15"></a></div>
+</section><section id="broncontour"><div class="header-wrapper"><h5 id="x3-2-3-14-broncontour"><bdi class="secno">3.2.3.14 </bdi>bronContour</h5><a class="self-link" href="#broncontour" aria-label="Permalink for Section 3.2.3.14"></a></div>
 <table>
 <thead>
 <tr>
@@ -1213,7 +1243,7 @@ vorm moeten krijgen.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>puntcoördinaten</td>
+<td>bronContour</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -1221,7 +1251,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>De X- en Y-coördinaat die als coördinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel</td>
+<td>De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1229,7 +1259,52 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>mogelijk formaat: wkt bij aanlevering als xml of xls<br>bij aanlevering als gisbestand is de geometrie formaatspecifiek.<br>MULTIPOINT wordt niet geaccepteerd<br>bij aanlevering van een contour kan een puntcoördinaat worden afgeleid; afzonderlijk aanleveren is dan niet verplicht</td>
+<td>De contour van een ErfgoedObject kan zijn overgenomen uit de BAG of de BGT. Voor ErfgoedObjecten met type=pand(en) geniet het overnemen van de pandgeometrie uit de BAG de nadrukkelijke voorkeur. Er kunnen redenen zijn om een BAG-contour niet over te nemen; in dat geval is sprake van een maatwerkcontour. Ook voor alle ErfgoedObjecten die niet het type=pand(en) hebben, is een maatwerkcontour van toepassing. Wanneer bij de vastlegging gebruik is gemaakt van een buffer om een punt of lijn-geometrie, wordt dit ook in de bronContour vermeld.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+<tr>
+<td><strong>Mogelijk geen waarde</strong></td>
+<td>Ja</td>
+</tr>
+</tbody></table>
+</section><section id="puntcoordinaten"><div class="header-wrapper"><h5 id="x3-2-3-15-puntcoordinaten"><bdi class="secno">3.2.3.15 </bdi>puntCoördinaten</h5><a class="self-link" href="#puntcoordinaten" aria-label="Permalink for Section 3.2.3.15"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>puntCoördinaten</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>de geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt.</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>de puntcoördinaten worden vastgelegd in WKT-formaat conform ISO/IEC 13249-3:2016. Dit betekent dat het veld als volgt is opgebouwd: POINT (x-coördinaat y-coördinaat). Bijvoorbeeld: POINT (136840.123 455874.123) voor de Dom in Utrecht. Multipoints zijn niet toegestaan. Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1262,7 +1337,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Alleen gevuld indien het object een pand is (conform de definitie van een pand in de BAG)</td>
+<td>Verwijzing naar een of meer Panden in de BAG.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1270,7 +1345,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verwijzing naar de landelijke PandIdentificatie; verplicht indien het ErfgoedObject van het type Pand is; tenzij de pandcontour in de BAG onjuist is (bijvoorbeeld te ruim is ten opzichte het oorspronkelijke historische pand dat is aangewezen). In dat geval dient een eigen 'maatwerk' contour te worden aangeleverd.<br><br>een ErfgoedObject kan naar meerdere BAGPanden verwijzen. De BAGPanden vormen samen één contour die geldt voor het ErfgoedObject</td>
+<td>Het veld betreftPand is verplicht voor ErfgoedObjecten met type=pand(en). Panden kunnen in de Basisregistratie Adressen en Gebouwen (BAG) worden gevonden aan de hand van het unieke id van het Pand. ErfgoedObjecten van het type pand(en) vallen per definitie samen met één of meer Panden in de BAG.<br><br>Een Pand is in de BAG als volgt gedefinieerd: de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is. Er is sprake van een bouwkundig-constructief zelfstandige eenheid, als het slopen ervan redelijkerwijs geen aangrenzende bouwkundige constructies doet instorten. Bij eventuele doorbraken van panden worden de pandbegrenzingen in de BAG niet aangepast. Deze definities worden door het Erfgoedobject met type=pand(en) overgenomen.<br><br>Een Pand in de BAG heeft als eigenschap bouwjaar. Dit bouwjaar wordt niet per definitie overgenomen als jaarBegin van het ErfgoedObject. Dit is vanwege onvoldoende zekerheid over de kwaliteit van dit gegeven in de BAG.<br>Aan de hand van een Pand in de BAG kunnen gerelateerde adressen (Nummeraanduidingen) worden gevonden. Zie hierover de toelichting bij objectklasse Situering en attribuutsoort situering.<br><br>Een Pand in de BAG heeft een Geometrie. Zie hierover de toelichting bij attribuutsoort contour.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1282,15 +1357,11 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Kardinaliteit</strong></td>
-<td>1..*</td>
+<td>0..*</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
-</tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="betreftbgt"><div class="header-wrapper"><h5 id="x3-2-3-17-betreftbgt"><bdi class="secno">3.2.3.17 </bdi>betreftBGT</h5><a class="self-link" href="#betreftbgt" aria-label="Permalink for Section 3.2.3.17"></a></div>
@@ -1409,7 +1480,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Jaartal begin materiële levensduur van het deelobject</td>
+<td>Jaartal begin materiële levensduur van het object</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1417,7 +1488,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>het begin van de levensduur van het deelobject wordt bepaald door het ontstaan van de erfgoedwaarde.</td>
+<td>Het begin van de levensduur van het object wordt bepaald door het ontstaan van de erfgoedwaarde. Theoretisch hoeft dit niet hetzelfde moment te zijn als het begin van de levensduur van het object zelf. Denk bijvoorbeeld aan een belangrijke verbouwing aan een pand dat daarvoor weinig waarde had. Of een woonhuis dat cultuurhistorische waarde heeft vanwege een bijzondere bewoner. In deze situaties wordt in de praktijk meestal toch het ontstaan van het object als begin van de levensduur gekozen, maar er kan van worden afgeweken.<br><br>Anderzijds komt het voor dat een object in oorsprong ouder is, maar dat de precieze ontstaansgeschiedenis niet bekend is. Of dat onduidelijk is hoeveel waarde uit het vroege begin nog aanwezig is. Het jaarBegin kan een ijkpunt zijn in deze ontstaansgeschiedenis. In annotatieJaarBegin kan deze nuance worden aangegeven (in de kern ouder).</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1428,12 +1499,12 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Kardinaliteit</strong></td>
-<td>0..1</td>
-</tr>
-<tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
+</tr>
+<tr>
+<td><strong>Mogelijk geen waarde</strong></td>
+<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="jaareind"><div class="header-wrapper"><h5 id="x3-2-3-20-jaareind"><bdi class="secno">3.2.3.20 </bdi>jaarEind</h5><a class="self-link" href="#jaareind" aria-label="Permalink for Section 3.2.3.20"></a></div>
@@ -1454,7 +1525,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Jaartal einde materiële levensduur van het deelobject</td>
+<td>Jaartal einde materiële levensduur van het object</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1462,7 +1533,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>het einde van de levensduur van het deelobject wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beeindiging van de levensduur kan de registratie nog voortduren.</td>
+<td>Het einde van de levensduur van het object wordt bepaald door het verdwijnen van de erfgoedwaarde (bijvoorbeeld door sloop of aanpassingen). Na beëindiging van de levensduur kan de registratie nog voortduren; aardRegistratie hoort dan de waarde 'historisch' te krijgen.<br><br>Een bijzondere omstandigheid doet zich voor bij cultuurhistorische waarden die betrekking hebben op restanten, relicten of zelfs een compleet verdwenen object dat alleen nog herkenbaar is in bijvoorbeeld het landschap. Sommige kenmerken van de registratie hebben dan betrekking op het object dat er materieel gezien niet (of bijna niet) meer is. Denk bijvoorbeeld aan oorspronkelijke functie. Het veld jaarEind wordt alleen gevuld in combinatie met aardRegistratie is 'historisch'. Zolang er nog bescherming rust op het object blijft het jaarEind leeg (aardRegistratie is 'beschermd').</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1479,10 +1550,6 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
-</tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="annotatiejaarbegin"><div class="header-wrapper"><h5 id="x3-2-3-21-annotatiejaarbegin"><bdi class="secno">3.2.3.21 </bdi>annotatieJaarBegin</h5><a class="self-link" href="#annotatiejaarbegin" aria-label="Permalink for Section 3.2.3.21"></a></div>
@@ -1524,10 +1591,6 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
-</tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="annotatiejaareind"><div class="header-wrapper"><h5 id="x3-2-3-22-annotatiejaareind"><bdi class="secno">3.2.3.22 </bdi>annotatieJaarEind</h5><a class="self-link" href="#annotatiejaareind" aria-label="Permalink for Section 3.2.3.22"></a></div>
@@ -1573,10 +1636,6 @@ vorm moeten krijgen.</p>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
-</tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
 </tr>
 </tbody></table>
 </section><section id="naam"><div class="header-wrapper"><h5 id="x3-2-3-23-naam"><bdi class="secno">3.2.3.23 </bdi>naam</h5><a class="self-link" href="#naam" aria-label="Permalink for Section 3.2.3.23"></a></div>
@@ -1628,7 +1687,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="redengevendeomschrijving"><div class="header-wrapper"><h5 id="x3-2-3-24-redengevendeomschrijving"><bdi class="secno">3.2.3.24 </bdi>redengevendeOmschrijving</h5><a class="self-link" href="#redengevendeomschrijving" aria-label="Permalink for Section 3.2.3.24"></a></div>
+</section><section id="toelichtingwaarde"><div class="header-wrapper"><h5 id="x3-2-3-24-toelichtingwaarde"><bdi class="secno">3.2.3.24 </bdi>toelichtingWaarde</h5><a class="self-link" href="#toelichtingwaarde" aria-label="Permalink for Section 3.2.3.24"></a></div>
 <table>
 <thead>
 <tr>
@@ -1638,7 +1697,7 @@ vorm moeten krijgen.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>redengevendeOmschrijving</td>
+<td>toelichtingWaarde</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -1646,7 +1705,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>De historische omschrijving, behorend bij het aanwijzingsbesluit <br>Verplicht in combinatie met status monument</td>
+<td>Een toelichting op de cultuurhistorische waardering en/of de beschermde status van een ErgoedObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -1654,7 +1713,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>voor Rijksmonumenten wordt hier de registeromschrijving bedoeld</td>
+<td>Deze kan bestaan uit een herhaling, samenvatting van of verwijzing naar de redengevende omschrijving. Of bevat een korte toelichting op waardekenmerken in het algemeen en/of waarderingsuitkomsten.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -1665,12 +1724,12 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Authentiek</strong></td>
-<td>Overig</td>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
 </tr>
 </tbody></table>
 </section><section id="beschrijving"><div class="header-wrapper"><h5 id="x3-2-3-25-beschrijving"><bdi class="secno">3.2.3.25 </bdi>beschrijving</h5><a class="self-link" href="#beschrijving" aria-label="Permalink for Section 3.2.3.25"></a></div>
@@ -1717,12 +1776,98 @@ vorm moeten krijgen.</p>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
+</tbody></table>
+</section><section id="aanwezig"><div class="header-wrapper"><h5 id="x3-2-3-26-aanwezig"><bdi class="secno">3.2.3.26 </bdi>aanwezig</h5><a class="self-link" href="#aanwezig" aria-label="Permalink for Section 3.2.3.26"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>aanwezig</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Kwalificatie van de materiële aanwezigheid van het ErfgoedObject</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Kwalificatie die de actuele staat van het ErfgoedObject relativeert en dient als aangrijpingspunt voor duiding en eventuele bescherming van de (nog) aanwezige waarde. Als de waarde van attribuutsoort aardRegistratie gelijk is aan historisch, dan dient (indien gevuld) attribuutsoort aanwezig de waarde verdwenen, verplaatst of verschoven te hebben (en vise versa). De contour van een verdwenen, verplaatst of verschoven ErfgoedObject toont de oorspronkelijk locatie.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221006</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
 <tr>
 <td><strong>Mogelijk geen waarde</strong></td>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="architectontwerp"><div class="header-wrapper"><h5 id="x3-2-3-26-architectontwerp"><bdi class="secno">3.2.3.26 </bdi>architectOntwerp</h5><a class="self-link" href="#architectontwerp" aria-label="Permalink for Section 3.2.3.26"></a></div>
+</section><section id="verwachtebouwhistwaarde"><div class="header-wrapper"><h5 id="x3-2-3-27-verwachtebouwhistwaarde"><bdi class="secno">3.2.3.27 </bdi>verwachteBouwhistWaarde</h5><a class="self-link" href="#verwachtebouwhistwaarde" aria-label="Permalink for Section 3.2.3.27"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>verwachteBouwhistWaarde</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Een signalering voor de mogelijke aanwezigheid van bouwhistorische waarden</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Het aantonen van de verwachte bouwhistorische waarde vereist nader onderzoek of toegang. Bij niet aantreffen wordt de waarde nee.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="architectontwerp"><div class="header-wrapper"><h5 id="x3-2-3-28-architectontwerp"><bdi class="secno">3.2.3.28 </bdi>architectOntwerp</h5><a class="self-link" href="#architectontwerp" aria-label="Permalink for Section 3.2.3.28"></a></div>
 <table>
 <thead>
 <tr>
@@ -1771,48 +1916,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="aanwezig"><div class="header-wrapper"><h5 id="x3-2-3-27-aanwezig"><bdi class="secno">3.2.3.27 </bdi>aanwezig</h5><a class="self-link" href="#aanwezig" aria-label="Permalink for Section 3.2.3.27"></a></div>
-<table>
-<thead>
-<tr>
-<th><strong>Attribuutsoort-eigenschap</strong></th>
-<th><strong>Waarde</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Naam</strong></td>
-<td>aanwezig</td>
-</tr>
-<tr>
-<td><strong>Herkomst</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Definitie</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Herkomst definitie</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Toelichting</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Datum opname</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Indicatie formele historie</strong></td>
-<td>Ja</td>
-</tr>
-<tr>
-<td><strong>Authentiek</strong></td>
-<td></td>
-</tr>
-</tbody></table>
-</section><section id="opdrachtgeverbouw"><div class="header-wrapper"><h5 id="x3-2-3-28-opdrachtgeverbouw"><bdi class="secno">3.2.3.28 </bdi>opdrachtgeverBouw</h5><a class="self-link" href="#opdrachtgeverbouw" aria-label="Permalink for Section 3.2.3.28"></a></div>
+</section><section id="opdrachtgeverbouw"><div class="header-wrapper"><h5 id="x3-2-3-29-opdrachtgeverbouw"><bdi class="secno">3.2.3.29 </bdi>opdrachtgeverBouw</h5><a class="self-link" href="#opdrachtgeverbouw" aria-label="Permalink for Section 3.2.3.29"></a></div>
 <table>
 <thead>
 <tr>
@@ -1861,7 +1965,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="uitvoerendkunstenaar"><div class="header-wrapper"><h5 id="x3-2-3-29-uitvoerendkunstenaar"><bdi class="secno">3.2.3.29 </bdi>uitvoerendKunstenaar</h5><a class="self-link" href="#uitvoerendkunstenaar" aria-label="Permalink for Section 3.2.3.29"></a></div>
+</section><section id="uitvoerendkunstenaar"><div class="header-wrapper"><h5 id="x3-2-3-30-uitvoerendkunstenaar"><bdi class="secno">3.2.3.30 </bdi>uitvoerendKunstenaar</h5><a class="self-link" href="#uitvoerendkunstenaar" aria-label="Permalink for Section 3.2.3.30"></a></div>
 <table>
 <thead>
 <tr>
@@ -1910,7 +2014,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="oospronkelijkefunctie"><div class="header-wrapper"><h5 id="x3-2-3-30-oospronkelijkefunctie"><bdi class="secno">3.2.3.30 </bdi>oospronkelijkeFunctie</h5><a class="self-link" href="#oospronkelijkefunctie" aria-label="Permalink for Section 3.2.3.30"></a></div>
+</section><section id="oorspronkelijkefunctie"><div class="header-wrapper"><h5 id="x3-2-3-31-oorspronkelijkefunctie"><bdi class="secno">3.2.3.31 </bdi>oorspronkelijkeFunctie</h5><a class="self-link" href="#oorspronkelijkefunctie" aria-label="Permalink for Section 3.2.3.31"></a></div>
 <table>
 <thead>
 <tr>
@@ -1920,7 +2024,7 @@ vorm moeten krijgen.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>oospronkelijkeFunctie</td>
+<td>oorspronkelijkeFunctie</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -1959,7 +2063,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="gebouwtype"><div class="header-wrapper"><h5 id="x3-2-3-31-gebouwtype"><bdi class="secno">3.2.3.31 </bdi>gebouwtype</h5><a class="self-link" href="#gebouwtype" aria-label="Permalink for Section 3.2.3.31"></a></div>
+</section><section id="gebouwtype"><div class="header-wrapper"><h5 id="x3-2-3-32-gebouwtype"><bdi class="secno">3.2.3.32 </bdi>gebouwtype</h5><a class="self-link" href="#gebouwtype" aria-label="Permalink for Section 3.2.3.32"></a></div>
 <table>
 <thead>
 <tr>
@@ -2008,7 +2112,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="bouwstijl"><div class="header-wrapper"><h5 id="x3-2-3-32-bouwstijl"><bdi class="secno">3.2.3.32 </bdi>bouwstijl</h5><a class="self-link" href="#bouwstijl" aria-label="Permalink for Section 3.2.3.32"></a></div>
+</section><section id="bouwstijl"><div class="header-wrapper"><h5 id="x3-2-3-33-bouwstijl"><bdi class="secno">3.2.3.33 </bdi>bouwstijl</h5><a class="self-link" href="#bouwstijl" aria-label="Permalink for Section 3.2.3.33"></a></div>
 <table>
 <thead>
 <tr>
@@ -2057,7 +2161,7 @@ vorm moeten krijgen.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="oorspronkelijkefunctiecbs"><div class="header-wrapper"><h5 id="x3-2-3-33-oorspronkelijkefunctiecbs"><bdi class="secno">3.2.3.33 </bdi>oorspronkelijkeFunctieCBS</h5><a class="self-link" href="#oorspronkelijkefunctiecbs" aria-label="Permalink for Section 3.2.3.33"></a></div>
+</section><section id="fysischlandschap"><div class="header-wrapper"><h5 id="x3-2-3-34-fysischlandschap"><bdi class="secno">3.2.3.34 </bdi>fysischLandschap</h5><a class="self-link" href="#fysischlandschap" aria-label="Permalink for Section 3.2.3.34"></a></div>
 <table>
 <thead>
 <tr>
@@ -2067,7 +2171,7 @@ vorm moeten krijgen.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>oorspronkelijkeFunctieCBS</td>
+<td>fysischLandschap</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -2075,7 +2179,7 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Indeling naar vorm en functie die leidend zijn geweest in het ontwerp en de realisatie van het object.</td>
+<td>Categorisering van landschap naar ontstaan van fysisch geografische eigenschappen zoals reliëf en grondsoort, waarop de nu nog herkenbare ontginning in het verleden plaatsvond.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2083,15 +2187,191 @@ vorm moeten krijgen.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>indeling gebaseerd op CBS-categorieën 'oorspronkelijke functie'</td>
+<td>Het typeren van fysische geografie vindt plaats in combinatie met het beschrijven van het cultuurlandschap. Dit gebeurt in principe voor gebieden (of eventueel terreinen). De gebieden (en terreinen) vormen een landsdekkend geheel.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
 <td>20191001</td>
 </tr>
 <tr>
-<td><strong>Indicatie materiële historie</strong></td>
+<td><strong>Indicatie formele historie</strong></td>
 <td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="fysischdeellandschap"><div class="header-wrapper"><h5 id="x3-2-3-35-fysischdeellandschap"><bdi class="secno">3.2.3.35 </bdi>fysischDeelLandschap</h5><a class="self-link" href="#fysischdeellandschap" aria-label="Permalink for Section 3.2.3.35"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>fysischDeelLandschap</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Nadere onderverdeling fysischLandschap.</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Het typeren van fysische geografie vindt plaats in combinatie met het beschrijven van het cultuurlandschap. Dit gebeurt in principe voor gebieden (of eventueel terreinen). De gebieden (en terreinen) vormen een landsdekkend geheel.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="themacultuurhistorie"><div class="header-wrapper"><h5 id="x3-2-3-36-themacultuurhistorie"><bdi class="secno">3.2.3.36 </bdi>themaCultuurhistorie</h5><a class="self-link" href="#themacultuurhistorie" aria-label="Permalink for Section 3.2.3.36"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>themaCultuurhistorie</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>categorisering van de oorspronkelijke functie in relatie tot maatschappelijk gebruik en ruimtelijke situering.</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>indeling naar thema's ten behoeve van de presentatie van Erfgoedobjecten in herkenbare maatschappelijke thematiek en bijbehorende cultuurhistorische verhalen.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221006</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+<tr>
+<td><strong>Mogelijk geen waarde</strong></td>
+<td>Ja</td>
+</tr>
+</tbody></table>
+</section><section id="cultuurlandschap"><div class="header-wrapper"><h5 id="x3-2-3-37-cultuurlandschap"><bdi class="secno">3.2.3.37 </bdi>cultuurLandschap</h5><a class="self-link" href="#cultuurlandschap" aria-label="Permalink for Section 3.2.3.37"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>cultuurLandschap</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Nadere onderverdeling binnen een ontginningstype.</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Specificatie van een gebied of terrein, aan de hand van landschappelijke kenmerken (reliëf, begroeiing, openheid, verkaveling, leeftijd enz). Cultuurlandschappen zijn vaak gerelateerd aan één ontginningstype.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="ontginning"><div class="header-wrapper"><h5 id="x3-2-3-38-ontginning"><bdi class="secno">3.2.3.38 </bdi>ontginning</h5><a class="self-link" href="#ontginning" aria-label="Permalink for Section 3.2.3.38"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>ontginning</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Categorisering van gebieden naar de wijze waarop deze door mensen in cultuur zijn gebracht (of waar dat is uitgebleven).</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221207</td>
 </tr>
 <tr>
 <td><strong>Indicatie formele historie</strong></td>
@@ -2148,11 +2428,11 @@ vorm moeten krijgen.</p>
 </section>
 <section id="kenmerken-0"><div class="header-wrapper"><h4 id="x3-3-2-kenmerken"><bdi class="secno">3.3.2 </bdi>Kenmerken</h4><a class="self-link" href="#kenmerken-0" aria-label="Permalink for Section 3.3.2"></a></div>
 <section id="registratiekenmerken-0"><div class="header-wrapper"><h5 id="x3-3-2-1-registratiekenmerken"><bdi class="secno">3.3.2.1 </bdi>Registratiekenmerken</h5><a class="self-link" href="#registratiekenmerken-0" aria-label="Permalink for Section 3.3.2.1"></a></div>
-<p>De <strong>registratiekenmerken</strong> van een ErfgoedOmgeving zijn vergelijkbaar met die van een
-ErfgoedObject.</p>
+<p>Onder <strong>registratiekenmerken</strong> van een ErfgoedOmgeving valt enkel het type.</p>
 </section><section id="locatiekenmerken-0"><div class="header-wrapper"><h5 id="x3-3-2-2-locatiekenmerken"><bdi class="secno">3.3.2.2 </bdi>Locatiekenmerken</h5><a class="self-link" href="#locatiekenmerken-0" aria-label="Permalink for Section 3.3.2.2"></a></div>
 <p>Voor de ErfgoedOmgeving is alleen een contour gedefinieerd als <strong>locatiekenmerk</strong>. Deze is
-verplicht voor bepaalde typen ErfgoedOmgeving, zoals de biotoop en de zichtlijn.</p>
+verplicht voor bepaalde typen ErfgoedOmgeving, zoals de biotoop en de zichtlijn.
+Het type Complex heeft in beginsel geen contour; het complex is bepaald door de som van de gekoppelde Erfgoedobjecten.</p>
 </section><section id="waardekenmerken-0"><div class="header-wrapper"><h5 id="x3-3-2-3-waardekenmerken"><bdi class="secno">3.3.2.3 </bdi>Waardekenmerken</h5><a class="self-link" href="#waardekenmerken-0" aria-label="Permalink for Section 3.3.2.3"></a></div>
 <p>De <strong>waardekenmerken</strong> voor de ErfgoedOmgeving zijn beperkt tot een naam en
 omschrijving. De ErfgoedOmgeving is te beschouwen als een eigenschap van het
@@ -2177,7 +2457,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Aard van het omgevingselement</td>
+<td>Indeling van omgeving naar de ruimtelijke betekenis van de omgeving voor het ErfgoedObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2185,7 +2465,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Een inhoudelijke toelichting op de toepassing van het informatie-element.</td>
+<td>De ruimtelijke betekenis van de omgeving voor een ErfgoedObject kan van belang zijn voor de bescherming en daarmee voor de regels of de toepassing van regels die deze bescherming moeten bewerkstelligen. Het type bepaalt ook of de ErfgoedOmgeving een eigen contour heeft.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -2218,7 +2498,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Ruimtelijke contour van het omgevingselement<br><br>Verplicht afhankelijk van het type: een biotoop en zichtlijn kennen een verplichte contour.</td>
+<td>De tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedOmgeving.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2226,11 +2506,15 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek (nog te bepalen welke formaten worden geaccepteerd) of GML</td>
+<td>Een samengesteld geometriegegevenstype waarbij wordt afgedwongen dat voor de geometrie een keuze gemaakt moet worden tussen een vlak (Polygon) of een multivlak (MultiPolygon), conform ISO/IEC 13249-3:2016. Deze standaard beschrijft de vastlegging in WKT-formaat.<br>Alleen geometrieën die voldoen aan het Simple Features profile conform ISO 19125-1:2004 zijn toegestaan.<br>Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. Wanneer de bron voor een geometrie beperkt is tot een punt of een lijn, kan deze als vlak worden geregistreerd door een buffer toe te voegen. Daarbij wordt de breedte van de buffer geschat.<br>De aanwezigheid van een contour is afhankelijk van het type. Wanneer type=complex, dan heeft het OmgevingsObject geen eigen contour. Bij de overige types heeft het OmgevingsObject in principe wel een contour.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
 <td>20191001</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
@@ -2259,7 +2543,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Naam waaronder het omgevingselement bekend staat</td>
+<td>Naam waaronder het OmgevingsObject bekend staat.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2267,11 +2551,15 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Een inhoudelijke toelichting op de toepassing van het informatie-element.</td>
+<td>De naam van een complex kan overeenkomen met de naam van een van de samenstellende ErfgoedObjecten. Ten behoeve van de registratie kan een naam worden toegekend of van het ErfgoedObject herhaald.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
 <td>20191001</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
@@ -2296,7 +2584,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Beschrijving van het omgevingselement</td>
+<td>Beschrijving van de aard, verschijningsvorm, bron of oorsprong en eventueel beoogde bescherming van het OmgevingsObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2304,7 +2592,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Een inhoudelijke toelichting op de toepassing van het informatie-element.</td>
+<td>Naar keuze in te vullen vrije tekst.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -2328,7 +2616,7 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 
 <section id="objecttype-erfgoeddeelobject"><div class="header-wrapper"><h3 id="x3-4-objecttype-erfgoeddeelobject"><bdi class="secno">3.4 </bdi>Objecttype ErfgoedDeelobject</h3><a class="self-link" href="#objecttype-erfgoeddeelobject" aria-label="Permalink for Section 3.4"></a></div>
 
-<p><img src="ers-media/ErfgoedDeelObject.png" alt="" height="5085" width="2163"></p>
+<p><img src="ers-media/ErfgoedDeelobject.png" alt="" height="861" width="1948"></p>
 <section id="definitie-2"><div class="header-wrapper"><h4 id="x3-4-1-definitie"><bdi class="secno">3.4.1 </bdi>Definitie</h4><a class="self-link" href="#definitie-2" aria-label="Permalink for Section 3.4.1"></a></div>
 <table>
 <thead>
@@ -2365,24 +2653,11 @@ ErfgoedObject; niet als een ErfgoedObject op zichzelf.</p>
 </section>
 <section id="kenmerken-1"><div class="header-wrapper"><h4 id="x3-4-2-kenmerken"><bdi class="secno">3.4.2 </bdi>Kenmerken</h4><a class="self-link" href="#kenmerken-1" aria-label="Permalink for Section 3.4.2"></a></div>
 <section id="registratiekenmerken-1"><div class="header-wrapper"><h5 id="x3-4-2-1-registratiekenmerken"><bdi class="secno">3.4.2.1 </bdi>Registratiekenmerken</h5><a class="self-link" href="#registratiekenmerken-1" aria-label="Permalink for Section 3.4.2.1"></a></div>
-<p>De <strong>registratiekenmerken</strong> van een ErfgoedDeelobject zijn vergelijkbaar met die van een
-ErfgoedObject. De typologie van het ErfgoedDeelobject is uitgebreid met drie types die
-logischerwijs alleen als onderdeel van een geheel voorkomen: Constructief deel (restant),
-Constructief deel (toegevoegd) en Interieur</p>
-<p>Het kenmerk "aanwezig" is specifiek voor ErfgoedDeelobjecten. Het is vergelijkbaar met de
-aardRegistratie van het ErfgoedObject. Het legt vast hoe groot de kans is dat de beschreven
-waarde ook daadwerkelijk aanwezig is. De bescherming wordt niet afzonderlijk geregeld;
-deze is altijd een afgeleide van het ErfgoedObject. Hetzelfde geldt voor de aardRegistratie
-historisch; deze geldt altijd voor het ErfgoedObject plus bijbehorende ErfgoedDeelobjecten.</p>
+<p>De <strong>registratiekenmerken</strong> van een ErfgoedDeelobject zijn beperkt tot het type. De typologie van het ErfgoedDeelobject is uitgebreid met drie types die logischerwijs alleen als onderdeel van een geheel voorkomen: Interieur, Constructie, Aanleg. Het type Gebied komt niet voor als ErfgoedDeelobject; dit kan alleen als ErfgoedObject worden beschreven.</p>
 </section><section id="locatiekenmerken-1"><div class="header-wrapper"><h5 id="x3-4-2-2-locatiekenmerken"><bdi class="secno">3.4.2.2 </bdi>Locatiekenmerken</h5><a class="self-link" href="#locatiekenmerken-1" aria-label="Permalink for Section 3.4.2.2"></a></div>
-<p>Voor het ErfgoedDeelobject zijn de <strong>locatiekenmerken</strong> gelijk aan die van het ErfgoedObject.
-Alleen de mogelijkheid voor een aparte adressering geldt hier niet. Er wordt volstaan met de
-mogelijkheid om een of meer BAG-panden (of BGT-objecten) te koppelen om een contour te
-verwerven.</p>
+<p>Voor het ErfgoedDeelobject zijn de <strong>locatiekenmerken</strong> gelijk aan die van het ErfgoedObject. Alleen de mogelijkheid voor een aparte adressering geldt hier niet. Er wordt volstaan met de mogelijkheid om een of meer BAG-panden (of BGT-objecten) te koppelen om een contour te verwerven.</p>
 </section><section id="waardekenmerken-1"><div class="header-wrapper"><h5 id="x3-4-2-3-waardekenmerken"><bdi class="secno">3.4.2.3 </bdi>Waardekenmerken</h5><a class="self-link" href="#waardekenmerken-1" aria-label="Permalink for Section 3.4.2.3"></a></div>
-<p>De <strong>waardekenmerken</strong> voor het ErfgoedDeelobject komen overeen met de de
-waardekenmerken voor het ErfgoedObject. Alleen redengevende omschrijving en
-CBS-functie zijn niet van toepassing.</p>
+<p>De <strong>waardekenmerken</strong> voor het ErfgoedDeelobject komen overeen met de waardekenmerken voor het ErfgoedObject. Alleen toelichtingWaarde, themaCultuurhistorie en de landschapstypologieën zijn niet van toepassing.</p>
 </section></section>
 <section id="attribuutsoorten-2"><div class="header-wrapper"><h4 id="x3-4-3-attribuutsoorten"><bdi class="secno">3.4.3 </bdi>Attribuutsoorten</h4><a class="self-link" href="#attribuutsoorten-2" aria-label="Permalink for Section 3.4.3"></a></div>
 <section id="type-1"><div class="header-wrapper"><h5 id="x3-4-3-1-type"><bdi class="secno">3.4.3.1 </bdi>type</h5><a class="self-link" href="#type-1" aria-label="Permalink for Section 3.4.3.1"></a></div>
@@ -2430,48 +2705,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="aanwezig-0"><div class="header-wrapper"><h5 id="x3-4-3-2-aanwezig"><bdi class="secno">3.4.3.2 </bdi>aanwezig</h5><a class="self-link" href="#aanwezig-0" aria-label="Permalink for Section 3.4.3.2"></a></div>
-<table>
-<thead>
-<tr>
-<th><strong>Attribuutsoort-eigenschap</strong></th>
-<th><strong>Waarde</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Naam</strong></td>
-<td>aanwezig</td>
-</tr>
-<tr>
-<td><strong>Herkomst</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Definitie</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Herkomst definitie</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Toelichting</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Datum opname</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Indicatie formele historie</strong></td>
-<td>Ja</td>
-</tr>
-<tr>
-<td><strong>Authentiek</strong></td>
-<td></td>
-</tr>
-</tbody></table>
-</section><section id="contour-1"><div class="header-wrapper"><h5 id="x3-4-3-3-contour"><bdi class="secno">3.4.3.3 </bdi>contour</h5><a class="self-link" href="#contour-1" aria-label="Permalink for Section 3.4.3.3"></a></div>
+</section><section id="contour-1"><div class="header-wrapper"><h5 id="x3-4-3-2-contour"><bdi class="secno">3.4.3.2 </bdi>contour</h5><a class="self-link" href="#contour-1" aria-label="Permalink for Section 3.4.3.2"></a></div>
 <table>
 <thead>
 <tr>
@@ -2489,15 +2723,15 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Ruimtelijke contour en ligging van het object in het Rijksdriehoekstelsel (bovenaanzicht, zoals in de BAG)</td>
+<td>de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedDeelObject.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
-<td>ERS</td>
+<td>BAG</td>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek.</td>
+<td>Een samengesteld geometriegegevenstype waarbij wordt afgedwongen dat voor de geometrie een keuze gemaakt moet worden tussen een vlak (Polygon) of een multivlak (MultiPolygon), conform ISO/IEC 13249-3:2016. Deze standaard beschrijft de vastlegging in WKT-formaat.<br>Alleen geometrieën die voldoen aan het Simple Features profile conform ISO 19125-1:2004 zijn toegestaan.<br><br>Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond. Wanneer de bron voor een geometrie beperkt is tot een punt of een lijn, kan deze als vlak worden geregistreerd door een buffer toe te voegen. Daarbij wordt de breedte van de buffer geschat.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -2512,10 +2746,6 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Kardinaliteit</strong></td>
-<td>0..1</td>
-</tr>
-<tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
@@ -2524,7 +2754,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="broncontour-0"><div class="header-wrapper"><h5 id="x3-4-3-4-broncontour"><bdi class="secno">3.4.3.4 </bdi>broncontour</h5><a class="self-link" href="#broncontour-0" aria-label="Permalink for Section 3.4.3.4"></a></div>
+</section><section id="broncontour-0"><div class="header-wrapper"><h5 id="x3-4-3-3-broncontour"><bdi class="secno">3.4.3.3 </bdi>bronContour</h5><a class="self-link" href="#broncontour-0" aria-label="Permalink for Section 3.4.3.3"></a></div>
 <table>
 <thead>
 <tr>
@@ -2534,7 +2764,7 @@ CBS-functie zijn niet van toepassing.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>broncontour</td>
+<td>bronContour</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -2542,7 +2772,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Toelichting op de contour. Waar is deze op gebaseerd? Bijvoorbeeld een historische kaart, de BGT, etc.</td>
+<td>De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2569,7 +2799,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="puntcoordinaten-0"><div class="header-wrapper"><h5 id="x3-4-3-5-puntcoordinaten"><bdi class="secno">3.4.3.5 </bdi>puntcoördinaten</h5><a class="self-link" href="#puntcoordinaten-0" aria-label="Permalink for Section 3.4.3.5"></a></div>
+</section><section id="puntcoordinaten-0"><div class="header-wrapper"><h5 id="x3-4-3-4-puntcoordinaten"><bdi class="secno">3.4.3.4 </bdi>puntCoördinaten</h5><a class="self-link" href="#puntcoordinaten-0" aria-label="Permalink for Section 3.4.3.4"></a></div>
 <table>
 <thead>
 <tr>
@@ -2579,7 +2809,7 @@ CBS-functie zijn niet van toepassing.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>puntcoördinaten</td>
+<td>puntCoördinaten</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -2587,7 +2817,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>De X- en Y-coördinaat die als coördinatenpaar de ligging van het monument representeert in het Rijksdriehoekstelsel</td>
+<td>De geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -2595,7 +2825,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>mogelijk formaat: wkt bij aanlevering als xml of xls bij aanlevering als gisbestand is de geometrie formaatspecifiek. MULTIPOINT wordt niet geaccepteerd.</td>
+<td>de puntcoördinaten worden vastgelegd in WKT-formaat conform ISO/IEC 13249-3:2016. Dit betekent dat het veld als volgt is opgebouwd: POINT (x-coördinaat y-coördinaat). Bijvoorbeeld: POINT (136840.123 455874.123) voor de Dom in Utrecht. Multipoints zijn niet toegestaan. Het toegepaste coördinatenstelsel is dat van de Rijksdriehoeksmeting (RD-stelsel). De coördinaten zijn op de millimeter nauwkeurig en de eenheid is meter. Elk coördinaat heeft maximaal drie decimalen. Zo nodig wordt daarvoor afgerond.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -2610,7 +2840,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Overig</td>
 </tr>
 </tbody></table>
-</section><section id="betreftpand-0"><div class="header-wrapper"><h5 id="x3-4-3-6-betreftpand"><bdi class="secno">3.4.3.6 </bdi>betreftPand</h5><a class="self-link" href="#betreftpand-0" aria-label="Permalink for Section 3.4.3.6"></a></div>
+</section><section id="betreftpand-0"><div class="header-wrapper"><h5 id="x3-4-3-5-betreftpand"><bdi class="secno">3.4.3.5 </bdi>betreftPand</h5><a class="self-link" href="#betreftpand-0" aria-label="Permalink for Section 3.4.3.5"></a></div>
 <table>
 <thead>
 <tr>
@@ -2659,7 +2889,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="betreftbgt-0"><div class="header-wrapper"><h5 id="x3-4-3-7-betreftbgt"><bdi class="secno">3.4.3.7 </bdi>betreftBGT</h5><a class="self-link" href="#betreftbgt-0" aria-label="Permalink for Section 3.4.3.7"></a></div>
+</section><section id="betreftbgt-0"><div class="header-wrapper"><h5 id="x3-4-3-6-betreftbgt"><bdi class="secno">3.4.3.6 </bdi>betreftBGT</h5><a class="self-link" href="#betreftbgt-0" aria-label="Permalink for Section 3.4.3.6"></a></div>
 <table>
 <thead>
 <tr>
@@ -2708,7 +2938,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="jaarbegin-0"><div class="header-wrapper"><h5 id="x3-4-3-8-jaarbegin"><bdi class="secno">3.4.3.8 </bdi>jaarBegin</h5><a class="self-link" href="#jaarbegin-0" aria-label="Permalink for Section 3.4.3.8"></a></div>
+</section><section id="jaarbegin-0"><div class="header-wrapper"><h5 id="x3-4-3-7-jaarbegin"><bdi class="secno">3.4.3.7 </bdi>jaarBegin</h5><a class="self-link" href="#jaarbegin-0" aria-label="Permalink for Section 3.4.3.7"></a></div>
 <table>
 <thead>
 <tr>
@@ -2745,15 +2975,15 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 <tr>
-<td><strong>Kardinaliteit</strong></td>
-<td>0..1</td>
-</tr>
-<tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
+<tr>
+<td><strong>Mogelijk geen waarde</strong></td>
+<td>Ja</td>
+</tr>
 </tbody></table>
-</section><section id="jaareind-0"><div class="header-wrapper"><h5 id="x3-4-3-9-jaareind"><bdi class="secno">3.4.3.9 </bdi>jaarEind</h5><a class="self-link" href="#jaareind-0" aria-label="Permalink for Section 3.4.3.9"></a></div>
+</section><section id="jaareind-0"><div class="header-wrapper"><h5 id="x3-4-3-8-jaareind"><bdi class="secno">3.4.3.8 </bdi>jaarEind</h5><a class="self-link" href="#jaareind-0" aria-label="Permalink for Section 3.4.3.8"></a></div>
 <table>
 <thead>
 <tr>
@@ -2797,12 +3027,8 @@ CBS-functie zijn niet van toepassing.</p>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
-</tr>
 </tbody></table>
-</section><section id="annotatiejaarbegin-0"><div class="header-wrapper"><h5 id="x3-4-3-10-annotatiejaarbegin"><bdi class="secno">3.4.3.10 </bdi>annotatieJaarBegin</h5><a class="self-link" href="#annotatiejaarbegin-0" aria-label="Permalink for Section 3.4.3.10"></a></div>
+</section><section id="annotatiejaarbegin-0"><div class="header-wrapper"><h5 id="x3-4-3-9-annotatiejaarbegin"><bdi class="secno">3.4.3.9 </bdi>annotatieJaarBegin</h5><a class="self-link" href="#annotatiejaarbegin-0" aria-label="Permalink for Section 3.4.3.9"></a></div>
 <table>
 <thead>
 <tr>
@@ -2846,12 +3072,8 @@ CBS-functie zijn niet van toepassing.</p>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
-</tr>
 </tbody></table>
-</section><section id="annotatiejaareind-0"><div class="header-wrapper"><h5 id="x3-4-3-11-annotatiejaareind"><bdi class="secno">3.4.3.11 </bdi>annotatieJaarEind</h5><a class="self-link" href="#annotatiejaareind-0" aria-label="Permalink for Section 3.4.3.11"></a></div>
+</section><section id="annotatiejaareind-0"><div class="header-wrapper"><h5 id="x3-4-3-10-annotatiejaareind"><bdi class="secno">3.4.3.10 </bdi>annotatieJaarEind</h5><a class="self-link" href="#annotatiejaareind-0" aria-label="Permalink for Section 3.4.3.10"></a></div>
 <table>
 <thead>
 <tr>
@@ -2895,12 +3117,8 @@ CBS-functie zijn niet van toepassing.</p>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
-<tr>
-<td><strong>Mogelijk geen waarde</strong></td>
-<td>Ja</td>
-</tr>
 </tbody></table>
-</section><section id="naam-1"><div class="header-wrapper"><h5 id="x3-4-3-12-naam"><bdi class="secno">3.4.3.12 </bdi>naam</h5><a class="self-link" href="#naam-1" aria-label="Permalink for Section 3.4.3.12"></a></div>
+</section><section id="naam-1"><div class="header-wrapper"><h5 id="x3-4-3-11-naam"><bdi class="secno">3.4.3.11 </bdi>naam</h5><a class="self-link" href="#naam-1" aria-label="Permalink for Section 3.4.3.11"></a></div>
 <table>
 <thead>
 <tr>
@@ -2949,7 +3167,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="beschrijving-1"><div class="header-wrapper"><h5 id="x3-4-3-13-beschrijving"><bdi class="secno">3.4.3.13 </bdi>beschrijving</h5><a class="self-link" href="#beschrijving-1" aria-label="Permalink for Section 3.4.3.13"></a></div>
+</section><section id="beschrijving-1"><div class="header-wrapper"><h5 id="x3-4-3-12-beschrijving"><bdi class="secno">3.4.3.12 </bdi>beschrijving</h5><a class="self-link" href="#beschrijving-1" aria-label="Permalink for Section 3.4.3.12"></a></div>
 <table>
 <thead>
 <tr>
@@ -2992,6 +3210,47 @@ CBS-functie zijn niet van toepassing.</p>
 <tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
+</tr>
+</tbody></table>
+</section><section id="aanwezig-0"><div class="header-wrapper"><h5 id="x3-4-3-13-aanwezig"><bdi class="secno">3.4.3.13 </bdi>aanwezig</h5><a class="self-link" href="#aanwezig-0" aria-label="Permalink for Section 3.4.3.13"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Attribuutsoort-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>aanwezig</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Kwalificatie van de materiële aanwezigheid van het ErfgoedDeelobject</td>
+</tr>
+<tr>
+<td><strong>Herkomst definitie</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Kwalificatie die de actuele staat van het ErfgoedDeelobject relativeert en dient als aangrijpingspunt voor duiding van de aanwezige waarde. De contour van een verdwenen, verplaatst of verschoven ErfgoedDeelobject toont de oorspronkelijk locatie.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Indicatie formele historie</strong></td>
+<td>Ja</td>
+</tr>
+<tr>
+<td><strong>Authentiek</strong></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Mogelijk geen waarde</strong></td>
@@ -3145,7 +3404,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="oospronkelijkefunctie-0"><div class="header-wrapper"><h5 id="x3-4-3-17-oospronkelijkefunctie"><bdi class="secno">3.4.3.17 </bdi>oospronkelijkeFunctie</h5><a class="self-link" href="#oospronkelijkefunctie-0" aria-label="Permalink for Section 3.4.3.17"></a></div>
+</section><section id="oorspronkelijkefunctie-0"><div class="header-wrapper"><h5 id="x3-4-3-17-oorspronkelijkefunctie"><bdi class="secno">3.4.3.17 </bdi>oorspronkelijkeFunctie</h5><a class="self-link" href="#oorspronkelijkefunctie-0" aria-label="Permalink for Section 3.4.3.17"></a></div>
 <table>
 <thead>
 <tr>
@@ -3155,7 +3414,7 @@ CBS-functie zijn niet van toepassing.</p>
 </thead>
 <tbody><tr>
 <td><strong>Naam</strong></td>
-<td>oospronkelijkeFunctie</td>
+<td>oorspronkelijkeFunctie</td>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
@@ -3317,7 +3576,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td></td>
+<td>Duiding van de ligging van het ErfgoedObject ten opzichte van een bepaald adres.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -3325,7 +3584,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Een inhoudelijke toelichting op de toepassing van het informatie-element.</td>
+<td>Met de situering legt de registratie een koppeling naar de BAG. Daarbij kan optioneel de plaats van het ErfgoedObject ten opzichte van dit adres worden meegegeven. In sommige gevallen is dit verplicht.<br>Wanneer een erfgoedObject het type pand(en) heeft wordt ook op een andere manier een relatie gelegd met de BAG, namelijk met één of meer pandID's. Ook aan de hand van deze pandID's zijn de gerelateerde adressen in de BAG opvraagbaar. In het beheer van het Objecttype Situering kan zijn ingeregeld dat de Situering(en) identiek zijn aan de via de pandID's gerelateerde adressen in de BAG. Dit is aan te bevelen omdat adreswijzigingen in de BAG veelvuldig voorkomen. Dit is echter niet verplicht; de Erfgoedregistratie staat ook maatwerk toe.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -3335,24 +3594,9 @@ CBS-functie zijn niet van toepassing.</p>
 </section>
 <section id="kenmerken-2"><div class="header-wrapper"><h4 id="x3-5-2-kenmerken"><bdi class="secno">3.5.2 </bdi>Kenmerken</h4><a class="self-link" href="#kenmerken-2" aria-label="Permalink for Section 3.5.2"></a></div>
 <section id="registratiekenmerken-2"><div class="header-wrapper"><h5 id="x3-5-2-1-registratiekenmerken"><bdi class="secno">3.5.2.1 </bdi>Registratiekenmerken</h5><a class="self-link" href="#registratiekenmerken-2" aria-label="Permalink for Section 3.5.2.1"></a></div>
-<p>De <strong>registratiekenmerken</strong> van een ErfgoedDeelobject zijn vergelijkbaar met die van een
-ErfgoedObject. De typologie van het ErfgoedDeelobject is uitgebreid met drie types die
-logischerwijs alleen als onderdeel van een geheel voorkomen: Constructief deel (restant),
-Constructief deel (toegevoegd) en Interieur</p>
-<p>Het kenmerk "aanwezig" is specifiek voor ErfgoedDeelobjecten. Het is vergelijkbaar met de
-aardRegistratie van het ErfgoedObject. Het legt vast hoe groot de kans is dat de beschreven
-waarde ook daadwerkelijk aanwezig is. De bescherming wordt niet afzonderlijk geregeld;
-deze is altijd een afgeleide van het ErfgoedObject. Hetzelfde geldt voor de aardRegistratie
-historisch; deze geldt altijd voor het ErfgoedObject plus bijbehorende ErfgoedDeelobjecten.</p>
+<p>De <strong>registratiekenmerken</strong> van een Situering beperken zich tot een uniek id.</p>
 </section><section id="locatiekenmerken-2"><div class="header-wrapper"><h5 id="x3-5-2-2-locatiekenmerken"><bdi class="secno">3.5.2.2 </bdi>Locatiekenmerken</h5><a class="self-link" href="#locatiekenmerken-2" aria-label="Permalink for Section 3.5.2.2"></a></div>
-<p>Voor het ErfgoedDeelobject zijn de <strong>locatiekenmerken</strong> gelijk aan die van het ErfgoedObject.
-Alleen de mogelijkheid voor een aparte adressering geldt hier niet. Er wordt volstaan met de
-mogelijkheid om een of meer BAG-panden (of BGT-objecten) te koppelen om een contour te
-verwerven.</p>
-</section><section id="waardekenmerken-2"><div class="header-wrapper"><h5 id="x3-5-2-3-waardekenmerken"><bdi class="secno">3.5.2.3 </bdi>Waardekenmerken</h5><a class="self-link" href="#waardekenmerken-2" aria-label="Permalink for Section 3.5.2.3"></a></div>
-<p>De <strong>waardekenmerken</strong> voor het ErfgoedDeelobject komen overeen met de de
-waardekenmerken voor het ErfgoedObject. Alleen redengevende omschrijving en
-CBS-functie zijn niet van toepassing.</p>
+<p>De <strong>locatiekenmerken</strong> van een Situering zijn de verwijzing naar een adres in de BAG, eventeel in combinatie met een aanduiding van de plaats van het ErfgoedObject ten opzichte van dit adres.</p>
 </section></section>
 <section id="attribuutsoorten-3"><div class="header-wrapper"><h4 id="x3-5-3-attribuutsoorten"><bdi class="secno">3.5.3 </bdi>Attribuutsoorten</h4><a class="self-link" href="#attribuutsoorten-3" aria-label="Permalink for Section 3.5.3"></a></div>
 <section id="identificatie-0"><div class="header-wrapper"><h5 id="x3-5-3-1-identificatie"><bdi class="secno">3.5.3.1 </bdi>identificatie</h5><a class="self-link" href="#identificatie-0" aria-label="Permalink for Section 3.5.3.1"></a></div>
@@ -3388,10 +3632,6 @@ CBS-functie zijn niet van toepassing.</p>
 <td>20191001</td>
 </tr>
 <tr>
-<td><strong>Kardinaliteit</strong></td>
-<td>0..1</td>
-</tr>
-<tr>
 <td><strong>Authentiek</strong></td>
 <td>Overig</td>
 </tr>
@@ -3400,7 +3640,7 @@ CBS-functie zijn niet van toepassing.</p>
 <td>Ja</td>
 </tr>
 </tbody></table>
-</section><section id="situering-0"><div class="header-wrapper"><h5 id="x3-5-3-2-situering"><bdi class="secno">3.5.3.2 </bdi>situering</h5><a class="self-link" href="#situering-0" aria-label="Permalink for Section 3.5.3.2"></a></div>
+</section><section id="situering"><div class="header-wrapper"><h5 id="x3-5-3-2-situering"><bdi class="secno">3.5.3.2 </bdi>situering</h5><a class="self-link" href="#situering" aria-label="Permalink for Section 3.5.3.2"></a></div>
 <table>
 <thead>
 <tr>
@@ -3418,7 +3658,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Wijze waarop het adres zich tot het monument verhoudt<br>Toestand: actueel of vervallen<br>Locatie: bij, tegenover, via</td>
+<td>Aanduiding van de plaats van het ErfgoedObject ten opzichte van het adres.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -3426,11 +3666,15 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>Actueel: huidig, geldig adres<br>Actueel/Bij: object is gelegen 'bij dit adres'<br>Actueel/Tegenover: object is gelegen 'tegenover dit adres'<br>Actueel/Via: object kan worden betreden 'via dit adres'</td>
+<td>Deze aanduiding is verplicht in het geval dat het ErfgoedObject een type heeft ongelijk aan "pand(en)". Deze ErfgoedObjecten zijn namelijk per definitie niet adresseerbaar. Een gekoppeld adres moet daarom worden voorzien van een situering: hoe verhoudt het ErfgoedObject zich tot dit adres. Alle enumeraties zijn in deze situatie mogelijk, met uitzondering van de waarde 'via'.<br>De waarde 'via' is voorbehouden aan ErfgoedObjecten met type is gelijk aan "pand(en)". Het gebruik van 'via' is daarbij van toepassing bij verblijfsobjecten die uit meerdere panden beslaan, waarbij het ErfgoedObject een subset van die panden betreft. Bijvoorbeeld twee buurpanden die zijn doorgebroken (tot één verblijfsobject), waar slechts één van beide panden het ErfgoedObject betreft. Gebruik de situering 'via' om te benadrukken dat het ErfgoedObject slechts een deel van het verblijfsobject betreft en mogelijk juist een ánder deel dan waar de ingang zich bevindt. Het gebruik van de waarde 'via' is niet verplicht; het nut ervan is afhankelijk van de context ter plaatse.<br><br>Een ErfgoedObject van het type "pand(en)" kan ook een situering hebben om een andere reden. In de BAG komen immers panden voor zonder adres. In die gevallen kan in de Erfgoedregistratie een adres worden gekoppeld in combinatie met (verplicht) een situering. Alle voorkomende waarden van situering zijn dan toegestaan.<br><br>Bij het gebruik van een situering in combinatie met een ErfgoedObject met type "pand(en)" is per definitie sprake van maatwerk ten opzichte van de BAG. Met andere woorden: geen automatische overeenstemming met de via de pandId's gerelateerde adressen in de BAG (of van het ontbreken daarvan).</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
 <td>20191001</td>
+</tr>
+<tr>
+<td><strong>Kardinaliteit</strong></td>
+<td>0..1</td>
 </tr>
 <tr>
 <td><strong>Authentiek</strong></td>
@@ -3451,11 +3695,11 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Herkomst</strong></td>
-<td>ERS</td>
+<td>BAG</td>
 </tr>
 <tr>
 <td><strong>Definitie</strong></td>
-<td>Het adres dat de situering heeft</td>
+<td>Verwijzing naar een Nummeraanduiding in de BAG.</td>
 </tr>
 <tr>
 <td><strong>Herkomst definitie</strong></td>
@@ -3463,7 +3707,7 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 <tr>
 <td><strong>Toelichting</strong></td>
-<td>verwijzing naar ID in de BAG<br>De aanlevering kan bestaan uit een ID uit de BAG, maar kan ook het feitelijke adres (in tekst) bevatten. Door het systeem wordt het bijbehorende ID dan opgezocht.</td>
+<td>Adressen kunnen in de Basisregistratie Adressen en Gebouwen (BAG) worden gevonden aan de hand van het unieke id van de Nummeraanduiding. De Nummeraanduiding bevat het volledige adres, inclusief de verwijzingen naar straatnaam en woonplaats.</td>
 </tr>
 <tr>
 <td><strong>Datum opname</strong></td>
@@ -3475,7 +3719,912 @@ CBS-functie zijn niet van toepassing.</p>
 </tr>
 </tbody></table>
 </section></section>
-</section></section><p role="navigation" id="back-to-top">
+</section>
+
+</section><section id="enumeraties"><div class="header-wrapper"><h2 id="x4-enumeraties"><bdi class="secno">4. </bdi>Enumeraties</h2><a class="self-link" href="#enumeraties" aria-label="Permalink for Section 4."></a></div>
+
+<section id="aanwezigheid"><div class="header-wrapper"><h3 id="x4-1-aanwezigheid"><bdi class="secno">4.1 </bdi>Aanwezigheid</h3><a class="self-link" href="#aanwezigheid" aria-label="Permalink for Section 4.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Aanwezigheid</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Duiding van de (nog) aanwezige materiële cultuurhistorische waarde.</td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-aanwezigheid"><div class="header-wrapper"><h4 id="x4-1-1-enumeratiewaarden-aanwezigheid"><bdi class="secno">4.1.1 </bdi>Enumeratiewaarden Aanwezigheid</h4><a class="self-link" href="#enumeratiewaarden-aanwezigheid" aria-label="Permalink for Section 4.1.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deels intact</td>
+<td></td>
+<td>delen nog aanwezig, delen verdwenen of verstoord</td>
+</tr>
+<tr>
+<td>herkenbaar</td>
+<td></td>
+<td>in het landschap, in de constructie is de historische aanwezigheid te herkennen, mogelijk relicten aanwezig</td>
+</tr>
+<tr>
+<td>intact</td>
+<td></td>
+<td>min of meer in geheel nog aanwezig</td>
+</tr>
+<tr>
+<td>verschoven</td>
+<td></td>
+<td>in aanleg is het object inmiddels veranderd</td>
+</tr>
+<tr>
+<td>verplaatst</td>
+<td></td>
+<td>het object is fysiek verplaatst of herbouwd elders</td>
+</tr>
+<tr>
+<td>verdwenen</td>
+<td></td>
+<td>het object is niet meer aanwezig</td>
+</tr>
+<tr>
+<td>tracé aanwezig</td>
+<td></td>
+<td>enkel tracé is nog herkenbaar; oorspronkelijke verschijningsvorm van de (vaar)weg of verbinding niet meer</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="beschermdestatus"><div class="header-wrapper"><h3 id="x4-2-beschermdestatus"><bdi class="secno">4.2 </bdi>BeschermdeStatus</h3><a class="self-link" href="#beschermdestatus" aria-label="Permalink for Section 4.2"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>BeschermdeStatus</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Beschermde status van een ErfgoedObject.</td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-beschermdestatus"><div class="header-wrapper"><h4 id="x4-2-1-enumeratiewaarden-beschermdestatus"><bdi class="secno">4.2.1 </bdi>Enumeratiewaarden BeschermdeStatus</h4><a class="self-link" href="#enumeratiewaarden-beschermdestatus" aria-label="Permalink for Section 4.2.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>attentiegebied</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>basisorde</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cultuurhistorie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dorpsgezicht</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>karakteristiek</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>kenmerkend</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>monument</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>orde1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>orde2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>orde3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>stadsgezicht</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>werelderfgoed</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="beschermendeinstantie"><div class="header-wrapper"><h3 id="x4-3-beschermendeinstantie"><bdi class="secno">4.3 </bdi>BeschermendeInstantie</h3><a class="self-link" href="#beschermendeinstantie" aria-label="Permalink for Section 4.3"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>BeschermendeInstantie</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Bevoegd gezag dat een beschermde status toekent aan een ErfgoedObject.<br></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-beschermendeinstantie"><div class="header-wrapper"><h4 id="x4-3-1-enumeratiewaarden-beschermendeinstantie"><bdi class="secno">4.3.1 </bdi>Enumeratiewaarden BeschermendeInstantie</h4><a class="self-link" href="#enumeratiewaarden-beschermendeinstantie" aria-label="Permalink for Section 4.3.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gemeente</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Provincie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rijk</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Unesco</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="erfgoeddeelobjecttype"><div class="header-wrapper"><h3 id="x4-4-erfgoeddeelobjecttype"><bdi class="secno">4.4 </bdi>ErfgoedDeelobjectType</h3><a class="self-link" href="#erfgoeddeelobjecttype" aria-label="Permalink for Section 4.4"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>ErfgoedDeelobjectType</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Typering van de fysieke verschijningsvorm van een deelobject.<br></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-erfgoeddeelobjecttype"><div class="header-wrapper"><h4 id="x4-4-1-enumeratiewaarden-erfgoeddeelobjecttype"><bdi class="secno">4.4.1 </bdi>Enumeratiewaarden ErfgoedDeelobjectType</h4><a class="self-link" href="#enumeratiewaarden-erfgoeddeelobjecttype" aria-label="Permalink for Section 4.4.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aanleg</td>
+<td></td>
+<td>een structurele ingreep of ontwerp van (een deel) van het object</td>
+</tr>
+<tr>
+<td>beeldhouwwerk</td>
+<td></td>
+<td>kunstobject dat als kunstvorm is gemaakt of een functioneel object met kunstzinnige, esthetische vormgeving</td>
+</tr>
+<tr>
+<td>bouwwerk</td>
+<td></td>
+<td>gebouwd object, onroerend van aard, anders dan een pand</td>
+</tr>
+<tr>
+<td>constructie</td>
+<td></td>
+<td>het deel van een object dat zorgt voor de sterkte, stijfheid en stabiliteit</td>
+</tr>
+<tr>
+<td>interieur</td>
+<td></td>
+<td>inrichting en aankleding van een pand of bouwwerk</td>
+</tr>
+<tr>
+<td>opgaand groen</td>
+<td></td>
+<td>bossen en andere beplantingen zijnde een groep bomen en struiken, of solitair groen element</td>
+</tr>
+<tr>
+<td>pand(en)</td>
+<td></td>
+<td>een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet, of een aantal van dergelijke gebouwen samen</td>
+</tr>
+<tr>
+<td>terrein</td>
+<td></td>
+<td>aangelegd gebied met een bepaalde functie in de openbare ruimte</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="erfgoedobjecttype"><div class="header-wrapper"><h3 id="x4-5-erfgoedobjecttype"><bdi class="secno">4.5 </bdi>ErfgoedObjectType</h3><a class="self-link" href="#erfgoedobjecttype" aria-label="Permalink for Section 4.5"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>ErfgoedObjectType</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Typering van de fysieke verschijningsvorm van een ErfgoedObject</td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-erfgoedobjecttype"><div class="header-wrapper"><h4 id="x4-5-1-enumeratiewaarden-erfgoedobjecttype"><bdi class="secno">4.5.1 </bdi>Enumeratiewaarden ErfgoedObjectType</h4><a class="self-link" href="#enumeratiewaarden-erfgoedobjecttype" aria-label="Permalink for Section 4.5.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>beeldhouwwerk</td>
+<td></td>
+<td>kunstobject dat als kunstvorm is gemaakt of een functioneel object met kunstzinnige, esthetische vormgeving</td>
+</tr>
+<tr>
+<td>bouwwerk</td>
+<td></td>
+<td>gebouwd object, onroerend van aard, anders dan een pand</td>
+</tr>
+<tr>
+<td>gebied</td>
+<td></td>
+<td>groter geografisch gedefinieerd gebied met een bepaald cultuurhistorisch karakter, typologie of structuur</td>
+</tr>
+<tr>
+<td>pand(en)</td>
+<td></td>
+<td>een gebouw dat functioneel en bouwkundig-constructief als een zelfstandige eenheid is neergezet, of een aantal van dergelijke gebouwen samen</td>
+</tr>
+<tr>
+<td>opgaand groen</td>
+<td></td>
+<td>bossen en andere beplantingen zijnde een groep bomen en struiken, of solitair groen element</td>
+</tr>
+<tr>
+<td>terrein</td>
+<td></td>
+<td>aangelegd gebied met een bepaalde functie in de openbare ruimte</td>
+</tr>
+<tr>
+<td>verbinding</td>
+<td></td>
+<td>tracé van een vaarweg of landweg van A naar B</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="erfgoedomgevingtype"><div class="header-wrapper"><h3 id="x4-6-erfgoedomgevingtype"><bdi class="secno">4.6 </bdi>ErfgoedOmgevingType</h3><a class="self-link" href="#erfgoedomgevingtype" aria-label="Permalink for Section 4.6"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>ErfgoedOmgevingType</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Aard van een omgevingselement.<br></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-erfgoedomgevingtype"><div class="header-wrapper"><h4 id="x4-6-1-enumeratiewaarden-erfgoedomgevingtype"><bdi class="secno">4.6.1 </bdi>Enumeratiewaarden ErfgoedOmgevingType</h4><a class="self-link" href="#enumeratiewaarden-erfgoedomgevingtype" aria-label="Permalink for Section 4.6.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>biotoop</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>complex</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>symmetrie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>zichtlijn</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="jaarannotatie"><div class="header-wrapper"><h3 id="x4-7-jaarannotatie"><bdi class="secno">4.7 </bdi>JaarAnnotatie</h3><a class="self-link" href="#jaarannotatie" aria-label="Permalink for Section 4.7"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>JaarAnnotatie</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Aanduiding van de precisie van een gegeven jaar.<br></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-jaarannotatie"><div class="header-wrapper"><h4 id="x4-7-1-enumeratiewaarden-jaarannotatie"><bdi class="secno">4.7.1 </bdi>Enumeratiewaarden JaarAnnotatie</h4><a class="self-link" href="#enumeratiewaarden-jaarannotatie" aria-label="Permalink for Section 4.7.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bouwjaar onbekend</td>
+<td></td>
+<td>eerste inventarisatie heeft geen eenduidig bouwjaar opgeleverd (in combinatie met jaarBegin leeg)</td>
+</tr>
+<tr>
+<td>jaar afbraak/sloop onbekend</td>
+<td></td>
+<td>eerste inventarisatie heeft geen eenduidig jaartal afbraak/sloop opgeleverd (in combinatie met jaarEind leeg)</td>
+</tr>
+<tr>
+<td>circa</td>
+<td></td>
+<td>exacte jaartal kan enkele jaren voor of na dit jaar zijn</td>
+</tr>
+<tr>
+<td>datering gevel; oudere kern</td>
+<td></td>
+<td>bouwjaar heeft betrekking op de gevel; de kern van het pand is ouder</td>
+</tr>
+<tr>
+<td>vanaf</td>
+<td></td>
+<td>vond plaats na dit jaartal, doch niet langer dan enkele jaren daarna</td>
+</tr>
+<tr>
+<td>vanaf (binnen 25 jaar)</td>
+<td></td>
+<td>vond plaats na dit jaartal, doch binnen 25 jaar</td>
+</tr>
+<tr>
+<td>vanaf (binnen 50 jaar)</td>
+<td></td>
+<td>vond plaats na dit jaartal, doch binnen 50 jaar</td>
+</tr>
+<tr>
+<td>vanaf (binnen anderhalve eeuw)</td>
+<td></td>
+<td>vond plaats binnen 150 jaar vanaf dit jaartal (jaartal bijvoorbeeld 1650)</td>
+</tr>
+<tr>
+<td>vanaf (tot einde decennium)</td>
+<td></td>
+<td>vond plaats binnen dit decennium (jaartal bijvoorbeeld 1880)</td>
+</tr>
+<tr>
+<td>vanaf (tot einde eeuw)</td>
+<td></td>
+<td>vond plaats binnen deze eeuw (jaartal bijvoorbeeld 1600)</td>
+</tr>
+<tr>
+<td>vóór</td>
+<td></td>
+<td>vond plaats vóór dit jaartal, doch niet meer dan enkele jaren daarvoor</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="themacultuurhistorie-0"><div class="header-wrapper"><h3 id="x4-8-themacultuurhistorie"><bdi class="secno">4.8 </bdi>ThemaCultuurhistorie</h3><a class="self-link" href="#themacultuurhistorie-0" aria-label="Permalink for Section 4.8"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>ThemaCultuurhistorie</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Indeling naar vorm en functie die leidend zijn geweest in het ontwerp en de realisatie van het object. Bij de verschillende waarden zijn voorbeelden gegeven van functies die meestal binnen het thema vallen. Soms spelen meerdere thema's een rol. Het dominante thema bij de aanleg of bouw van het object is bepalend, een subjectief element is daarbij niet uit te sluiten.</td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-themacultuurhistorie"><div class="header-wrapper"><h4 id="x4-8-1-enumeratiewaarden-themacultuurhistorie"><bdi class="secno">4.8.1 </bdi>Enumeratiewaarden ThemaCultuurhistorie</h4><a class="self-link" href="#enumeratiewaarden-themacultuurhistorie" aria-label="Permalink for Section 4.8.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>verkeer en vervoer</td>
+<td></td>
+<td>wegen en paden, bruggen, tunnels, werven en havens, (spoor)wegen en stations en vlieghavens, scheepvaartkanaal</td>
+</tr>
+<tr>
+<td>waterstaat</td>
+<td></td>
+<td>sluizen, waterkeringen, poldermolens en gemalen, rivieren en waterwegen, meren en plassen, terpen en wierden</td>
+</tr>
+<tr>
+<td>landbouw en bosbouw</td>
+<td></td>
+<td>boerderijen, boswachterswoningen, ontginning, verkaveling, visvijver, eendenkooi, irrigatiekanaal, tuindersvilla, tuinderswoning, houtwallen, takkenrillen</td>
+</tr>
+<tr>
+<td>religie</td>
+<td></td>
+<td>kerken en kapellen, kloosters, abdijen, synagogen en moskeeën, alsook wegkruizen en heiligenbeelden</td>
+</tr>
+<tr>
+<td>begraven</td>
+<td></td>
+<td>begraafplaatsen, kerkhoven, hunebedden, uitvaartcentra, mortuaria, crematoria en onderdelen daarvan zoals klokkenstoelen en poortgebouwen</td>
+</tr>
+<tr>
+<td>industrie en ambacht</td>
+<td></td>
+<td>fabrieken en nijverheid, zoals suikerraffinaderijen, bierbrouwerijen, bakkerijen, smederijen enz.</td>
+</tr>
+<tr>
+<td>delfstoffenwinning</td>
+<td></td>
+<td>mijnbouw, afgraving, veenwinning, aardgaswinning</td>
+</tr>
+<tr>
+<td>oorlog en defensie</td>
+<td></td>
+<td>kastelen*, schansen, bastions, grachten, stadsmuren en -wallen, kazernes, bunkers, alsook oefenterreinen (* zelfstandig, versterkt bouwwerk dat onder middeleeuwse omstandigheden te verdedigen was)</td>
+</tr>
+<tr>
+<td>bestuur en recht</td>
+<td></td>
+<td>rechtbanken, stadhuizen, gevangenissen, politieposten en grenspalen</td>
+</tr>
+<tr>
+<td>landgoederen en buitenplaatsen</td>
+<td></td>
+<td>paleizen, landhuizen en onderdelen daarvan en/of bijgebouwen daarbij, tuinen, parken en plantsoenen</td>
+</tr>
+<tr>
+<td>horeca, sport en recreatie</td>
+<td></td>
+<td>hotels, restaurants en café's, zwembaden, maneges, stadions en onderdelen daarvan, dierenverblijven en vergaderzalen, verenigingsgebouwen en sociëteiten</td>
+</tr>
+<tr>
+<td>nutsvoorziening</td>
+<td></td>
+<td>drinkwater, elektriciteit, gas, lantaarns, riolering en rioolwaterzuivering, straatmeubilair, telefonie, post, media, brandweer</td>
+</tr>
+<tr>
+<td>wonen</td>
+<td></td>
+<td>woningen en woningbouwcomplexen, dienstwoningen, woon-werkpanden en woon-winkelgebouwen</td>
+</tr>
+<tr>
+<td>handel en administratie</td>
+<td></td>
+<td>kantoren, (groot-) handelsgebouwen, pakhuizen, warenhuizen en bankgebouwen</td>
+</tr>
+<tr>
+<td>herdenken</td>
+<td></td>
+<td>herinneringsmonumenten (niet zijnde straatmeubilair, grafmonument of kunstwerk)</td>
+</tr>
+<tr>
+<td>zorg en welzijn</td>
+<td></td>
+<td>ziekenhuizen, weeshuizen, begijnhofjes, inrichtingen ggz</td>
+</tr>
+<tr>
+<td>onderwijs en wetenschap</td>
+<td></td>
+<td>scholen, universiteitsgebouwen, hortus botanicus, planetaria</td>
+</tr>
+<tr>
+<td>kunst en cultuur</td>
+<td></td>
+<td>museum, schouwburg, bioscoop, muziekkoepel, bibliotheek, kunstwerken</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="registratieaard"><div class="header-wrapper"><h3 id="x4-9-registratieaard"><bdi class="secno">4.9 </bdi>Registratieaard</h3><a class="self-link" href="#registratieaard" aria-label="Permalink for Section 4.9"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Registratieaard</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Wijze waarop de cultuurhistorische waarde van een ErfgoedObject beleidsmatig betekenis heeft.<br></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-registratieaard"><div class="header-wrapper"><h4 id="x4-9-1-enumeratiewaarden-registratieaard"><bdi class="secno">4.9.1 </bdi>Enumeratiewaarden Registratieaard</h4><a class="self-link" href="#enumeratiewaarden-registratieaard" aria-label="Permalink for Section 4.9.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>verwacht</td>
+<td></td>
+<td>op grond van context is de verwachting dat er nog onbekende cultuurhistorische waarde aanwezig is</td>
+</tr>
+<tr>
+<td>aanwezig</td>
+<td></td>
+<td>de waarde is bekend, geïnventariseerd en/of gewaardeerd, maar op dit moment niet als zodanig beschermd</td>
+</tr>
+<tr>
+<td>beschermd</td>
+<td></td>
+<td>het ErfgoedObject heeft een in werking zijnde beschermde status (beschermdAls)</td>
+</tr>
+<tr>
+<td>historisch</td>
+<td></td>
+<td>het ErfgoedObject is in werkelijkheid niet meer aanwezig (gesloopt of verdwenen)</td>
+</tr>
+<tr>
+<td>niet aangetroffen</td>
+<td></td>
+<td>het ErfgoedObject met de verwachte waarde is bij nader onderzoek niet aangetroffen.</td>
+</tr>
+</tbody></table>
+</section></section>
+<section id="situeringswijze"><div class="header-wrapper"><h3 id="x4-10-situeringswijze"><bdi class="secno">4.10 </bdi>Situeringswijze</h3><a class="self-link" href="#situeringswijze" aria-label="Permalink for Section 4.10"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratie-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Situeringswijze</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<section id="enumeratiewaarden-situeringswijze"><div class="header-wrapper"><h4 id="x4-10-1-enumeratiewaarden-situeringswijze"><bdi class="secno">4.10.1 </bdi>Enumeratiewaarden Situeringswijze</h4><a class="self-link" href="#enumeratiewaarden-situeringswijze" aria-label="Permalink for Section 4.10.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Enumeratiewaarde</strong></th>
+<th><strong>Code</strong></th>
+<th><strong>Definitie</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>achter</td>
+<td></td>
+<td>Object is gelegen 'achter dit adres'.</td>
+</tr>
+<tr>
+<td>bij</td>
+<td></td>
+<td>Object is gelegen 'bij dit adres'.<br></td>
+</tr>
+<tr>
+<td>tegenover</td>
+<td></td>
+<td>Object is gelegen 'tegenover dit adres'.<br></td>
+</tr>
+<tr>
+<td>via</td>
+<td></td>
+<td>Object kan worden betreden 'via dit adres'.<br></td>
+</tr>
+</tbody></table>
+</section></section>
+</section>
+
+<section id="codelijsten"><div class="header-wrapper"><h2 id="x5-codelijsten"><bdi class="secno">5. </bdi>Codelijsten</h2><a class="self-link" href="#codelijsten" aria-label="Permalink for Section 5."></a></div>
+
+<section id="bouwstijl-1"><div class="header-wrapper"><h3 id="x5-1-bouwstijl"><bdi class="secno">5.1 </bdi>Bouwstijl</h3><a class="self-link" href="#bouwstijl-1" aria-label="Permalink for Section 5.1"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Bouwstijl</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Indeling naar stijlperiode of stroming</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>De codelijst bevat stijlperioden, zowel specifiek als minder specifiek.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/bouwstijl.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/bouwstijl.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+<section id="cultuurlandschap-0"><div class="header-wrapper"><h3 id="x5-2-cultuurlandschap"><bdi class="secno">5.2 </bdi>Cultuurlandschap</h3><a class="self-link" href="#cultuurlandschap-0" aria-label="Permalink for Section 5.2"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Cultuurlandschap</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Kenmerken van het landschap die een nadere indeling van het toegepast ontginningstype geven.</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>De codelijst zal naar verwachting langer worden naarmate meer Ontginningen worden opgenomen.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221107</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/cultuurlandschap.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/cultuurlandschap.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+<section id="functie"><div class="header-wrapper"><h3 id="x5-3-functie"><bdi class="secno">5.3 </bdi>Functie</h3><a class="self-link" href="#functie" aria-label="Permalink for Section 5.3"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Functie</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Indeling naar functie(s) die leidend zijn geweest in het ontwerp en de realisatie van het object.</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>De codelijst Functie bevat zowel specifieke als meer generieke functies en beperkt zich niet tot gebouwde objecten.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/functie.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/functie.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+<section id="gebouwtype-1"><div class="header-wrapper"><h3 id="x5-4-gebouwtype"><bdi class="secno">5.4 </bdi>Gebouwtype</h3><a class="self-link" href="#gebouwtype-1" aria-label="Permalink for Section 5.4"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Gebouwtype</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Indeling naar aard van het gebouw</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>Gebouwtypen onderscheiden zich in vorm. De typologie kan ook betrekking hebben op andere objecten dan gebouwen, waarbij de vorm een onderscheidend kenmerk is.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20191001</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/gebouwtype.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/gebouwtype.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+<section id="ontginning-0"><div class="header-wrapper"><h3 id="x5-5-ontginning"><bdi class="secno">5.5 </bdi>Ontginning</h3><a class="self-link" href="#ontginning-0" aria-label="Permalink for Section 5.5"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>Ontginning</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Fysische geografische kenmerken die de kwalificatie fysischLandschap nader specificeren.</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>In sommige gevallen volstaat de kwalificatie fysischLandschap niet en dient deze nader te worden gespecificeerd.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221207</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/ontginningstype.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/ontginningstype.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+<section id="subfysiologie"><div class="header-wrapper"><h3 id="x5-6-subfysiologie"><bdi class="secno">5.6 </bdi>SubFysiologie</h3><a class="self-link" href="#subfysiologie" aria-label="Permalink for Section 5.6"></a></div>
+<table>
+<thead>
+<tr>
+<th><strong>Codelijst-eigenschap</strong></th>
+<th><strong>Waarde</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Naam</strong></td>
+<td>SubFysiologie</td>
+</tr>
+<tr>
+<td><strong>Herkomst</strong></td>
+<td>ERS</td>
+</tr>
+<tr>
+<td><strong>Definitie</strong></td>
+<td>Fysische geografische kenmerken die de kwalificatie fysischLandschap nader specificeren.</td>
+</tr>
+<tr>
+<td><strong>Toelichting</strong></td>
+<td>In sommige gevallen volstaat de kwalificatie fysischLandschap niet en dient deze nader te worden gespecificeerd.</td>
+</tr>
+<tr>
+<td><strong>Datum opname</strong></td>
+<td>20221107</td>
+</tr>
+<tr>
+<td><strong>Locatie</strong></td>
+<td><a href="https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/subfysiologie.xlsx">https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/subfysiologie.xlsx</a></td>
+</tr>
+</tbody></table>
+</section>
+</section>
+
+    
+
+<div id="eddb4c1e-63e4-4866-8ca5-508de1bb434e-quickmenu"></div><section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties"><div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-bag">[BAG]</dt><dd>
+      <a href="https://www.geobasisregistraties.nl/documenten/publicatie/2018/03/12/catalogus-2018"><cite>Catalogus Basisregistratie Adressen en Gebouwen</cite></a>.  Ministerie van Binnenlandse Zaken en Koninkrijksrelaties. 1 juli 2018. definitieve versie 1.0. URL: <a href="https://www.geobasisregistraties.nl/documenten/publicatie/2018/03/12/catalogus-2018">https://www.geobasisregistraties.nl/documenten/publicatie/2018/03/12/catalogus-2018</a>
+    </dd><dt id="bib-mim">[MIM]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20220217/"><cite>MIM - Metamodel Informatie Modellering</cite></a>.  Geonovum. 17 februari 2022. versie 1.1.1. URL: <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20220217/">https://docs.geostandaarden.nl/mim/def-st-mim-20220217/</a>
+    </dd><dt id="bib-nen 3610">[NEN 3610]</dt><dd>
+      <a href="https://www.nen.nl/nen-3610-2022-nl-296137"><cite>NEN-3610 Basismodel geo-informatie</cite></a>.  NEN. Juni 2022. NEN 3610:2022 nl. URL: <a href="https://www.nen.nl/nen-3610-2022-nl-296137">https://www.nen.nl/nen-3610-2022-nl-296137</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
@@ -3699,4 +4848,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script><div id="3a26ae87-f090-48ec-bc6b-eec9ae75e049-loading-animation"><div data-testid="wrapper" class="_loading_overlay_wrapper css-79elbk workflow-extension-loading-overlay inactive"></div></div></body></html>
