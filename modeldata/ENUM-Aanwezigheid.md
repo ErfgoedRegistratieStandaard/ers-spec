@@ -12,3 +12,4 @@
 | verschoven |  | in aanleg is het object inmiddels veranderd |
 | verplaatst |  | het object is fysiek verplaatst of herbouwd elders |
 | verdwenen |  | het object is niet meer aanwezig |
+| tracé aanwezig |  | enkel trac&#233; is nog herkenbaar; oorspronkelijke verschijningsvorm van de (vaar)weg of verbinding niet meer |
