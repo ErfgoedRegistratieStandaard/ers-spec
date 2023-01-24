@@ -501,3 +501,16 @@
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
 
+#### ontginning
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | ontginning |
+| **Herkomst** | ERS |
+| **Definitie** | Categorisering van gebieden naar de wijze waarop deze door mensen in cultuur zijn gebracht (of waar dat is uitgebleven). |
+| **Herkomst definitie** | ERS |
+| **Toelichting** |  |
+| **Datum opname** | 20221207 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
+
