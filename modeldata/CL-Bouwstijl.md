@@ -4,6 +4,6 @@
 | **Naam** | Bouwstijl |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar stijlperiode of stroming |
-| **Toelichting** | Een inhoudelijke toelichting op de toepassing van het informatie-element. |
+| **Toelichting** | De codelijst bevat stijlperioden, zowel specifiek als minder specifiek. |
 | **Datum opname** | 20191001 |
 | **Locatie** | https://erfgoedregistratiestandaard.github.io/ers-spec/codelijsten/bouwstijl.xlsx |
