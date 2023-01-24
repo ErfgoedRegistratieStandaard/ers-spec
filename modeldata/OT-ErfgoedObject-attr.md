@@ -454,9 +454,9 @@
 | ---- | ---- |
 | **Naam** | fysischLandschap |
 | **Herkomst** | ERS |
-| **Definitie** | Indeling naar stijlperiode of stroming |
+| **Definitie** | Categorisering van landschap naar ontstaan van fysisch geografische eigenschappen zoals reli&#235;f en grondsoort, waarop de nu nog herkenbare ontginning in het verleden plaatsvond. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | combineren met Type is 'gebied' |
+| **Toelichting** | Het typeren van fysische geografie vindt plaats in combinatie met het beschrijven van het cultuurlandschap. Dit gebeurt in principe voor gebieden (of eventueel terreinen). De gebieden (en terreinen) vormen een landsdekkend geheel. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
