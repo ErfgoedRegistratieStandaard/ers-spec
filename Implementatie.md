@@ -1,7 +1,15 @@
 
 ## API documentatie
 
-De documentatie enz enz
+Er is een [standaard API-specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/yaml/ers-oas3.yaml) met [bijbehorende documentatie](https://erfgoedregistratiestandaard.github.io/ers-spec/yaml) beachikbaar. 
+
+De standaard API-specificatie is gebaseerd op deze ERS-standaard, en biedt een vertaling van het informatiemodel uit de specificatie naar een concrete (REST) API. Deze API kan worden geïmplementeerd door registraties die op een gestandaardiseerde wijze informatie conform de ERS-specificatie willen ontsluiten.
+
+De API-specificatie definieert endpoints voor collecties en individuele objecten. In een collectie worden voor elk object de registratiekenmerken en locatiekenmerken in het resultaat opgenomen. In het resultaat voor een individueel object wordt deze informatie aangevuld met de waardekenmerken van het object.
+
+Het is mogelijk om de API-specificatie aan te vullen met lokale uitbreidingen die buiten de Erfgoedregistratiestandaard vallen. Dergelijke uitbreidingen vallen onder de verantwoordelijkheid van de implementerende partij. Voor schema-uitbreidingen kan gebruik gemaakt worden van de blokken 'ErfgoedObject-Extension' en 'ErfgoedDeelobject-Extension'. Aanvullingen in deze blokken worden opgenomen in het resultaat voor individuele objecten. Voor aanvullende endpoints wordt aangeraden deze te registreren onder /v1/local/ en te voorzien van de tag 'Lokaal', zodat voor de gebruiker van de API duidelijk is dat deze endpoints aanvullend zijn ten opzichte van de standaard.
+
+In de standaard API-specificatie (en de bijbehorende documentatie) is als voorbeeld van het uitbreidingsmechanisme een invulling de ErfgoedObject-Extension en een aanvullend endpoint /v1/local/erfgoedobjecten opgenomen. Deze uitbreidingen zijn voorbeeldmatig en zijn geen deel van de standaard-specificatie; bij implementatie moeten deze uitbreidingen worden weggelaten of - indien dat gewenst is - vervangen door een eigen lokale aanvulling.
 
 ## Uitwisseling via bestanden
 

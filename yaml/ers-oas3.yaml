@@ -1,0 +1,860 @@
+openapi: 3.0.0
+info:
+  version: 1-oas3
+  title: ERS Rest Service
+paths:
+  /v1/erfgoedobjecten:
+    get:
+      tags:
+        - ERS
+      summary: Haalt een verzameling erfgoedobjecten op.
+      description: >
+        Deze operatie  haalt een verzameling erfgoedobjecten op die voldoet aan
+        de opgegeven filtercriteria. Het resultaat omvat alleen de registratiekenmerken en locatiekenmerken van de erfgoedobjecten. 
+        Aanvullende informatie kan worden opgevraagd door aan de hand van het id het individuele object als resource op te halen.
+      operationId: getErfgoedObjecten
+      parameters:
+        - name: bronhouder
+          in: query
+          required: false
+          description: >
+            De naam van de bronhouder (gemeente) van het erfgoedobject. [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#bronhouder)
+          example: Dordrecht
+          schema:
+            type: string
+        - name: situering.betreftAdres
+          in: query
+          required: false
+          description: >
+            Het ID van het BAG-object (type: Nummeraanduiding) waar de
+            erfgoedobjecten zijn gesitueerd.
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftadres)
+          example: 505200000040718
+          schema:
+            type: string
+        - name: coordinaatX
+          in: query
+          required: false
+          description: >
+            De x-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatY gebruikt.
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
+          example: 136840.123
+          schema:
+            type: string
+        - name: coordinaatY
+          in: query
+          required: false
+          description: >
+            De y-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatX gebruikt.
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
+          example: 455874.123
+          schema:
+            type: string
+        - name: straal
+          in: query
+          required: false
+          description: >
+            De straal (in meters) waarbinnen, gerekend vanaf de x,y-coördinaat,
+            de erfgoedobjecten zich bevinden.
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten) 
+          example: 25
+          schema:
+            type: string
+        - name: beschermdDoor
+          in: query
+          required: false
+          description: >
+            Filtert de gevonden erfgoedobjecten op de 'beschermdDoor'-waarde (BeschermendeInstantie).
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermddoor) [Waarden](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermendeinstantie)
+          example: Gemeente
+          schema:
+            type: string
+        - name: beschermdAls
+          in: query
+          required: false
+          description: >
+            Filtert de gevonden erfgoedobjecten op de 'beschermdAls'-waarde (BeschermdeStatus).
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermdals) [Waarden](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermdestatus)
+          example: dorpsgezicht
+          schema:
+            type: string   
+        - name: themaCultuurhistorie
+          in: query
+          required: false
+          description: >
+            Filtert de gevonden erfgoedobjecten op de 'themaCultuurhistorie'-waarde.
+            [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie) [Waarden](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie-0)
+          example: handel en administratie
+          schema:
+            type: string 
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+  /v1/erfgoedobjecten/{id}:
+    get:
+      tags:
+        - ERS
+      operationId: Zoek_object
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObject-Full'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObject-Full'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObject-Full'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObject-Full'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+  /v1/erfgoedobjecten/{id}/deelobjecten:
+    get:
+      tags:
+        - ERS
+      operationId: Zoek_deelobjecten
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+  /v1/erfgoedobject/{id}/deelobjecten/{deelobjectid}:
+    get:
+      tags:
+        - ERS
+      operationId: Zoek_deelobject
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deelobjectid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+  /v1/local/erfgoedobjecten:
+    get:
+      tags:
+        - Lokaal
+      summary: Haalt een verzameling erfgoedobjecten op o.b.v. andere eigenschappen dan die in ERS.
+      description: >
+        Lokale aanvulling op /v1/erfgoedobjecten; biedt alternatieve wijze (buiten de standaard om) om erfgoedobjecten te selecteren.
+      operationId: getErfgoedObjecten-localextension
+      parameters:
+        - name: foobar
+          in: query
+          required: false
+          description: >
+            Een eigenschap die niet in de standaard zit.
+          example: Baz
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+servers:
+  - url: https://erfgoedregistratie.nl
+components:
+  schemas:
+    IM-ERS-Object:
+      type: object
+      description: Objecttype IM_ERS_Object<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object)
+      properties:
+        identificatie:
+          type: string
+          readOnly: true
+          description: De (lokale) identifier conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
+          example: <hier nog een voorbeeld opnemen>
+        versie:
+          type: integer
+          readOnly: true
+          description: Het versienummer conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
+          example: 2
+        bronhouder:
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bronhouder)
+          example: Dordrecht
+        tijdstipRegistratie:
+          format: date-time
+          type: string
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#tijdstipregistratie).
+          example: 2022-03-04T11:53:00
+          readOnly: true
+        eindRegistratie:
+          format: date-time
+          type: string
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#eindregistratie).
+          example: 2022-09-02T17:12:00
+          readOnly: true
+          minimum: 0
+          maximum: 1
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<hier de voorbeeld identifier>"
+    ErfgoedObjecten-Collectie:
+      type: object
+      properties:
+        currentPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 1
+        nextPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 2
+        pageSize:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 10
+        total:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 47
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErfgoedObject-Minimal'
+          readOnly: true
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718"
+            next:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718?page=2"
+    ErfgoedObject-Full:
+      allOf:
+        - $ref: '#/components/schemas/ErfgoedObject-Minimal'
+        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedObject'
+        - $ref: '#/components/schemas/ErfgoedObject-Extension'
+    ErfgoedObject-Minimal:
+      allOf:
+        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedObject'
+        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedObject'
+    Registratiekenmerken-ErfgoedObject:
+      type: object
+      properties:
+        aardRegistratie:
+          type: string
+          readOnly: true
+          example: beschermd
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aardregistratie).
+        beschermdAls:
+          type: string
+          readOnly: true
+          example: monument
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermdals).
+        beschermdDoor:
+          type: string
+          readOnly: true
+          example: Gemeente
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermddoor).
+        datumInProcedure:
+          format: date-time
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datuminprocedure).
+          minimum: 0
+          maximum: 1
+        datumAanwijzing:
+          format: date-time
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumaanwijzing).
+          minimum: 0
+          maximum: 1
+        datumNietAanwijzen:
+          format: date-time
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumnietaanwijzen).
+          minimum: 0
+          maximum: 1
+        datumAfvoeren:
+          format: date-time
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumafvoeren).
+          minimum: 0
+          maximum: 1
+        toelichtingProcedure:
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingprocedure).
+          minimum: 0
+          maximum: 1
+        grondslag:
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#grondslag).
+        monumentnummer:
+          type: string
+          readOnly: true
+          example: 9121794
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#monumentnummer).
+        inOnderzoek:
+          type: boolean
+          readOnly: true
+          example: false
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#inonderzoek).
+          minimum: 0
+          maximum: 1
+        type:
+          type: string
+          readOnly: true
+          example: pand(en)
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type).
+    Locatiekenmerken-ErfgoedObject:
+      type: object
+      properties:
+        contour:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour).
+        bronContour:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour).
+        puntCoordinaten:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten).
+        betreftPand:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand).
+        betreftBGT:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt).
+        toelichtingAdressering:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingadressering).
+    Waardekenmerken-ErfgoedObject:
+      type: object
+      properties:
+        jaarBegin:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin).
+        jaarEind:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind).
+        annotatieJaarBegin:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin).
+        annotatieJaarEind:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind).
+        naam:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam).
+        toelichtingWaarde:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingwaarde).
+        beschrijving:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving).
+        aanwezig:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig).
+        verwachteBouwhistWaarde:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#verwachtebouwhistwaarde).
+        architectOntwerp:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp).
+        opdrachtgeverBouw:
+          type: string
+          readOnly: true
+          example: Boerenleenbank
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw).
+        uitvoerendKunstenaar:
+          type: string
+          readOnly: true
+          example: Albert van Essen
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar).
+        oorspronkelijkeFunctie:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [bankgebouw]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie).
+        gebouwtype:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [polderhuis, villa]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype).
+        bouwstijl:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [nieuwe Haagse school]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl).
+        themaCultuurhistorie:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
+        fysischLandschap:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischlandschap).
+        cultuurLandschap:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#cultuurlandschap).
+        toelichtingLandschap:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtinglandschap).
+    ErfgoedDeelobjecten-Collectie:
+      type: object
+      properties:
+        currentPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 1
+        nextPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 2
+        pageSize:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 10
+        total:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 47
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErfgoedDeelobject-Minimal'
+          readOnly: true
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten"
+            next:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten?page=2"
+    ErfgoedDeelobject-Full:
+      allOf:
+        - $ref: '#/components/schemas/ErfgoedDeelobject-Minimal'
+        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedDeelobject'
+        - $ref: '#/components/schemas/ErfgoedDeelobject-Extension'
+    ErfgoedDeelobject-Minimal:
+      allOf:
+        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedDeelobject'
+        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedDeelobject'
+    Registratiekenmerken-ErfgoedDeelobject:
+      type: object
+      properties:
+        type:
+          type: string
+          readOnly: true
+          example: pand(en)
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-1).
+    Locatiekenmerken-ErfgoedDeelobject:
+      type: object
+      properties:
+        contour:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour-1).
+        bronContour:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour-1).
+        puntCoordinaten:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten-1).
+        betreftPand:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand-1).
+        betreftBGT:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-1).
+    Waardekenmerken-ErfgoedDeelobject:
+      type: object
+      properties:
+        jaarBegin:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin-1).
+        jaarEind:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind-1).
+        annotatieJaarBegin:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin-1).
+        annotatieJaarEind:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind-1).
+        naam:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam-1).
+        toelichtingWaarde:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingwaarde).
+        beschrijving:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-1).
+        aanwezig:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig-1).
+        architectOntwerp:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp-1).
+        opdrachtgeverBouw:
+          type: string
+          readOnly: true
+          example: Boerenleenbank
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw-1).
+        uitvoerendKunstenaar:
+          type: string
+          readOnly: true
+          example: Albert van Essen
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar-1).
+        oorspronkelijkeFunctie:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [bankgebouw]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie-1).
+        gebouwtype:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [polderhuis, villa]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype-1).
+        bouwstijl:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          example: [nieuwe Haagse school]
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-1).
+#-------------------------------
+# Anything below this line may be 
+# extended by an implementor
+#-------------------------------
+    ErfgoedDeelobject-Extension:
+      type: object
+    ErfgoedObject-Extension:
+      type: object
+      properties:
+        adressen:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectAdresModel'
+          readOnly: true
+        panden:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectPandModel'
+          readOnly: true
+        omgevingen:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectOmgevingModel'
+          readOnly: true
+        afbeeldingen:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectAfbeeldingModel'
+          readOnly: true
+    ObjectAdresModel:
+      type: object
+      properties:
+        situering:
+          type: string
+          readOnly: true
+        sleutel:
+          format: int64
+          type: integer
+          readOnly: true
+        objectSleutel:
+          format: int64
+          type: integer
+          readOnly: true
+        woonplaats:
+          type: string
+          readOnly: true
+        straat:
+          type: string
+          readOnly: true
+        huisNummer:
+          format: int32
+          type: integer
+          readOnly: true
+        huisLetter:
+          type: string
+          readOnly: true
+        huisToevoeging:
+          type: string
+          readOnly: true
+        postcode:
+          type: string
+          readOnly: true
+    ObjectPandModel:
+      type: object
+      properties:
+        sleutel:
+          format: int64
+          type: integer
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        bouwjaar:
+          format: int32
+          type: integer
+          readOnly: true
+    ObjectOmgevingModel:
+      type: object
+      properties:
+        versie:
+          format: int64
+          type: integer
+          readOnly: true
+        identificatie:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        naam:
+          type: string
+          readOnly: true
+        omschrijving:
+          type: string
+          readOnly: true
+        contour:
+          type: string
+          readOnly: true
+    ObjectAfbeeldingModel:
+      type: object
+      properties:
+        Type:
+          type: string
+          readOnly: true
+        bron:
+          type: string
+          readOnly: true
+        titel:
+          type: string
+          readOnly: true
+        omschrijving:
+          type: string
+          readOnly: true
+        auteur:
+          type: string
+          readOnly: true
+        datum:
+          format: date-time
+          type: string
+          readOnly: true
+        urlThumbnail:
+          type: string
+          readOnly: true
+        urlAfbeelding:
+          type: string
+          readOnly: true
