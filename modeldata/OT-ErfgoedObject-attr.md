@@ -475,19 +475,6 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
-#### cultuurLandschap
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | cultuurLandschap |
-| **Herkomst** | ERS |
-| **Definitie** | Nadere onderverdeling binnen een ontginningstype. |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | Specificatie van een gebied of terrein, aan de hand van landschappelijke kenmerken (reliëf, begroeiing, openheid, verkaveling, leeftijd enz). Cultuurlandschappen zijn vaak gerelateerd aan één ontginningstype. |
-| **Datum opname** | 20191001 |
-| **Indicatie formele historie** | Ja |
-| **Kardinaliteit** | 0..1 |
-| **Authentiek** | Overig |
-
 #### ontginning
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
@@ -497,6 +484,19 @@
 | **Herkomst definitie** | ERS |
 | **Toelichting** |  |
 | **Datum opname** | 20221207 |
+| **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
+| **Authentiek** | Overig |
+
+#### cultuurLandschap
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | cultuurLandschap |
+| **Herkomst** | ERS |
+| **Definitie** | Nadere onderverdeling binnen een ontginningstype. |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | Specificatie van een gebied of terrein, aan de hand van landschappelijke kenmerken (reliëf, begroeiing, openheid, verkaveling, leeftijd enz). Cultuurlandschappen zijn vaak gerelateerd aan één ontginningstype. |
+| **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
