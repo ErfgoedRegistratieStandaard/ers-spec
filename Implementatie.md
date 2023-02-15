@@ -1,4 +1,3 @@
-# Afspraken
 
 ## API documentatie
 
