@@ -15,7 +15,7 @@ In de standaard API-specificatie (en de bijbehorende documentatie) is als voorbe
 
 ## Uitwisseling via bestanden
 
-In plaats van met de API kan ook uitwisseling van data plaatsvinden met behulp van bestanden. De mogelijkheden of beperkingen van deze uitwisseling zullen afhangen van het gebruikte bestandsformaat. Per implementatie kunnen daar verschillende keuzes in worden gemaakt. In een apart document [labelsERS](https://erfgoedregistratiestandaard.github.io/ers-spec/documenten/labelsERS_20230218.xlsx) worden hiervoor handvatten gegeven.
+In plaats van met de API kan ook uitwisseling van data plaatsvinden met behulp van bestanden. De mogelijkheden of beperkingen van deze uitwisseling zullen afhangen van het gebruikte bestandsformaat. Per implementatie kunnen daar verschillende keuzes in worden gemaakt. In een apart document [labelsERS](https://erfgoedregistratiestandaard.github.io/ers-spec/documents/labelsERS_20230218.xlsx) worden hiervoor handvatten gegeven.
 
 Bijvoorbeeld: in een shapefile zijn de velnamen in lengte beperkt en kunnen de velden zelf een gelimiteerd aantal karakters bevatten. Lijsten (of subtabellen) worden door de shape niet ondersteund. In het document is een vertaling beschikbaar van de attribuutsoorten naar verkorte veldnamen. De standaard adviseert om deze te gebruiken.
 
