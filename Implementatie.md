@@ -14,7 +14,9 @@ In de standaard API-specificatie (en de bijbehorende documentatie) is als voorbe
 ## Uitwisseling via bestanden
 
 Afgezien van de API kan ook uitwisseling van data plaatsvinden door middel van bestanden. Het gebruikte bestandsformaat bepaalt ook de mogelijkheden of beperkingen  van deze uitwisseling. Per implementatie kunnen daar verschillende keuzes in worden gemaakt. In een apart document [labelsERS](https://erfgoedregistratiestandaard.github.io/ers-spec/documenten/labelsERS.xlsx) worden hiervoor handvatten gegeven.
+
 Bijvoorbeeld: in een shapefile zijn de velnamen in lengte beperkt en kunnen de velden zelf een gelimiteerd aantal karakters bevatten. Lijsten (of subtabellen) worden door de shape niet ondersteund. In het document is een vertaling beschikbaar van de attribuutsoorten naar verkorte veldnamen. De standaard adviseert om deze te gebruikten.
+
 Een ander voorbeeld is het aanleveren van adressen. Binnen de ERS zijn verschillende varianten mogelijk waarop panden, adressen en contouren met elkaar kunnen samenhangen. Het kan behulpzaam zijn om bij een uitwisseling aan te geven of sprake is van maatwerk ten opzichte van de BAG. Is geen sprake van maatwerk, dan kunnen velden leeg blijven want de inhoud kan worden afgeleid uit de BAG. In het document worden aanwijzingen gegeven hoe dit soort afspraken per veld kunnen worden gemaakt.
 
 ## Coördinatenstelsel  
