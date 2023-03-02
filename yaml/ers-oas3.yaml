@@ -670,26 +670,26 @@ components:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour-0).
         puntCoordinaten:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten-0).
         betreftPand:
           type: array
           items:
             type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand-0).
         betreftBGT:
           type: array
           items:
             type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-0).
     Waardekenmerken-ErfgoedDeelobject:
       type: object
       properties:
@@ -698,27 +698,27 @@ components:
           format: date-fullyear
           readOnly: true
           example: 1902
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin-0).
         jaarEind:
           type: string
           format: date-fullyear
           readOnly: true
           example: 1967
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind-0).
           minimum: 0
           maximum: 1  
         annotatieJaarBegin:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin-0).
           minimum: 0
           maximum: 1  
         annotatieJaarEind:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind-0).
           minimum: 0
           maximum: 1   
         naam:
@@ -739,26 +739,26 @@ components:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig-0).
         architectOntwerp:
           type: string
           readOnly: true
           example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp-0).
           minimum: 0
           maximum: 1  
         opdrachtgeverBouw:
           type: string
           readOnly: true
           example: Boerenleenbank
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw-0).
           minimum: 0
           maximum: 1  
         uitvoerendKunstenaar:
           type: string
           readOnly: true
           example: Albert van Essen
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar-0).
           minimum: 0
           maximum: 1  
         oorspronkelijkeFunctie:
@@ -767,21 +767,21 @@ components:
             type: string
           readOnly: true
           example: [bankgebouw]
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie-0).
         gebouwtype:
           type: array
           items:
             type: string
           readOnly: true
           example: [polderhuis, villa]
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype-0).
         bouwstijl:
           type: array
           items:
             type: string
           readOnly: true
           example: [nieuwe Haagse school]
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-1).
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-0).
     ErfgoedOmgeving-Full:
       allOf:
         - $ref: '#/components/schemas/ErfgoedOmgeving-Minimal'
