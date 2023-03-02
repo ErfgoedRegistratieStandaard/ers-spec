@@ -397,11 +397,11 @@ components:
           minimum: 0
           maximum: 1
         grondslag:
-          type: string
+          type: integer
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#grondslag).
         monumentnummer:
-          type: string
+          type: integer
           readOnly: true
           example: 9121794
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#monumentnummer).
@@ -454,44 +454,60 @@ components:
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingadressering).
+          minimum: 0
+          maximum: 1
     Waardekenmerken-ErfgoedObject:
       type: object
       properties:
         jaarBegin:
           type: string
+          format: date-fullyear
           readOnly: true
-          example: <tbd>
+          example: 1902
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin).
         jaarEind:
           type: string
+          format: date-fullyear
           readOnly: true
-          example: <tbd>
+          example: 1967
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind).
-        annotatieJaarBegin:
+          minimum: 0
+          maximum: 1 
+        annotatieJaarBegin:    
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin).
+          minimum: 0
+          maximum: 1
         annotatieJaarEind:
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind).
+          minimum: 0
+          maximum: 1 
         naam:
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam).
+          minimum: 0
+          maximum: 1
         toelichtingWaarde:
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingwaarde).
+          minimum: 0
+          maximum: 1
         beschrijving:
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving).
+          minimum: 0
+          maximum: 1
         aanwezig:
           type: string
           readOnly: true
@@ -502,21 +518,29 @@ components:
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#verwachtebouwhistwaarde).
+          minimum: 0
+          maximum: 1
         architectOntwerp:
           type: string
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp).
+          minimum: 0
+          maximum: 1
         opdrachtgeverBouw:
           type: string
           readOnly: true
           example: Boerenleenbank
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw).
+          minimum: 0
+          maximum: 1
         uitvoerendKunstenaar:
           type: string
           readOnly: true
           example: Albert van Essen
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar).
+          minimum: 0
+          maximum: 1
         oorspronkelijkeFunctie:
           type: array
           items:
@@ -538,26 +562,39 @@ components:
           readOnly: true
           example: [nieuwe Haagse school]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl).
-        themaCultuurhistorie:
-          type: string
-          readOnly: true
-          example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
         fysischLandschap:
           type: string
           readOnly: true
-          example: <tbd>
+          example: veenlandschap
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischlandschap).
+          minimum: 0
+          maximum: 1
+        fysischDeelLandschap:
+          type: string
+          readOnly: true
+          example: kom
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischdeellandschap).
+          minimum: 0
+          maximum: 1
+        themaCultuurhistorie:
+          type: string
+          readOnly: true
+          example: landbouw en bosbouw
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
+        ontginning:
+          type: string
+          readOnly: true
+          example: niet-ontgonnen landschappen
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#ontginning).
+          minimum: 0
+          maximum: 1
         cultuurLandschap:
           type: string
           readOnly: true
-          example: <tbd>
+          example: veenkoloniaal landschap
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#cultuurlandschap).
-        toelichtingLandschap:
-          type: string
-          readOnly: true
-          example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtinglandschap).
+          minimum: 0
+          maximum: 1
     ErfgoedDeelobjecten-Collectie:
       type: object
       properties:
