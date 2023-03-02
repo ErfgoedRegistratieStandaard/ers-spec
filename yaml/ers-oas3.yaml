@@ -825,7 +825,37 @@ components:
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-0).
           minimum: 0
-          maximum: 1           
+          maximum: 1 
+    Situering-Full:
+      allOf:
+        - $ref: '#/components/schemas/Situering-Minimal'
+    Situering-Minimal:
+      allOf:
+        - $ref: '#/components/schemas/Registratiekenmerken-Situering'
+        - $ref: '#/components/schemas/Locatiekenmerken-Situering'
+    Registratiekenmerken-Situering:
+      type: object
+      properties:
+        identificatie:
+          type: integer
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie-0).
+    Locatiekenmerken-Situering:
+     type: object
+     properties:
+        situering:
+          type: string
+          readOnly: true
+          example: achter
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#situering).
+          minimum: 0
+          maximum: 1 
+        betreftAdres:
+          type: string
+          readOnly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftadres).
+           
 #-------------------------------
 # Anything below this line may be 
 # extended by an implementor
