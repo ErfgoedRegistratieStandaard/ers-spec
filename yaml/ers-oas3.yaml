@@ -782,6 +782,50 @@ components:
           readOnly: true
           example: [nieuwe Haagse school]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-1).
+    ErfgoedOmgeving-Full:
+      allOf:
+        - $ref: '#/components/schemas/ErfgoedOmgeving-Minimal'
+        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedOmgeving'
+    ErfgoedOmgeving-Minimal:
+      allOf:
+        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedOmgeving'
+        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedOmgeving'
+    Registratiekenmerken-ErfgoedOmgeving:
+      type: object
+      properties:
+        type:
+          type: string
+          readOnly: true
+          example: complex
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-0).
+    Locatiekenmerken-ErfgoedOmgeving:
+     type: object
+     properties:
+        contour:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour-0).
+          minimum: 0
+          maximum: 1
+    Waardekenmerken-ErfgoedOmgeving:
+     type: object
+     properties:
+        naam:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam-0).
+          minimum: 0
+          maximum: 1  
+        beschrijving:
+          type: string
+          readOnly: true
+          example: <tbd>
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-0).
+          minimum: 0
+          maximum: 1           
 #-------------------------------
 # Anything below this line may be 
 # extended by an implementor
