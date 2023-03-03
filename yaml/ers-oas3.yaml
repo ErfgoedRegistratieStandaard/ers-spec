@@ -327,7 +327,7 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718"
-           prev:
+            prev:
               type: object
               properties:
                 href: 
