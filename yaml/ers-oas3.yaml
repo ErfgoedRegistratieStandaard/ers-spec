@@ -22,7 +22,7 @@ paths:
           example: Dordrecht
           schema:
             type: string
-        - name: situering.betreftAdres
+        - name: heeftAdres.betreftAdres
           in: query
           required: false
           description: >
@@ -338,12 +338,22 @@ components:
       allOf:
         - $ref: '#/components/schemas/ErfgoedObject-Minimal'
         - $ref: '#/components/schemas/Waardekenmerken-ErfgoedObject'
+        - $ref: '#/components/schemas/ErfgoedObject-Situering'
         - $ref: '#/components/schemas/ErfgoedObject-Extension'
     ErfgoedObject-Minimal:
       allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
         - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedObject'
         - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedObject'
+    ErfgoedObject-Situering:
+      type: object
+      properties:
+        heeftAdres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Situering-Full'
+          readonly: true
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering).  
     Registratiekenmerken-ErfgoedObject:
       type: object
       properties:
