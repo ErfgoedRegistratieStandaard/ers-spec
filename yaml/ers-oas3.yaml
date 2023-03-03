@@ -111,6 +111,9 @@ paths:
     get:
       tags:
         - ERS
+      summary: Haalt een individueel erfgoedobject binnen de verzameling erfgoedobjecten op.
+      description: >
+        Deze operatie  haalt een individueel erfgoedobject op aan de hand van het opgegeven id. Het resultaat omvat alle kenmerken van het erfgoedobject, inclusief eventuele lokale aanvullingen. 
       operationId: Zoek_object
       parameters:
         - name: id
@@ -142,6 +145,10 @@ paths:
     get:
       tags:
         - ERS
+      summary: Haalt de verzameling deelobjecten op bij een erfgoedobject.
+      description: >
+        Deze operatie  haalt een verzameling deelobjecten op die horen bij een erfgoedobject. Het resultaat omvat alleen de registratiekenmerken en locatiekenmerken van de deelobjecten. 
+        Aanvullende informatie kan worden opgevraagd door aan de hand van het id het individuele deelobject als resource op te halen.
       operationId: Zoek_deelobjecten
       parameters:
         - name: id
@@ -173,6 +180,9 @@ paths:
     get:
       tags:
         - ERS
+      summary: Haalt een individueel deelobject bij een erfgoedobject op.
+      description: >
+        Deze operatie  haalt een individueel deelobject op aan de hand van het opgegeven deelobjectid. Het resultaat omvat alle kenmerken van het deelobject, inclusief eventuele lokale aanvullingen.
       operationId: Zoek_deelobject
       parameters:
         - name: id
@@ -201,6 +211,40 @@ paths:
             text/xml:
               schema:
                 $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+        '404':
+          description: NotFound
+        '500':
+          description: InternalServerError
+  /v1/erfgoedobjecten/{id}/omgevingen:
+    get:
+      tags:
+        - ERS
+      summary: Haalt de verzameling erfgoedomgevingen op bij een erfgoedobject.
+      description: >
+        Deze operatie  haalt een verzameling erfgoedomgevingen op die horen bij een erfgoedobject. Het resultaat omvat alle kenmerken van de erfgoedomgevingen.
+      operationId: Zoek_omgevingen
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
         '404':
           description: NotFound
         '500':
@@ -288,7 +332,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<hier de voorbeeld identifier>"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<...>"
     ErfgoedObjecten-Collectie:
       type: object
       properties:
@@ -814,6 +858,62 @@ components:
           readOnly: true
           example: [nieuwe Haagse school]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-0).
+    ErfgoedOmgevingen-Collectie:
+      type: object
+      properties:
+        currentPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 1
+        nextPage:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 2
+        pageSize:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 10
+        total:
+          format: int32
+          type: integer
+          readOnly: true
+          example: 47
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErfgoedOmgeving-Full'
+          readOnly: true
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/omgevingen"
+            prev:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "(since this is the first page, no prev link is provided)"
+                  minimum: 0
+                  maximum: 1 
+            next:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/omgevingen?page=2"
+                  minimum: 0
+                  maximum: 1
     ErfgoedOmgeving-Full:
       allOf:
         - $ref: '#/components/schemas/ErfgoedOmgeving-Minimal'
