@@ -209,17 +209,17 @@ paths:
     get:
       tags:
         - Lokaal
-      summary: Haalt een verzameling erfgoedobjecten op o.b.v. andere eigenschappen dan die in ERS.
+      summary: Haalt een verzameling erfgoedobjecten op o.b.v. een postcode. 
       description: >
-        Lokale aanvulling op /v1/erfgoedobjecten; biedt alternatieve wijze (buiten de standaard om) om erfgoedobjecten te selecteren.
+        Lokale aanvulling op /v1/erfgoedobjecten; biedt een alternatieve wijze (buiten de standaard om) om erfgoedobjecten te selecteren op postcode. NB. 'postcode' maakt geen onderdeel uit van de ERS-specificatie, maar is in dit voorbeeld beschikbaar in een lokale extensie 'Adres' die meegegeven wordt in de details van het volledige object (via /v1/erfgoedobjecten/{id}) 
       operationId: getErfgoedObjecten-localextension
       parameters:
-        - name: foobar
+        - name: postcode
           in: query
           required: false
           description: >
             Een eigenschap die niet in de standaard zit.
-          example: Baz
+          example: 3311 RR
           schema:
             type: string
       responses:
@@ -896,41 +896,17 @@ components:
       type: object
     ErfgoedObject-Extension:
       type: object
+      description: Dit is een voorbeeldextensie voor een registratie die, naast informatie conform de ERS-standaard, ook in staat is om adresinformatie bij een ErfgoedObject terug te geven.
       properties:
         adressen:
           type: array
           items:
-            $ref: '#/components/schemas/ObjectAdresModel'
-          readOnly: true
-        panden:
-          type: array
-          items:
-            $ref: '#/components/schemas/ObjectPandModel'
-          readOnly: true
-        omgevingen:
-          type: array
-          items:
-            $ref: '#/components/schemas/ObjectOmgevingModel'
-          readOnly: true
-        afbeeldingen:
-          type: array
-          items:
-            $ref: '#/components/schemas/ObjectAfbeeldingModel'
-          readOnly: true
-    ObjectAdresModel:
+            $ref: '#/components/schemas/Adres'
+          readOnly: true        
+    Adres:
       type: object
-      properties:
-        situering:
-          type: string
-          readOnly: true
-        sleutel:
-          format: int64
-          type: integer
-          readOnly: true
-        objectSleutel:
-          format: int64
-          type: integer
-          readOnly: true
+      description: Voorbeelduitwerking van een adres voor een registratie die, naast informatie conform de ERS-standaard, ook in staat is om adresinformatie bij een ErfgoedObject terug te geven.
+      properties:        
         woonplaats:
           type: string
           readOnly: true
@@ -948,69 +924,5 @@ components:
           type: string
           readOnly: true
         postcode:
-          type: string
-          readOnly: true
-    ObjectPandModel:
-      type: object
-      properties:
-        sleutel:
-          format: int64
-          type: integer
-          readOnly: true
-        status:
-          type: string
-          readOnly: true
-        bouwjaar:
-          format: int32
-          type: integer
-          readOnly: true
-    ObjectOmgevingModel:
-      type: object
-      properties:
-        versie:
-          format: int64
-          type: integer
-          readOnly: true
-        identificatie:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          readOnly: true
-        naam:
-          type: string
-          readOnly: true
-        omschrijving:
-          type: string
-          readOnly: true
-        contour:
-          type: string
-          readOnly: true
-    ObjectAfbeeldingModel:
-      type: object
-      properties:
-        Type:
-          type: string
-          readOnly: true
-        bron:
-          type: string
-          readOnly: true
-        titel:
-          type: string
-          readOnly: true
-        omschrijving:
-          type: string
-          readOnly: true
-        auteur:
-          type: string
-          readOnly: true
-        datum:
-          format: date-time
-          type: string
-          readOnly: true
-        urlThumbnail:
-          type: string
-          readOnly: true
-        urlAfbeelding:
           type: string
           readOnly: true
