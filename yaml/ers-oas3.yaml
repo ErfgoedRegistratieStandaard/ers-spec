@@ -327,6 +327,15 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718"
+           prev:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "(since this is the first page, no prev link is provided)"
+                  minimum: 0
+                  maximum: 1
             next:
               type: object
               properties:
@@ -334,6 +343,8 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718?page=2"
+                  minimum: 0
+                  maximum: 1
     ErfgoedObject-Full:
       allOf:
         - $ref: '#/components/schemas/ErfgoedObject-Minimal'
@@ -643,6 +654,15 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten"
+            prev:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "(since this is the first page, no prev link is provided)"
+                  minimum: 0
+                  maximum: 1 
             next:
               type: object
               properties:
@@ -650,6 +670,8 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten?page=2"
+                  minimum: 0
+                  maximum: 1
     ErfgoedDeelobject-Full:
       allOf:
         - $ref: '#/components/schemas/ErfgoedDeelobject-Minimal'
