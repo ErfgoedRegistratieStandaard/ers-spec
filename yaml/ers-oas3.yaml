@@ -19,7 +19,7 @@ paths:
           required: false
           description: >
             De naam van de bronhouder (gemeente) van het erfgoedobject. [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#bronhouder)
-          example: Dordrecht
+          example: Purmerend
           schema:
             type: string
         - name: heeftAdres.betreftAdres
@@ -29,7 +29,7 @@ paths:
             Het ID van het BAG-object (type: Nummeraanduiding) waar de
             erfgoedobjecten zijn gesitueerd.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftadres)
-          example: 505200000040718
+          example: 0439200000038901
           schema:
             type: string
         - name: coordinaatX
@@ -38,7 +38,7 @@ paths:
           description: >
             De x-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatY gebruikt.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
-          example: 136840.123
+          example: 124994
           schema:
             type: string
         - name: coordinaatY
@@ -47,7 +47,7 @@ paths:
           description: >
             De y-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatX gebruikt.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
-          example: 455874.123
+          example: 502685
           schema:
             type: string
         - name: straal
@@ -75,7 +75,7 @@ paths:
           description: >
             Filtert de gevonden erfgoedobjecten op de 'beschermdAls'-waarde (BeschermdeStatus).
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermdals) [Waarden](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermdestatus)
-          example: dorpsgezicht
+          example: monument
           schema:
             type: string   
         - name: themaCultuurhistorie
@@ -119,6 +119,7 @@ paths:
         - name: id
           in: path
           required: true
+          example: "0439080000001137"
           schema:
             type: string
       responses:
@@ -154,6 +155,7 @@ paths:
         - name: id
           in: path
           required: true
+          example: "0439080000001137"
           schema:
             type: string
       responses:
@@ -188,11 +190,13 @@ paths:
         - name: id
           in: path
           required: true
+          example: "0439080000001137"
           schema:
             type: string
         - name: deelobjectid
           in: path
           required: true
+          example: "0575080000001100"
           schema:
             type: string
       responses:
@@ -227,6 +231,7 @@ paths:
         - name: id
           in: path
           required: true
+          example: "0439080000001137"
           schema:
             type: string
       responses:
@@ -298,28 +303,28 @@ components:
           type: string
           readOnly: true
           description: De (lokale) identifier conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
-          example: <hier nog een voorbeeld opnemen>
+          example: 0439080000001137 (ErfgoedObject), 0575080000001100 (ErfgoedDeelobject), 0439080000511327 (ErfgoedOmgeving)
         versie:
           type: integer
           readOnly: true
           description: Het versienummer conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
-          example: 2
+          example: 1
         bronhouder:
           type: string
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bronhouder)
-          example: Dordrecht
+          example: Purmerend
         tijdstipRegistratie:
           format: date-time
           type: string
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#tijdstipregistratie).
-          example: 2022-03-04T11:53:00
+          example: 2022-03-04T11:53:00Z
           readOnly: true
         eindRegistratie:
           format: date-time
           type: string
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#eindregistratie).
-          example: 2022-09-02T17:12:00
+          example: 2022-09-02T17:12:00Z
           readOnly: true
           minimum: 0
           maximum: 1
@@ -431,6 +436,7 @@ components:
           format: date
           type: string
           readOnly: true
+          example: 2023-04-01
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datuminprocedure).
           minimum: 0
           maximum: 1
@@ -438,6 +444,7 @@ components:
           format: date
           type: string
           readOnly: true
+          example: 2023-04-02
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumaanwijzing).
           minimum: 0
           maximum: 1
@@ -445,6 +452,7 @@ components:
           format: date
           type: string
           readOnly: true
+          example: 2023-04-02
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumnietaanwijzen).
           minimum: 0
           maximum: 1
@@ -452,23 +460,26 @@ components:
           format: date
           type: string
           readOnly: true
+          example: 2023-04-02
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumafvoeren).
           minimum: 0
           maximum: 1
         toelichtingProcedure:
           type: string
           readOnly: true
+          example: monument is niet aangewezen omdat...
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingprocedure).
           minimum: 0
           maximum: 1
         grondslag:
           type: integer
           readOnly: true
+          example: 123
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#grondslag).
         monumentnummer:
           type: integer
           readOnly: true
-          example: 9121794
+          example: GM012
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#monumentnummer).
         inOnderzoek:
           type: boolean
@@ -488,36 +499,36 @@ components:
         contour:
           type: string
           readOnly: true
-          example: <tbd>
+          example: POLYGON ((124987.048 502684.176,124982.958 502686.706,124987.587 502694.191,125003.921 502684.033,124987.048 502684.176))
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour).
         bronContour:
           type: string
           readOnly: true
-          example: <tbd>
+          example: GEM
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour).
         puntCoordinaten:
           type: string
           readOnly: true
-          example: <tbd>
+          example: POINT (124994 502685)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten).
         betreftPand:
           type: array
           items:
             type: string
           readOnly: true
-          example: <tbd>
+          example: [0439100000010010]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand).
         betreftBGT:
           type: array
           items:
             type: string
           readOnly: true
-          example: <tbd>
+          example: [G1023.b2ad189a-8c46-49f2-a192-557ba07c49a2]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt).
         toelichtingAdressering:
           type: string
           readOnly: true
-          example: <tbd>
+          example: voorheen nr 20
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingadressering).
           minimum: 0
           maximum: 1
@@ -528,81 +539,81 @@ components:
           type: string
           format: date-fullyear
           readOnly: true
-          example: 1902
+          example: 1850
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin).
         jaarEind:
           type: string
           format: date-fullyear
           readOnly: true
-          example: 1967
+          example: 1980
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind).
           minimum: 0
           maximum: 1 
         annotatieJaarBegin:    
           type: string
           readOnly: true
-          example: <tbd>
+          example: vanaf (binnen 25 jaar)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin).
           minimum: 0
           maximum: 1
         annotatieJaarEind:
           type: string
           readOnly: true
-          example: <tbd>
+          example: circa
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind).
           minimum: 0
           maximum: 1 
         naam:
           type: string
           readOnly: true
-          example: <tbd>
+          example: De Purmer
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam).
           minimum: 0
           maximum: 1
         toelichtingWaarde:
           type: string
           readOnly: true
-          example: <tbd>
+          example: De voormalige smederij met bovenwoning is van algemeen belang vanwege de cultuurhistorische waarde, de stedenbouwkundige waarde en de architectuurhistorische waarde.
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingwaarde).
           minimum: 0
           maximum: 1
         beschrijving:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Het voormalige kaaspakhuis dateert uit het derde kwart van de 19e eeuw. Aan de metalen duimen aan beide kanten van de vensters is nog goed te zien dat er ooit luiken hingen.
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving).
           minimum: 0
           maximum: 1
         aanwezig:
           type: string
           readOnly: true
-          example: <tbd>
+          example: intact
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig).
         verwachteBouwhistWaarde:
-          type: string
+          type: boolean
           readOnly: true
-          example: <tbd>
+          example: false
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#verwachtebouwhistwaarde).
           minimum: 0
           maximum: 1
         architectOntwerp:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Jan Stuyt
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp).
           minimum: 0
           maximum: 1
         opdrachtgeverBouw:
           type: string
           readOnly: true
-          example: Boerenleenbank
+          example: Vereniging voor Volkshuisvesting "Alkmaar" (VVVA)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw).
           minimum: 0
           maximum: 1
         uitvoerendKunstenaar:
           type: string
           readOnly: true
-          example: Albert van Essen
+          example: Leopold Bernstamm, Rusland (beeldhouwer)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar).
           minimum: 0
           maximum: 1
@@ -611,52 +622,52 @@ components:
           items:
             type: string
           readOnly: true
-          example: [bankgebouw]
+          example: [poldermolen]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie).
         gebouwtype:
           type: array
           items:
             type: string
           readOnly: true
-          example: [polderhuis, villa]
+          example: [wipmolen]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype).
         bouwstijl:
           type: array
           items:
             type: string
           readOnly: true
-          example: [nieuwe Haagse school]
+          example: [eclecticisme]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl).
         themaCultuurhistorie:
           type: string
           readOnly: true
-          example: landbouw en bosbouw
+          example: handel en administratie
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
         fysischLandschap:
           type: string
           readOnly: true
-          example: veenlandschap
+          example: stuwwallandschap
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischlandschap).
           minimum: 0
           maximum: 1
         fysischDeelLandschap:
           type: string
           readOnly: true
-          example: kom
+          example: stuwwal
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischdeellandschap).
           minimum: 0
           maximum: 1
         ontginning:
           type: string
           readOnly: true
-          example: niet-ontgonnen landschappen
+          example: jonge heide- en broekontginningen
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#ontginning).
           minimum: 0
           maximum: 1
         cultuurLandschap:
           type: string
           readOnly: true
-          example: veenkoloniaal landschap
+          example: heideveld
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#cultuurlandschap).
           minimum: 0
           maximum: 1
@@ -732,7 +743,7 @@ components:
         type:
           type: string
           readOnly: true
-          example: pand(en)
+          example: bouwwerk
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-1).
     LocatiekenmerkenErfgoedDeelobject:
       type: object
@@ -740,31 +751,31 @@ components:
         contour:
           type: string
           readOnly: true
-          example: <tbd>
+          example: POLYGON ((91270.358 472652.492, 91268.347 472654.273, 91268.201 472654.108, 91268.036 472654.254, 91267.02 472653.106, 91262.893 472656.76, 91263.909 472657.908, 91263.744 472658.054, 91263.89 472658.219, 91261.602 472660.245, 91261.668 472660.32, 91259.793 472661.98, 91263.346 472665.995, 91265.222 472664.334, 91265.289 472664.409, 91267.577 472662.383, 91267.724 472662.548, 91267.889 472662.402, 91268.905 472663.55, 91273.032 472659.897, 91272.016 472658.749, 91272.181 472658.602, 91272.035 472658.437, 91274.046 472656.657, 91274.112 472656.732, 91274.45 472656.433, 91274.151 472656.095, 91274.076 472656.162, 91273.491 472655.501, 91274.654 472654.471, 91274.721 472654.546, 91274.968 472654.327, 91274.756 472654.087, 91274.681 472654.154, 91272.927 472652.173, 91273.002 472652.106, 91272.782 472651.858, 91272.535 472652.078, 91272.601 472652.153, 91271.438 472653.183, 91270.854 472652.522, 91270.929 472652.456, 91270.63 472652.118, 91270.292 472652.417, 91270.358 472652.492))
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour-1).
         bronContour:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Cultuurhistorische waardenkaart Noordwijk
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#broncontour-0).
         puntCoordinaten:
           type: string
           readOnly: true
-          example: <tbd>
+          example: POINT (91267.92 472658.281)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten-0).
         betreftPand:
           type: array
           items:
             type: string
           readOnly: true
-          example: <tbd>
+          example: [0575100000055825]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftpand-0).
         betreftBGT:
           type: array
           items:
             type: string
           readOnly: true
-          example: <tbd>
+          example: [G1023.b2ad189a-8c46-49f2-a192-557ba07c49a2]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-0).
     WaardekenmerkenErfgoedDeelobject:
       type: object
@@ -773,67 +784,67 @@ components:
           type: string
           format: date-fullyear
           readOnly: true
-          example: 1902
+          example: 1850
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin-0).
         jaarEind:
           type: string
           format: date-fullyear
           readOnly: true
-          example: 1967
+          example: 1980
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind-0).
           minimum: 0
           maximum: 1  
         annotatieJaarBegin:
           type: string
           readOnly: true
-          example: <tbd>
+          example: vanaf (binnen 25 jaar)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaarbegin-0).
           minimum: 0
           maximum: 1  
         annotatieJaarEind:
           type: string
           readOnly: true
-          example: <tbd>
+          example: circa
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#annotatiejaareind-0).
           minimum: 0
           maximum: 1   
         naam:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Mariakapel
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam-1).
           minimum: 0
           maximum: 1  
         beschrijving:
           type: string
           readOnly: true
-          example: <tbd>
+          example: De rouwkapel is een belangrijk element op de begraafplaats uit de 19e en 20e eeuw. De kapel werd gebruikt voor het opbaren van overledenen, het houden van diensten bij ter aarde bestellingen en als plek voor gebed.
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-1).
           minimum: 0
           maximum: 1   
         aanwezig:
           type: string
           readOnly: true
-          example: <tbd>
+          example: deels intact
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig-0).
         architectOntwerp:
           type: string
           readOnly: true
-          example: <tbd>
+          example: C. Alkemade
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#architectontwerp-0).
           minimum: 0
           maximum: 1  
         opdrachtgeverBouw:
           type: string
           readOnly: true
-          example: Boerenleenbank
+          example: Vereniging voor Volkshuisvesting "Alkmaar" (VVVA)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#opdrachtgeverbouw-0).
           minimum: 0
           maximum: 1  
         uitvoerendKunstenaar:
           type: string
           readOnly: true
-          example: Albert van Essen
+          example: Leopold Bernstamm, Rusland (beeldhouwer)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#uitvoerenkunstenaar-0).
           minimum: 0
           maximum: 1  
@@ -842,21 +853,21 @@ components:
           items:
             type: string
           readOnly: true
-          example: [bankgebouw]
+          example: [kapel]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#oorspronkelijkefunctie-0).
         gebouwtype:
           type: array
           items:
             type: string
           readOnly: true
-          example: [polderhuis, villa]
+          example: [wipmolen]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#gebouwtype-0).
         bouwstijl:
           type: array
           items:
             type: string
           readOnly: true
-          example: [nieuwe Haagse school]
+          example: [classicisme]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-0).
     ErfgoedOmgevingenCollectie:
       type: object
@@ -937,7 +948,7 @@ components:
         contour:
           type: string
           readOnly: true
-          example: <tbd>
+          example: POLYGON ((125277.788 502476.424,125284.799 502472.028,125283.229 502469.527,125269.513 502447.674,125269.112 502447.914,125262.355 502451.782,125277.788 502476.424))
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour-0).
           minimum: 0
           maximum: 1
@@ -947,14 +958,14 @@ components:
         naam:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Boschrijk 
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#naam-0).
           minimum: 0
           maximum: 1  
         beschrijving:
           type: string
           readOnly: true
-          example: <tbd>
+          example: Uit vijf onderdelen bestaand complex van voormalig POLDERHUIS, met DIENSTWONING en SCHUUR, gesitueerd aan de voet van de Noorddijk (Beemsterzijde). De aaneengebouwde objecten werden vermoedelijk gebouwd rond 1850. De schuur is mogelijk ouder. Het polderhuis wordt vanaf de dijk bereikt via een gietijzeren STEEKTRAP. De voortuinen van polderhuis en dienstwoning worden door een ijzeren SPIJLENHEK van de openbare weg gescheiden.
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-0).
           minimum: 0
           maximum: 1 
@@ -979,13 +990,14 @@ components:
         situering:
           type: string
           readOnly: true
-          example: achter
+          example: bij
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#situering).
           minimum: 0
           maximum: 1 
         betreftAdres:
           type: string
           readOnly: true
+          example: 0439200000038901
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftadres).
            
 #-------------------------------
@@ -1010,13 +1022,16 @@ components:
         woonplaats:
           type: string
           readOnly: true
+          example: Purmerend
         straat:
           type: string
           readOnly: true
+          example: Gedempte Singelgracht
         huisNummer:
           format: int32
           type: integer
           readOnly: true
+          example: 18
         huisLetter:
           type: string
           readOnly: true
@@ -1026,3 +1041,4 @@ components:
         postcode:
           type: string
           readOnly: true
+          example: 1441 AP
