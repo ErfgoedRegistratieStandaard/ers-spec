@@ -142,7 +142,7 @@ paths:
           description: NotFound
         '500':
           description: InternalServerError
-  /v1/erfgoedobjecten/{id}/deelobjecten:
+  /v1/erfgoeddeelobjecten:
     get:
       tags:
         - ERS
@@ -152,8 +152,8 @@ paths:
         Aanvullende informatie kan worden opgevraagd door aan de hand van het id het individuele deelobject als resource op te halen.
       operationId: Zoek_deelobjecten
       parameters:
-        - name: id
-          in: path
+        - name: erfgoedobjectid
+          in: query
           required: true
           example: "0439080000001137"
           schema:
@@ -177,49 +177,8 @@ paths:
         '404':
           description: NotFound
         '500':
-          description: InternalServerError
-  /v1/erfgoedobject/{id}/deelobjecten/{deelobjectid}:
-    get:
-      tags:
-        - ERS
-      summary: Haalt een individueel deelobject bij een erfgoedobject op.
-      description: >
-        Deze operatie  haalt een individueel deelobject op aan de hand van het opgegeven deelobjectid. Het resultaat omvat alle kenmerken van het deelobject, inclusief eventuele lokale aanvullingen.
-      operationId: Zoek_deelobject
-      parameters:
-        - name: id
-          in: path
-          required: true
-          example: "0439080000001137"
-          schema:
-            type: string
-        - name: deelobjectid
-          in: path
-          required: true
-          example: "0575080000001100"
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject'
-        '404':
-          description: NotFound
-        '500':
-          description: InternalServerError
-  /v1/erfgoedobjecten/{id}/omgevingen:
+          description: InternalServerError 
+  /v1/erfgoedomgevingen:
     get:
       tags:
         - ERS
@@ -228,8 +187,8 @@ paths:
         Deze operatie  haalt een verzameling erfgoedomgevingen op die horen bij een erfgoedobject. Het resultaat omvat alle kenmerken van de erfgoedomgevingen.
       operationId: Zoek_omgevingen
       parameters:
-        - name: id
-          in: path
+        - name: erfgoedobjectid
+          in: query
           required: true
           example: "0439080000001137"
           schema:
@@ -697,7 +656,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/ErfgoedDeelobjectBasis'
+            $ref: '#/components/schemas/ErfgoedDeelobject'
           readOnly: true
         _links:
           type: object
@@ -729,14 +688,11 @@ components:
                   maximum: 1
     ErfgoedDeelobject:
       allOf:
-        - $ref: '#/components/schemas/ErfgoedDeelobjectBasis'
-        - $ref: '#/components/schemas/WaardekenmerkenErfgoedDeelobject'
-        - $ref: '#/components/schemas/ErfgoedDeelobjectExtensie'
-    ErfgoedDeelobjectBasis:
-      allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedDeelobject'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedDeelobject'
+        - $ref: '#/components/schemas/WaardekenmerkenErfgoedDeelobject'
+        - $ref: '#/components/schemas/ErfgoedDeelobjectExtensie'
     RegistratiekenmerkenErfgoedDeelobject:
       type: object
       properties:
@@ -927,13 +883,10 @@ components:
                   maximum: 1
     ErfgoedOmgeving:
       allOf:
-        - $ref: '#/components/schemas/ErfgoedOmgevingBasis'
-        - $ref: '#/components/schemas/WaardekenmerkenErfgoedOmgeving'
-    ErfgoedOmgevingBasis:
-      allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedOmgeving'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedOmgeving'
+        - $ref: '#/components/schemas/WaardekenmerkenErfgoedOmgeving'
     RegistratiekenmerkenErfgoedOmgeving:
       type: object
       properties:
