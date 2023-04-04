@@ -436,6 +436,19 @@
 | **Authentiek** | Overig |
 | **Mogelijk geen waarde** | Ja |
 
+#### themaCultuurhistorie
+| **Attribuutsoort-eigenschap** | **Waarde** |
+| ---- | ---- |
+| **Naam** | themaCultuurhistorie |
+| **Herkomst** | ERS |
+| **Definitie** | categorisering van de oorspronkelijke functie in relatie tot maatschappelijk gebruik en ruimtelijke situering. |
+| **Herkomst definitie** | ERS |
+| **Toelichting** | indeling naar thema's ten behoeve van de presentatie van Erfgoedobjecten in herkenbare maatschappelijke thematiek en bijbehorende cultuurhistorische verhalen. |
+| **Datum opname** | 20221006 |
+| **Indicatie formele historie** | Ja |
+| **Authentiek** | Overig |
+| **Mogelijk geen waarde** | Ja |
+
 #### fysischLandschap
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
@@ -461,19 +474,6 @@
 | **Indicatie formele historie** | Ja |
 | **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-
-#### themaCultuurhistorie
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | themaCultuurhistorie |
-| **Herkomst** | ERS |
-| **Definitie** | categorisering van de oorspronkelijke functie in relatie tot maatschappelijk gebruik en ruimtelijke situering. |
-| **Herkomst definitie** | ERS |
-| **Toelichting** | indeling naar thema's ten behoeve van de presentatie van Erfgoedobjecten in herkenbare maatschappelijke thematiek en bijbehorende cultuurhistorische verhalen. |
-| **Datum opname** | 20221006 |
-| **Indicatie formele historie** | Ja |
-| **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### ontginning
 | **Attribuutsoort-eigenschap** | **Waarde** |

@@ -627,6 +627,11 @@ components:
           readOnly: true
           example: [nieuwe Haagse school]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl).
+        themaCultuurhistorie:
+          type: string
+          readOnly: true
+          example: landbouw en bosbouw
+          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
         fysischLandschap:
           type: string
           readOnly: true
@@ -641,11 +646,6 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#fysischdeellandschap).
           minimum: 0
           maximum: 1
-        themaCultuurhistorie:
-          type: string
-          readOnly: true
-          example: landbouw en bosbouw
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#themacultuurhistorie).
         ontginning:
           type: string
           readOnly: true
