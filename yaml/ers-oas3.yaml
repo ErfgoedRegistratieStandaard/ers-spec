@@ -268,7 +268,7 @@ paths:
           required: false
           description: >
             Een eigenschap die niet in de standaard zit.
-          example: 3311 RR
+          example: 1441AP
           schema:
             type: string
       responses:
@@ -1041,4 +1041,4 @@ components:
         postcode:
           type: string
           readOnly: true
-          example: 1441 AP
+          example: 1441AP
