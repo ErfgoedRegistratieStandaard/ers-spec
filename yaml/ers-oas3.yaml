@@ -258,10 +258,10 @@ components:
       type: object
       description: Objecttype IM_ERS_Object<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object)
       properties:
-        identificatie:
+        lokaalID:
           type: string
           readOnly: true
-          description: De (lokale) identifier conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
+          description: De (lokale) identifier conform NEN 3610, zonder namespace en/of versie.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
           example: 0439080000001137 (ErfgoedObject), 0575080000001100 (ErfgoedDeelobject), 0439080000511327 (ErfgoedOmgeving)
         versie:
           type: integer
@@ -289,6 +289,7 @@ components:
           maximum: 1
     ErfgoedObjectenCollectie:
       type: object
+      description: Een verzameling erfgoedobjecten. Het resultaat omvat alleen de registratiekenmerken en locatiekenmerken van de erfgoedobjecten (ErfgoedObjectBasis).
       properties:
         currentPage:
           format: int32
@@ -349,11 +350,13 @@ components:
         - $ref: '#/components/schemas/WaardekenmerkenErfgoedObject'
         - $ref: '#/components/schemas/ErfgoedObjectSituering'
         - $ref: '#/components/schemas/ErfgoedObjectExtensie'
+      description: Objecttype ErfgoedObject<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoedobject)
     ErfgoedObjectBasis:
       allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedObject'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedObject'
+      description: Objecttype ErfgoedObject; omvat alleen de registratiekenmerken en locatiekenmerken<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoedobject)
       properties:
         _links:
           type: object
@@ -367,15 +370,16 @@ components:
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/0439080000001137"
     ErfgoedObjectSituering:
       type: object
+      description: Situering van een ErfgoedObject<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering)
       properties:
         heeftAdres:
           type: array
           items:
             $ref: '#/components/schemas/Situering'
-          readonly: true
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering).  
+          readonly: true 
     RegistratiekenmerkenErfgoedObject:
       type: object
+      description: De registratiekenmerken van een ErfgoedObject.
       properties:
         aardRegistratie:
           type: string
@@ -455,6 +459,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type).
     LocatiekenmerkenErfgoedObject:
       type: object
+      description: De locatiekenmerken van een ErfgoedObject.
       properties:
         contour:
           type: string
@@ -494,6 +499,7 @@ components:
           maximum: 1
     WaardekenmerkenErfgoedObject:
       type: object
+      description: De waardekenmerken van een ErfgoedObject.
       properties:
         jaarBegin:
           type: string
@@ -633,6 +639,7 @@ components:
           maximum: 1
     ErfgoedDeelobjectenCollectie:
       type: object
+      description: Een verzameling ErfgoedDeelobjecten.
       properties:
         currentPage:
           format: int32
@@ -694,8 +701,10 @@ components:
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedDeelobject'
         - $ref: '#/components/schemas/WaardekenmerkenErfgoedDeelobject'
         - $ref: '#/components/schemas/ErfgoedDeelobjectExtensie'
+      description: Objecttype ErfgoedDeelObject. <br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoeddeelobject)
     RegistratiekenmerkenErfgoedDeelobject:
       type: object
+      description: De registratiekenmerken van een ErfgoedDeelobject.
       properties:
         type:
           type: string
@@ -704,6 +713,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-1).
     LocatiekenmerkenErfgoedDeelobject:
       type: object
+      description: De locatiekenmerken van een ErfgoedDeelobject.
       properties:
         contour:
           type: string
@@ -736,6 +746,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-0).
     WaardekenmerkenErfgoedDeelobject:
       type: object
+      description: De waardekenmerken van een ErfgoedDeelobject.
       properties:
         jaarBegin:
           type: string
@@ -828,6 +839,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-0).
     ErfgoedOmgevingenCollectie:
       type: object
+      description: Een verzameling ErfgoedOmgevingen.
       properties:
         currentPage:
           format: int32
@@ -888,8 +900,11 @@ components:
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedOmgeving'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedOmgeving'
         - $ref: '#/components/schemas/WaardekenmerkenErfgoedOmgeving'
+        - $ref: '#/components/schemas/ErfgoedOmgevingExtensie'
+      description: Objecttype ErfgoedOmgeving<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoedomgeving)
     RegistratiekenmerkenErfgoedOmgeving:
       type: object
+      description: De registratiekenmerken van een ErfgoedOmgeving.
       properties:
         type:
           type: string
@@ -898,6 +913,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-0).
     LocatiekenmerkenErfgoedOmgeving:
      type: object
+     description: De locatiekenmerken van een ErfgoedOmgeving.
      properties:
         contour:
           type: string
@@ -908,6 +924,7 @@ components:
           maximum: 1
     WaardekenmerkenErfgoedOmgeving:
      type: object
+     description: De waardekenmerken van een ErfgoedOmgeving.
      properties:
         naam:
           type: string
@@ -925,13 +942,13 @@ components:
           maximum: 1 
     Situering:
       allOf:
-        - $ref: '#/components/schemas/SitueringBasis'
-    SitueringBasis:
-      allOf:
         - $ref: '#/components/schemas/RegistratiekenmerkenSituering'
         - $ref: '#/components/schemas/LocatiekenmerkenSituering'
+        - $ref: '#/components/schemas/SitueringExtensie'
+      description: Objecttype Situering<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering)
     RegistratiekenmerkenSituering:
       type: object
+      description: De registratiekenmerken van een Situering.
       properties:
         identificatie:
           type: integer
@@ -940,6 +957,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie-0).
     LocatiekenmerkenSituering:
      type: object
+     description: De locatiekenmerken van een Situering.
      properties:
         situering:
           type: string
@@ -958,8 +976,15 @@ components:
 # Anything below this line may be 
 # extended by an implementor
 #-------------------------------
+    ErfgoedOmgevingExtensie:
+      type: object
+      description: Extensieblok waarmee een lokale uitbreiding van een ErfgoedOmgeving kan worden gespecificeerd. Zie de voorbeelduitwerking van de ErfgoedObjectExtensie voor een illustratie van een mogelijke toepassing.
+    SitueringExtensie:
+      type: object
+      description: Extensieblok waarmee een lokale uitbreiding van een Situering kan worden gespecificeerd. Zie de voorbeelduitwerking van de ErfgoedObjectExtensie voor een illustratie van een mogelijke toepassing.
     ErfgoedDeelobjectExtensie:
       type: object
+      description: Extensieblok waarmee een lokale uitbreiding van een ErfgoedDeelobject kan worden gespecificeerd. Zie de voorbeelduitwerking van de ErfgoedObjectExtensie voor een illustratie van een mogelijke toepassing.
     ErfgoedObjectExtensie:
       type: object
       description: Dit is een voorbeeldextensie voor een registratie die, naast informatie conform de ERS-standaard, ook in staat is om adresinformatie bij een ErfgoedObject terug te geven.
