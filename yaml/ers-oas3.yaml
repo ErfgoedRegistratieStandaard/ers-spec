@@ -287,16 +287,6 @@ components:
           readOnly: true
           minimum: 0
           maximum: 1
-        _links:
-          type: object
-          properties:
-            self:
-              type: object
-              properties:
-                href: 
-                  type: string
-                  readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<...>"
     ErfgoedObjectenCollectie:
       type: object
       properties:
@@ -364,6 +354,17 @@ components:
         - $ref: '#/components/schemas/IM-ERS-Object'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedObject'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedObject'
+      properties:
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href: 
+                  type: string
+                  readOnly: true
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/0439080000001137"
     ErfgoedObjectSituering:
       type: object
       properties:
@@ -667,7 +668,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoeddeelobjecten?erfgoedobjectid=0439080000001137"
             prev:
               type: object
               properties:
@@ -683,7 +684,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten?page=2"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoeddeelobjecten?erfgoedobjectid=0439080000001137&page=2"
                   minimum: 0
                   maximum: 1
     ErfgoedDeelobject:
@@ -862,7 +863,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/omgevingen"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedomgevingen?erfgoedobjectid=0439080000001137"
             prev:
               type: object
               properties:
@@ -878,7 +879,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/omgevingen?page=2"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedomgevingen?erfgoedobjectid=0439080000001137&page=2"
                   minimum: 0
                   maximum: 1
     ErfgoedOmgeving:
