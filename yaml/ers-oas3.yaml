@@ -942,19 +942,9 @@ components:
           maximum: 1 
     Situering:
       allOf:
-        - $ref: '#/components/schemas/RegistratiekenmerkenSituering'
         - $ref: '#/components/schemas/LocatiekenmerkenSituering'
         - $ref: '#/components/schemas/SitueringExtensie'
       description: Objecttype Situering<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering)
-    RegistratiekenmerkenSituering:
-      type: object
-      description: De registratiekenmerken van een Situering.
-      properties:
-        identificatie:
-          type: integer
-          readOnly: true
-          example: <tbd>
-          description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie-0).
     LocatiekenmerkenSituering:
      type: object
      description: De locatiekenmerken van een Situering.

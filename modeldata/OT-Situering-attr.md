@@ -1,16 +1,4 @@
 ﻿### Attribuutsoorten
-#### identificatie
-| **Attribuutsoort-eigenschap** | **Waarde** |
-| ---- | ---- |
-| **Naam** | identificatie |
-| **Herkomst** | ERS |
-| **Definitie** | Identificerende sleutel |
-| **Herkomst definitie** | ERS |
-| **Toelichting** |  |
-| **Datum opname** | 20191001 |
-| **Authentiek** | Overig |
-| **Identificerend** | Ja |
-
 #### situering
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
