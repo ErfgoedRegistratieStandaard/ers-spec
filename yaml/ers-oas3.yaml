@@ -22,14 +22,14 @@ paths:
           example: Purmerend
           schema:
             type: string
-        - name: heeftAdres.betreftAdres
+        - name: betreftAdres
           in: query
           required: false
           description: >
             Het ID van het BAG-object (type: Nummeraanduiding) waar de
             erfgoedobjecten zijn gesitueerd.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftadres)
-          example: 0439200000038901
+          example: "0439200000038901"
           schema:
             type: string
         - name: coordinaatX
@@ -375,7 +375,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?betreftAdres=0439200000038901"
             prev:
               type: object
               properties:
@@ -391,7 +391,7 @@ components:
                 href: 
                   type: string
                   readOnly: true
-                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718?page=2"
+                  example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?betreftAdres=0439200000038901?page=2"
                   minimum: 0
                   maximum: 1
     ErfgoedObject:
