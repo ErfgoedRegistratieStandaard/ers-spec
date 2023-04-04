@@ -93,16 +93,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
         '404':
           description: NotFound
         '500':
@@ -127,16 +127,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObject-Full'
+                $ref: '#/components/schemas/ErfgoedObject'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObject-Full'
+                $ref: '#/components/schemas/ErfgoedObject'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObject-Full'
+                $ref: '#/components/schemas/ErfgoedObject'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObject-Full'
+                $ref: '#/components/schemas/ErfgoedObject'
         '404':
           description: NotFound
         '500':
@@ -162,16 +162,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedDeelobjectenCollectie'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedDeelobjectenCollectie'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedDeelobjectenCollectie'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedDeelobjectenCollectie'
         '404':
           description: NotFound
         '500':
@@ -201,16 +201,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+                $ref: '#/components/schemas/ErfgoedDeelobject'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+                $ref: '#/components/schemas/ErfgoedDeelobject'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+                $ref: '#/components/schemas/ErfgoedDeelobject'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedDeelobject-Full'
+                $ref: '#/components/schemas/ErfgoedDeelobject'
         '404':
           description: NotFound
         '500':
@@ -235,16 +235,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+                $ref: '#/components/schemas/ErfgoedOmgevingenCollectie'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+                $ref: '#/components/schemas/ErfgoedOmgevingenCollectie'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+                $ref: '#/components/schemas/ErfgoedOmgevingenCollectie'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedOmgevingen-Collectie'
+                $ref: '#/components/schemas/ErfgoedOmgevingenCollectie'
         '404':
           description: NotFound
         '500':
@@ -272,16 +272,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             text/json:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
             text/xml:
               schema:
-                $ref: '#/components/schemas/ErfgoedObjecten-Collectie'
+                $ref: '#/components/schemas/ErfgoedObjectenCollectie'
         '404':
           description: NotFound
         '500':
@@ -333,7 +333,7 @@ components:
                   type: string
                   readOnly: true
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<...>"
-    ErfgoedObjecten-Collectie:
+    ErfgoedObjectenCollectie:
       type: object
       properties:
         currentPage:
@@ -359,7 +359,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/ErfgoedObject-Minimal'
+            $ref: '#/components/schemas/ErfgoedObjectBasis'
           readOnly: true
         _links:
           type: object
@@ -389,27 +389,27 @@ components:
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten?situering.betreftAdres=505200000040718?page=2"
                   minimum: 0
                   maximum: 1
-    ErfgoedObject-Full:
+    ErfgoedObject:
       allOf:
-        - $ref: '#/components/schemas/ErfgoedObject-Minimal'
-        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedObject'
-        - $ref: '#/components/schemas/ErfgoedObject-Situering'
-        - $ref: '#/components/schemas/ErfgoedObject-Extension'
-    ErfgoedObject-Minimal:
+        - $ref: '#/components/schemas/ErfgoedObjectBasis'
+        - $ref: '#/components/schemas/WaardekenmerkenErfgoedObject'
+        - $ref: '#/components/schemas/ErfgoedObjectSituering'
+        - $ref: '#/components/schemas/ErfgoedObjectExtensie'
+    ErfgoedObjectBasis:
       allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
-        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedObject'
-        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedObject'
-    ErfgoedObject-Situering:
+        - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedObject'
+        - $ref: '#/components/schemas/LocatiekenmerkenErfgoedObject'
+    ErfgoedObjectSituering:
       type: object
       properties:
         heeftAdres:
           type: array
           items:
-            $ref: '#/components/schemas/Situering-Full'
+            $ref: '#/components/schemas/Situering'
           readonly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-situering).  
-    Registratiekenmerken-ErfgoedObject:
+    RegistratiekenmerkenErfgoedObject:
       type: object
       properties:
         aardRegistratie:
@@ -482,7 +482,7 @@ components:
           readOnly: true
           example: pand(en)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type).
-    Locatiekenmerken-ErfgoedObject:
+    LocatiekenmerkenErfgoedObject:
       type: object
       properties:
         contour:
@@ -521,7 +521,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#toelichtingadressering).
           minimum: 0
           maximum: 1
-    Waardekenmerken-ErfgoedObject:
+    WaardekenmerkenErfgoedObject:
       type: object
       properties:
         jaarBegin:
@@ -660,7 +660,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#cultuurlandschap).
           minimum: 0
           maximum: 1
-    ErfgoedDeelobjecten-Collectie:
+    ErfgoedDeelobjectenCollectie:
       type: object
       properties:
         currentPage:
@@ -686,7 +686,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/ErfgoedDeelobject-Minimal'
+            $ref: '#/components/schemas/ErfgoedDeelobjectBasis'
           readOnly: true
         _links:
           type: object
@@ -716,17 +716,17 @@ components:
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/deelobjecten?page=2"
                   minimum: 0
                   maximum: 1
-    ErfgoedDeelobject-Full:
+    ErfgoedDeelobject:
       allOf:
-        - $ref: '#/components/schemas/ErfgoedDeelobject-Minimal'
-        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedDeelobject'
-        - $ref: '#/components/schemas/ErfgoedDeelobject-Extension'
-    ErfgoedDeelobject-Minimal:
+        - $ref: '#/components/schemas/ErfgoedDeelobjectBasis'
+        - $ref: '#/components/schemas/WaardekenmerkenErfgoedDeelobject'
+        - $ref: '#/components/schemas/ErfgoedDeelobjectExtensie'
+    ErfgoedDeelobjectBasis:
       allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
-        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedDeelobject'
-        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedDeelobject'
-    Registratiekenmerken-ErfgoedDeelobject:
+        - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedDeelobject'
+        - $ref: '#/components/schemas/LocatiekenmerkenErfgoedDeelobject'
+    RegistratiekenmerkenErfgoedDeelobject:
       type: object
       properties:
         type:
@@ -734,7 +734,7 @@ components:
           readOnly: true
           example: pand(en)
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-1).
-    Locatiekenmerken-ErfgoedDeelobject:
+    LocatiekenmerkenErfgoedDeelobject:
       type: object
       properties:
         contour:
@@ -766,7 +766,7 @@ components:
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#betreftbgt-0).
-    Waardekenmerken-ErfgoedDeelobject:
+    WaardekenmerkenErfgoedDeelobject:
       type: object
       properties:
         jaarBegin:
@@ -858,7 +858,7 @@ components:
           readOnly: true
           example: [nieuwe Haagse school]
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#bouwstijl-0).
-    ErfgoedOmgevingen-Collectie:
+    ErfgoedOmgevingenCollectie:
       type: object
       properties:
         currentPage:
@@ -884,7 +884,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/ErfgoedOmgeving-Full'
+            $ref: '#/components/schemas/ErfgoedOmgeving'
           readOnly: true
         _links:
           type: object
@@ -914,16 +914,16 @@ components:
                   example: "https://api.erfgoedregistratie.nl/v1/erfgoedobjecten/<voorbeeldID>/omgevingen?page=2"
                   minimum: 0
                   maximum: 1
-    ErfgoedOmgeving-Full:
+    ErfgoedOmgeving:
       allOf:
-        - $ref: '#/components/schemas/ErfgoedOmgeving-Minimal'
-        - $ref: '#/components/schemas/Waardekenmerken-ErfgoedOmgeving'
-    ErfgoedOmgeving-Minimal:
+        - $ref: '#/components/schemas/ErfgoedOmgevingBasis'
+        - $ref: '#/components/schemas/WaardekenmerkenErfgoedOmgeving'
+    ErfgoedOmgevingBasis:
       allOf:
         - $ref: '#/components/schemas/IM-ERS-Object'
-        - $ref: '#/components/schemas/Registratiekenmerken-ErfgoedOmgeving'
-        - $ref: '#/components/schemas/Locatiekenmerken-ErfgoedOmgeving'
-    Registratiekenmerken-ErfgoedOmgeving:
+        - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedOmgeving'
+        - $ref: '#/components/schemas/LocatiekenmerkenErfgoedOmgeving'
+    RegistratiekenmerkenErfgoedOmgeving:
       type: object
       properties:
         type:
@@ -931,7 +931,7 @@ components:
           readOnly: true
           example: complex
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#type-0).
-    Locatiekenmerken-ErfgoedOmgeving:
+    LocatiekenmerkenErfgoedOmgeving:
      type: object
      properties:
         contour:
@@ -941,7 +941,7 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#contour-0).
           minimum: 0
           maximum: 1
-    Waardekenmerken-ErfgoedOmgeving:
+    WaardekenmerkenErfgoedOmgeving:
      type: object
      properties:
         naam:
@@ -958,14 +958,14 @@ components:
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschrijving-0).
           minimum: 0
           maximum: 1 
-    Situering-Full:
+    Situering:
       allOf:
-        - $ref: '#/components/schemas/Situering-Minimal'
-    Situering-Minimal:
+        - $ref: '#/components/schemas/SitueringBasis'
+    SitueringBasis:
       allOf:
-        - $ref: '#/components/schemas/Registratiekenmerken-Situering'
-        - $ref: '#/components/schemas/Locatiekenmerken-Situering'
-    Registratiekenmerken-Situering:
+        - $ref: '#/components/schemas/RegistratiekenmerkenSituering'
+        - $ref: '#/components/schemas/LocatiekenmerkenSituering'
+    RegistratiekenmerkenSituering:
       type: object
       properties:
         identificatie:
@@ -973,7 +973,7 @@ components:
           readOnly: true
           example: <tbd>
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie-0).
-    Locatiekenmerken-Situering:
+    LocatiekenmerkenSituering:
      type: object
      properties:
         situering:
@@ -992,9 +992,9 @@ components:
 # Anything below this line may be 
 # extended by an implementor
 #-------------------------------
-    ErfgoedDeelobject-Extension:
+    ErfgoedDeelobjectExtensie:
       type: object
-    ErfgoedObject-Extension:
+    ErfgoedObjectExtensie:
       type: object
       description: Dit is een voorbeeldextensie voor een registratie die, naast informatie conform de ERS-standaard, ook in staat is om adresinformatie bij een ErfgoedObject terug te geven.
       properties:
