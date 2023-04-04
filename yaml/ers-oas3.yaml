@@ -428,28 +428,28 @@ components:
           example: Gemeente
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#beschermddoor).
         datumInProcedure:
-          format: date-time
+          format: date
           type: string
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datuminprocedure).
           minimum: 0
           maximum: 1
         datumAanwijzing:
-          format: date-time
+          format: date
           type: string
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumaanwijzing).
           minimum: 0
           maximum: 1
         datumNietAanwijzen:
-          format: date-time
+          format: date
           type: string
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumnietaanwijzen).
           minimum: 0
           maximum: 1
         datumAfvoeren:
-          format: date-time
+          format: date
           type: string
           readOnly: true
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#datumafvoeren).
