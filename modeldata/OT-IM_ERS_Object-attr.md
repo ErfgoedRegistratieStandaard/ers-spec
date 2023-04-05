@@ -3,6 +3,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | identificatie |
+| **Datatype** | NEN3610ID |
 | **Herkomst** | ERS |
 | **Definitie** | attribuut voor unieke identificatie volgens NEN 3610 |
 | **Herkomst definitie** | NEN3610 |
@@ -15,6 +16,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | bronhouder |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Naam van de gemeente die de bronhouder is voor het object. |
 | **Herkomst definitie** | ERS |
@@ -27,6 +29,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | tijdstipRegistratie |
+| **Datatype** | DateTime |
 | **Herkomst** | ERS |
 | **Definitie** | Tijdstip waarop deze instantie van het object is opgenomen in de registratie |
 | **Herkomst definitie** | ERS |
@@ -38,6 +41,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | eindRegistratie |
+| **Datatype** | DateTime |
 | **Herkomst** | ERS |
 | **Definitie** | Formele levensduur van het omgevingselement |
 | **Herkomst definitie** | ERS |

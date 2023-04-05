@@ -3,6 +3,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | type |
+| **Datatype** | ErfgoedOmgevingType |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling van omgeving naar de ruimtelijke betekenis van de omgeving voor het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
@@ -15,6 +16,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | contour |
+| **Datatype** | VlakOfMultivlak |
 | **Herkomst** | ERS |
 | **Definitie** | De tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedOmgeving. |
 | **Herkomst definitie** | ERS |
@@ -28,6 +30,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | naam |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Naam waaronder het OmgevingsObject bekend staat. |
 | **Herkomst definitie** | ERS |
@@ -40,6 +43,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | beschrijving |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Beschrijving van de aard, verschijningsvorm, bron of oorsprong en eventueel beoogde bescherming van het OmgevingsObject. |
 | **Herkomst definitie** | ERS |

@@ -3,6 +3,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | type |
+| **Datatype** | ErfgoedDeelobjectType |
 | **Herkomst** | ERS |
 | **Definitie** | Typering van de fysieke verschijningsvorm van het deelobject zoals constructief deel van het gebouw of element dat op/aan/in het object is verbonden (kunst, interieur) |
 | **Herkomst definitie** | ERS |
@@ -16,6 +17,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | contour |
+| **Datatype** | VlakOfMultivlak |
 | **Herkomst** | ERS |
 | **Definitie** | de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedDeelObject. |
 | **Herkomst definitie** | BAG |
@@ -30,6 +32,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | bronContour |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is. |
 | **Herkomst definitie** | ERS |
@@ -43,6 +46,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | puntCoördinaten |
+| **Datatype** | GM_Point |
 | **Herkomst** | ERS |
 | **Definitie** | De geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt. |
 | **Herkomst definitie** | ERS |
@@ -55,6 +59,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | betreftPand |
+| **Datatype** | Objectnummering (BAG) |
 | **Herkomst** | ERS |
 | **Definitie** | Alleen gevuld indien het deelobject een pand is (conform de definitie van een pand in de BAG) |
 | **Herkomst definitie** | ERS |
@@ -69,6 +74,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | betreftBGT |
+| **Datatype** | BGTIdentificatie |
 | **Herkomst** | ERS |
 | **Definitie** | Gevuld indien het object geen pand is, maar een ander object uit de BGT, waarbij je de contour uit de BGT op zal willen halen |
 | **Herkomst definitie** | ERS |
@@ -83,6 +89,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | jaarBegin |
+| **Datatype** | Year |
 | **Herkomst** | ERS |
 | **Definitie** | Jaartal begin materi&#235;le levensduur van het deelobject |
 | **Herkomst definitie** | ERS |
@@ -96,6 +103,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | jaarEind |
+| **Datatype** | Year |
 | **Herkomst** | ERS |
 | **Definitie** | Jaartal einde materi&#235;le levensduur van het deelobject |
 | **Herkomst definitie** | ERS |
@@ -109,6 +117,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | annotatieJaarBegin |
+| **Datatype** | JaarAnnotatie |
 | **Herkomst** | ERS |
 | **Definitie** | Opmerking betreffende de precisie van de gegeven jaar |
 | **Herkomst definitie** | ERS |
@@ -122,6 +131,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | annotatieJaarEind |
+| **Datatype** | JaarAnnotatie |
 | **Herkomst** | ERS |
 | **Definitie** | Opmerking betreffende de precisie van de gegeven jaar |
 | **Herkomst definitie** | ERS |
@@ -135,6 +145,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | naam |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Naam waaronder het object bekend staat |
 | **Herkomst definitie** | ERS |
@@ -149,6 +160,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | beschrijving |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Beschrijving van (bouw)type, geschiedenis, architectonische verschijningsvorm en/ of stedebouwkundige en cultuurhistorische context |
 | **Herkomst definitie** | ERS |
@@ -162,6 +174,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | aanwezig |
+| **Datatype** | Aanwezigheid |
 | **Herkomst** |  |
 | **Definitie** | Kwalificatie van de materi&#235;le aanwezigheid van het ErfgoedDeelobject |
 | **Herkomst definitie** |  |
@@ -175,6 +188,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | architectOntwerp |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Degene die ontwerper is van het object, die dit ontwerp visualiseert (op tekening zet) en die de verwerkelijking van dit concept technisch en administratief begeleidt |
 | **Herkomst definitie** | ERS |
@@ -189,6 +203,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | opdrachtgeverBouw |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Degene die de opdracht heeft gegeven tot ontwerp en realisatie van het deelobject |
 | **Herkomst definitie** | ERS |
@@ -203,6 +218,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | uitvoerendKunstenaar |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | De schepper van een beeldhouwwerk (als objectType) |
 | **Herkomst definitie** | ERS |
@@ -217,6 +233,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | oorspronkelijkeFunctie |
+| **Datatype** | Functie |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar functie(s) die leidend zijn geweest in het ontwerp en de realisatie van het object. |
 | **Herkomst definitie** | ERS |
@@ -231,6 +248,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | gebouwtype |
+| **Datatype** | Gebouwtype |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar aard van het gebouw |
 | **Herkomst definitie** | ERS |
@@ -245,6 +263,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | bouwstijl |
+| **Datatype** | Bouwstijl |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar stijlperiode of stroming |
 | **Herkomst definitie** | ERS |

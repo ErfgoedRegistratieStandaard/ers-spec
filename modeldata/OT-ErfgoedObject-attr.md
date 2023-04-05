@@ -3,6 +3,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | aardRegistratie |
+| **Datatype** | Registratieaard |
 | **Herkomst** | ERS |
 | **Definitie** | Verwijzing naar de materi&#235;le levensduur en bescherming van het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
@@ -15,6 +16,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | beschermdAls |
+| **Datatype** | BeschermdeStatus |
 | **Herkomst** | ERS |
 | **Definitie** | Beschermde status van het ErfgoedObject<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
@@ -28,6 +30,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | beschermdDoor |
+| **Datatype** | BeschermendeInstantie |
 | **Herkomst** | ERS |
 | **Definitie** | Bevoegd gezag dat de status toekent<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
@@ -41,6 +44,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | datumInProcedure |
+| **Datatype** | Date |
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop voor het object de procedure tot aanwijzing als monument is gestart en de beschermde status in werking treedt |
 | **Herkomst definitie** | ERS |
@@ -55,6 +59,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | datumAanwijzing |
+| **Datatype** | Date |
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop het object is aangewezen als monument cq de beschermende status in werking treedt |
 | **Herkomst definitie** | ERS |
@@ -69,6 +74,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | datumNietAanwijzen |
+| **Datatype** | Date |
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop als onderdeel van de procedure is besloten tot niet aanwijzen |
 | **Herkomst definitie** | ERS |
@@ -82,6 +88,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | datumAfvoeren |
+| **Datatype** | Date |
 | **Herkomst** | ERS |
 | **Definitie** | Datum waarop de beschermde status van het object is opgeheven middels een besluit |
 | **Herkomst definitie** | ERS |
@@ -95,6 +102,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | toelichtingProcedure |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Aantekening met betrekking tot de doorlopen of beoogde procedure tot bescherming van het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
@@ -108,6 +116,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | grondslag |
+| **Datatype** | Integer |
 | **Herkomst** | ERS |
 | **Definitie** | Verwijzing naar het identificerende nummer waarmee dit object is aangewezen als gemeentelijk monument |
 | **Herkomst definitie** | ERS |
@@ -121,6 +130,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | monumentnummer |
+| **Datatype** | Integer |
 | **Herkomst** | ERS |
 | **Definitie** | Uniek nummer of unieke code, toegekend door de bronhouder van de monumentregistratie (Rijk, Provincie of Gemeente).<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
@@ -134,6 +144,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | inOnderzoek |
+| **Datatype** | Boolean |
 | **Herkomst** |  |
 | **Definitie** | Hiermee wordt aangegeven dat een onderzoek wordt uitgevoerd naar de juistheid van een of meer gegevens van het betreffende object |
 | **Herkomst definitie** |  |
@@ -147,6 +158,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | type |
+| **Datatype** | ErfgoedObjectType |
 | **Herkomst** | ERS |
 | **Definitie** | Typering van de fysieke verschijningsvorm van het object<br />Dit veld is verplicht. |
 | **Herkomst definitie** | ERS |
@@ -160,6 +172,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | contour |
+| **Datatype** | VlakOfMultivlak |
 | **Herkomst** | ERS |
 | **Definitie** | de tweedimensionale geometrische representatie van het vlak dat wordt gevormd door de omtrekken van een ErfgoedObject. |
 | **Herkomst definitie** | BAG |
@@ -173,6 +186,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | bronContour |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | De registratie of het informatiemodel waaraan de contour ontleend is dan wel de eigen organisatie indien het door de eigen organisatie toegevoegd is. |
 | **Herkomst definitie** | ERS |
@@ -186,6 +200,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | puntCoördinaten |
+| **Datatype** | GM_Point |
 | **Herkomst** | ERS |
 | **Definitie** | de geometrische representatie van een punt dat zich binnen de omtrek(ken) van een ErfgoedObject bevindt. |
 | **Herkomst definitie** | ERS |
@@ -198,6 +213,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | betreftPand |
+| **Datatype** | Objectnummering (BAG) |
 | **Herkomst** | ERS |
 | **Definitie** | Verwijzing naar een of meer Panden in de BAG. |
 | **Herkomst definitie** | ERS |
@@ -211,6 +227,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | betreftBGT |
+| **Datatype** | BGTIdentificatie |
 | **Herkomst** | ERS |
 | **Definitie** | Gevuld indien het object geen pand is, maar een ander object uit de BGT, waarbij je de contour uit de BGT op zal willen halen |
 | **Herkomst definitie** | ERS |
@@ -225,6 +242,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | toelichtingAdressering |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Adressering van het object waarbij het oorspronkelijke adres wordt geduid, of een reeks adressen wordt samengevat |
 | **Herkomst definitie** | ERS |
@@ -239,6 +257,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | jaarBegin |
+| **Datatype** | Year |
 | **Herkomst** | ERS |
 | **Definitie** | Jaartal begin materi&#235;le levensduur van het object |
 | **Herkomst definitie** | ERS |
@@ -252,6 +271,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | jaarEind |
+| **Datatype** | Year |
 | **Herkomst** | ERS |
 | **Definitie** | Jaartal einde materi&#235;le levensduur van het object |
 | **Herkomst definitie** | ERS |
@@ -265,6 +285,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | annotatieJaarBegin |
+| **Datatype** | JaarAnnotatie |
 | **Herkomst** | ERS |
 | **Definitie** | Opmerking betreffende de precisie van het gegeven jaartal voor de start van de materi&#235;le levensduur (het ontstaan van de erfgoed waarde)<br />Indien leeg verwijst het jaarBegin met voldoende zekerheid naar het jaar waarin de bouw/verbouw is opgeleverd. |
 | **Herkomst definitie** | ERS |
@@ -277,6 +298,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | annotatieJaarEind |
+| **Datatype** | JaarAnnotatie |
 | **Herkomst** | ERS |
 | **Definitie** | Opmerking betreffende de precisie van de gegeven jaar |
 | **Herkomst definitie** | ERS |
@@ -290,6 +312,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | naam |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Naam waaronder het object bekend staat |
 | **Herkomst definitie** | ERS |
@@ -304,6 +327,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | toelichtingWaarde |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Een toelichting op de cultuurhistorische waardering en/of de beschermde status van een ErgoedObject. |
 | **Herkomst definitie** | ERS |
@@ -317,6 +341,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | beschrijving |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Beschrijving van (bouw)type, geschiedenis, architectonische verschijningsvorm en/ of stedebouwkundige en cultuurhistorische context |
 | **Herkomst definitie** | ERS |
@@ -330,6 +355,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | aanwezig |
+| **Datatype** | Aanwezigheid |
 | **Herkomst** | ERS |
 | **Definitie** | Kwalificatie van de materi&#235;le aanwezigheid van het ErfgoedObject |
 | **Herkomst definitie** | ERS |
@@ -343,6 +369,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | verwachteBouwhistWaarde |
+| **Datatype** | Boolean |
 | **Herkomst** | ERS |
 | **Definitie** | Een signalering voor de mogelijke aanwezigheid van bouwhistorische waarden |
 | **Herkomst definitie** | ERS |
@@ -356,6 +383,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | architectOntwerp |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Degene die ontwerper is van het object, die dit ontwerp visualiseert (op tekening zet) en die de verwerkelijking van dit concept technisch en administratief begeleidt |
 | **Herkomst definitie** | ERS |
@@ -370,6 +398,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | opdrachtgeverBouw |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Degene die de opdracht heeft gegeven tot ontwerp en realisatie van het deelobject |
 | **Herkomst definitie** | ERS |
@@ -384,6 +413,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | uitvoerendKunstenaar |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | De schepper van een beeldhouwwerk (als objectType) |
 | **Herkomst definitie** | ERS |
@@ -398,6 +428,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | oorspronkelijkeFunctie |
+| **Datatype** | Functie |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar functie(s) die leidend zijn geweest in het ontwerp en de realisatie van het object. |
 | **Herkomst definitie** | ERS |
@@ -412,6 +443,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | gebouwtype |
+| **Datatype** | Gebouwtype |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar aard van het gebouw |
 | **Herkomst definitie** | ERS |
@@ -426,6 +458,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | bouwstijl |
+| **Datatype** | Bouwstijl |
 | **Herkomst** | ERS |
 | **Definitie** | Indeling naar stijlperiode of stroming |
 | **Herkomst definitie** | ERS |
@@ -440,6 +473,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | themaCultuurhistorie |
+| **Datatype** | ThemaCultuurhistorie |
 | **Herkomst** | ERS |
 | **Definitie** | categorisering van de oorspronkelijke functie in relatie tot maatschappelijk gebruik en ruimtelijke situering. |
 | **Herkomst definitie** | ERS |
@@ -453,6 +487,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | fysischLandschap |
+| **Datatype** | Fysiologie |
 | **Herkomst** | ERS |
 | **Definitie** | Categorisering van landschap naar ontstaan van fysisch geografische eigenschappen zoals reli&#235;f en grondsoort, waarop de nu nog herkenbare ontginning in het verleden plaatsvond. |
 | **Herkomst definitie** | ERS |
@@ -466,6 +501,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | fysischDeelLandschap |
+| **Datatype** | SubFysiologie |
 | **Herkomst** | ERS |
 | **Definitie** | Nadere onderverdeling fysischLandschap. |
 | **Herkomst definitie** | ERS |
@@ -479,6 +515,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | ontginning |
+| **Datatype** | Ontginning |
 | **Herkomst** | ERS |
 | **Definitie** | Categorisering van gebieden naar de wijze waarop deze door mensen in cultuur zijn gebracht (of waar dat is uitgebleven). |
 | **Herkomst definitie** | ERS |
@@ -492,6 +529,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | cultuurLandschap |
+| **Datatype** | Cultuurlandschap |
 | **Herkomst** | ERS |
 | **Definitie** | Nadere onderverdeling binnen een ontginningstype. |
 | **Herkomst definitie** | ERS |

@@ -3,6 +3,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | situering |
+| **Datatype** | Situeringswijze |
 | **Herkomst** | ERS |
 | **Definitie** | Aanduiding van de plaats van het ErfgoedObject ten opzichte van het adres. |
 | **Herkomst definitie** | ERS |
@@ -15,6 +16,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | betreftAdres |
+| **Datatype** | Objectnummering (BAG) |
 | **Herkomst** | BAG |
 | **Definitie** | Verwijzing naar een Nummeraanduiding in de BAG. |
 | **Herkomst definitie** | ERS |
