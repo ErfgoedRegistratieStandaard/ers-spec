@@ -260,6 +260,7 @@ components:
       properties:
         lokaalID:
           type: string
+          pattern: '^\d{16}$'
           readOnly: true
           description: De (lokale) identifier conform NEN 3610, zonder namespace en/of versie.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
           example: 0439080000001137 (ErfgoedObject), 0575080000001100 (ErfgoedDeelobject), 0439080000511327 (ErfgoedOmgeving)
@@ -503,13 +504,13 @@ components:
       properties:
         jaarBegin:
           type: string
-          format: date-fullyear
+          pattern: '^\d{4}$'
           readOnly: true
           example: 1850
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaarbegin).
         jaarEind:
           type: string
-          format: date-fullyear
+          pattern: '^\d{4}$'
           readOnly: true
           example: 1980
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#jaareind).
