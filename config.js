@@ -12,10 +12,12 @@
 //-------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------
+
 var respecConfig =
 {
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  //specStatus: "GN-WV",              // Werk Versie
+  specStatus: "unofficial",              // Not a W3C spec
+  copyrightStart: 2019,
   //specStatus: "GN-CV",              // Consultatie Versie
   //specStatus: "GN-VV",              // Vaststellings Versie
   //specStatus: "GN-DEF",             // Definitieve Versie
@@ -63,13 +65,25 @@ var respecConfig =
   //-- pubDomain is verplicht! (komt in de URL: Activeer 1 van de volgende) ------------
   pubDomain: "ers", 	              // Erfgoed Registratie Standaard  
   //-- Repositorynaam op GitHub -------------------------------------------------------
-  //github: "https://github.com/Geonovum/MIM-Werkomgeving",
+  github: "https://github.com/ErfgoedRegistratieStandaard/ers-spec",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
-  //issueBase: "https://github.com/Geonovum/MIM-Werkomgeving/issues/",
+  issueBase: "https://github.com/ErfgoedRegistratieStandaard/ers-spec/issues",
   //-- edDraftURI: de URI van de werkversie van het document
-  //edDraftURI: "https://geonovum.github.io/MIM-Werkomgeving/",
+  edDraftURI: "https://erfgoedregistratiestandaard.github.io/ers-spec/ers-respec-template.html",
+  latestVersion: "https://erfgoedregistratiestandaard.github.io/ers-spec/",
+  otherLinks: [
+	  {
+		  key: "Implementatie",
+		  data: [
+			  {
+				  value: "YAML",
+				  href: "https://erfgoedregistratiestandaard.github.io/ers-spec/yaml"
+			  },
+		  ],
+	  },
+  ],
   //-- license: voor de geldende gebruiksvoorwaarden
-  licence: "cc-by-nd",              //-- bronvermelding, geen afgeleide werken (default)
+  license: "cc-by",              //-- bronvermelding, geen afgeleide werken (default)
   // licence: "cc0",                //-- Public Domain Dedication
   // licence: "cc-by",              //-- Attribution, met bronvermelding
 
