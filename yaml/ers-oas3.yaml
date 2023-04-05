@@ -254,20 +254,20 @@ servers:
   - url: https://erfgoedregistratie.nl
 components:
   schemas:
-    IM-ERS-Object:
+    ERSObject:
       type: object
-      description: Objecttype IM_ERS_Object<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object)
+      description: Objecttype ERSObject<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-ersobject)
       properties:
         lokaalID:
           type: string
           pattern: '^\d{16}$'
           readOnly: true
-          description: De (lokale) identifier conform NEN 3610, zonder namespace en/of versie.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
+          description: De (lokale) identifier conform NEN 3610, zonder namespace en/of versie.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-ersobject).
           example: 0439080000001137 (ErfgoedObject), 0575080000001100 (ErfgoedDeelobject), 0439080000511327 (ErfgoedOmgeving)
         versie:
           type: integer
           readOnly: true
-          description: Het versienummer conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-im_ers_object).
+          description: Het versienummer conform NEN 3610.<br/> [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#identificatie). [Nadere toelichting](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-ersobject).
           example: 1
         bronhouder:
           type: string
@@ -354,7 +354,7 @@ components:
       description: Objecttype ErfgoedObject<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoedobject)
     ErfgoedObjectBasis:
       allOf:
-        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/ERSObject'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedObject'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedObject'
       description: Objecttype ErfgoedObject; omvat alleen de registratiekenmerken en locatiekenmerken<br/>Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#objecttype-erfgoedobject)
@@ -697,7 +697,7 @@ components:
                   maximum: 1
     ErfgoedDeelobject:
       allOf:
-        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/ERSObject'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedDeelobject'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedDeelobject'
         - $ref: '#/components/schemas/WaardekenmerkenErfgoedDeelobject'
@@ -897,7 +897,7 @@ components:
                   maximum: 1
     ErfgoedOmgeving:
       allOf:
-        - $ref: '#/components/schemas/IM-ERS-Object'
+        - $ref: '#/components/schemas/ERSObject'
         - $ref: '#/components/schemas/RegistratiekenmerkenErfgoedOmgeving'
         - $ref: '#/components/schemas/LocatiekenmerkenErfgoedOmgeving'
         - $ref: '#/components/schemas/WaardekenmerkenErfgoedOmgeving'
