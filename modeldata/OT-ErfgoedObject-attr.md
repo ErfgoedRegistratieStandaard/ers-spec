@@ -362,8 +362,8 @@
 | **Toelichting** | Kwalificatie die de actuele staat van het ErfgoedObject relativeert en dient als aangrijpingspunt voor duiding en eventuele bescherming van de (nog) aanwezige waarde. Als de waarde van attribuutsoort aardRegistratie gelijk is aan historisch, dan dient (indien gevuld) attribuutsoort aanwezig de waarde verdwenen, verplaatst of verschoven te hebben (en vise versa). De contour van een verdwenen, verplaatst of verschoven ErfgoedObject toont de oorspronkelijk locatie. |
 | **Datum opname** | 20221006 |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** | Overig |
-| **Mogelijk geen waarde** | Ja |
 
 #### verwachteBouwhistWaarde
 | **Attribuutsoort-eigenschap** | **Waarde** |

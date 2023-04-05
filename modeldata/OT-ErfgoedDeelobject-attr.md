@@ -181,8 +181,8 @@
 | **Toelichting** | Kwalificatie die de actuele staat van het ErfgoedDeelobject relativeert en dient als aangrijpingspunt voor duiding van de aanwezige waarde. De contour van een verdwenen, verplaatst of verschoven ErfgoedDeelobject toont de oorspronkelijk locatie. |
 | **Datum opname** |  |
 | **Indicatie formele historie** | Ja |
+| **Kardinaliteit** | 0..1 |
 | **Authentiek** |  |
-| **Mogelijk geen waarde** | Ja |
 
 #### architectOntwerp
 | **Attribuutsoort-eigenschap** | **Waarde** |

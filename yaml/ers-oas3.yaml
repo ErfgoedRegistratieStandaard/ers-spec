@@ -556,6 +556,8 @@ components:
           readOnly: true
           example: intact
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig).
+          minimum: 0
+          maximum: 1
         verwachteBouwhistWaarde:
           type: boolean
           readOnly: true
@@ -796,6 +798,8 @@ components:
           readOnly: true
           example: deels intact
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#aanwezig-0).
+          minimum: 0
+          maximum: 1
         architectOntwerp:
           type: string
           readOnly: true
