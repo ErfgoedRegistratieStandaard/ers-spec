@@ -3,7 +3,7 @@
 | ---- | ---- |
 | **Naam** | ErfgoedDeelobject |
 | **Herkomst** | ERS |
-| **Definitie** | Een ErfgoedOmgeving beschrijft de context (&#233;&#233;n of meerdere) die voor de cultuurhistorische waarde van het ErfgoedObject van belang is. |
+| **Definitie** | Een ErfgoedDeelobject beschrijft een onderdeel van een ErfgoedObject en overerft de aardRegistratie en bescherming van het ErfgoedObject. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | Een ErfgoedOmgeving kan alleen bestaan in combinatie met het (de) bijbehorende ErfgoedObject(en). Er worden verschillende typen omgeving onderscheiden, waarvoor verschillende regelgeving van toepassing kan zijn. Een groep ErfgoedObjecten kan bijvoorbeeld deel uitmaken van een complex . Of één of meer ErfgoedObjecten kunnen op een terrein of binnen een bepaald gebied liggen dat van belang is voor het ErfgoedObject en dat wordt aangeduid als ‘biotoop’. |
+| **Toelichting** |  Een ErfgoedDeelobject kan alleen bestaan in relatie tot één ErfgoedObject. De bescherming is per definitie gelijk aan het ErfgoedObject. De contour van het ErfgoedDeelobject kan zich binnen of buiten de contour van het ErfgoedObject bevinden. Het ErfgoedDeelobject kan daarmee een aanvulling zijn op de locatiekenmerken van het ErfgoedObject. |
 | **Datum opname** | 20191001 |

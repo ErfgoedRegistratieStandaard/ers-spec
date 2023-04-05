@@ -5,9 +5,9 @@
 | **Naam** | type |
 | **Datatype** | ErfgoedDeelobjectType |
 | **Herkomst** | ERS |
-| **Definitie** | Typering van de fysieke verschijningsvorm van het deelobject zoals constructief deel van het gebouw of element dat op/aan/in het object is verbonden (kunst, interieur) |
+| **Definitie** | Typering van de fysieke verschijningsvorm van het deelobject. |
 | **Herkomst definitie** | ERS |
-| **Toelichting** | vgl Klassen Functioneel gebied: begrensd en benoemd gebied dat door een functionele eenheid wordt beschreven. Vb: bedrijventerrein, bungalowpark, plantsoen, begraafplaats, jachthaven, windmolenpark, recreatiegebied. |
+| **Toelichting** | Het ErfgoedDeelobject kent enkele aanvullende types (interieur, constructie, aanleg) ten opzichte van het ErfgoedObject. Anderzijds is het type gebied hier niet van toepassing. |
 | **Datum opname** | 20191001 |
 | **Indicatie formele historie** | Ja |
 | **Authentiek** | Overig |
