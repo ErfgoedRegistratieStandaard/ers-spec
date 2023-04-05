@@ -437,12 +437,12 @@ components:
           minimum: 0
           maximum: 1
         grondslag:
-          type: integer
+          type: string
           readOnly: true
           example: 123
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#grondslag).
         monumentnummer:
-          type: integer
+          type: string
           readOnly: true
           example: GM012
           description: Zie [specificatie](https://erfgoedregistratiestandaard.github.io/ers-spec/#monumentnummer).

@@ -116,7 +116,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | grondslag |
-| **Datatype** | Integer |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Verwijzing naar het identificerende nummer waarmee dit object is aangewezen als gemeentelijk monument |
 | **Herkomst definitie** | ERS |
@@ -130,7 +130,7 @@
 | **Attribuutsoort-eigenschap** | **Waarde** |
 | ---- | ---- |
 | **Naam** | monumentnummer |
-| **Datatype** | Integer |
+| **Datatype** | CharacterString |
 | **Herkomst** | ERS |
 | **Definitie** | Uniek nummer of unieke code, toegekend door de bronhouder van de monumentregistratie (Rijk, Provincie of Gemeente).<br />Verplicht gevuld in combinatie met aardRegistratie=beschermd |
 | **Herkomst definitie** | ERS |
