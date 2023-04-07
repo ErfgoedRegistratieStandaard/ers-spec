@@ -36,7 +36,7 @@ paths:
           in: query
           required: false
           description: >
-            De x-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatY gebruikt.
+            De x-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met `coordinaatY` gebruikt.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
           example: 124994
           schema:
@@ -45,7 +45,7 @@ paths:
           in: query
           required: false
           description: >
-            De y-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met coordinaatX gebruikt.
+            De y-coordinaat van de locatie van de erfgoedobjecten. Wordt altijd samen met `coordinaatX` gebruikt.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten)
           example: 502685
           schema:
@@ -55,9 +55,10 @@ paths:
           required: false
           description: >
             De straal (in meters) waarbinnen, gerekend vanaf de x,y-coördinaat,
-            de erfgoedobjecten zich bevinden.
+            de erfgoedobjecten zich bevinden. Wordt alleen in combinatie met `coordinaatX` en `coordinaatY` gebruikt. Indien geen waarde is opgegeven, wordt uitgegaan van een straal van 100 meter.
             [Details](https://erfgoedregistratiestandaard.github.io/ers-spec/#puntcoordinaten) 
           example: 25
+          default: 100
           schema:
             type: string
         - name: beschermdDoor
