@@ -1,7 +1,7 @@
-Erfgoedregistratie Standaard, **versie 1.0**.
+Erfgoedregistratie Standaard, **versie 1.1**.
 
 Werkgroep De Data-Beet heeft in opdracht van het Bestuurlijk Platform Erfgoed (BPE) en in de lijn met haar visie deze Erfgoedregistratie Standaard ontwikkeld.
-Het doel van de werkgroep is dat gemeenten betrouwbare erfgoedinformatie toegankelijk hebben voor uitwisseling met derden. Dit begint met de definitie van een schema waarmee de minimale eisen aan een erfgoedregistratie zijn vastgelegd. Bij het definiëren van de standaard zijn  onder andere deze drie vraagstukken belangrijk:
+Het doel van de werkgroep is dat gemeenten betrouwbare erfgoedinformatie toegankelijk hebben voor uitwisseling met derden. Dit begint met de definitie van een schema waarmee de minimale eisen aan een erfgoedregistratie zijn vastgelegd. Bij het definiëren van de standaard zijn onder andere deze drie vraagstukken belangrijk:
 
 1. Registratie reikwijdte (wat stellen we verplicht of optioneel, wat valt er wel en niet onder Erfgoed)
 2. Locatie (hoe wordt de relatie tot stelsel basisregistratie gelegd, welke betekenis heeft een geometrische contour, hoe om te gaan met de omgeving)
