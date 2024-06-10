@@ -16,22 +16,20 @@ In de standaard API-specificatie (en de bijbehorende documentatie) is als voorbe
 ## Uitwisseling via WFS
 
 Een Web Feature Service (WFS) is een alternatieve methode waarmee snel veel data kan worden uitgewisseld. Daartoe zijn een aantal views ontwikkeld die het datamodel op een slimme manier vereenvoudigen. Het gaat om de volgende views:
-viewObjecten
-viewDeelobjecten
-viewOmgevingen
-gegAdressen
-gegComplexen
-gegPanden
+* viewObjecten
+* viewDeelobjecten
+* viewOmgevingen
+* gegAdressen
+* gegComplexen
+* gegPanden
+
 De drie views bevatten elk eigen geometrie. De drie gegevensbestanden bevatten geen geometrie, maar herhaalbare attributen die verwijzen naar de viewObjecten.
 De url voor de WFS luidt: https://atlas-wddb.delta10-review.nl/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities
 
 Om enkel de gegevens van de eigen gemeente op te halen past men een "XML filter expression" toe. Bijvoorbeeld:
-<Filter> 
-   <PropertyIsEqualTo> 
-      <PropertyName>gemeente</PropertyName>
-      <Literal>Alkmaar</Literal>   
-   </PropertyIsEqualTo> 
-</Filter>
+
+![afbeelding](https://github.com/ErfgoedRegistratieStandaard/ers-spec/assets/72350551/604962d0-ebe7-4864-b09e-08eed0ff6567)
+
 
 ## Uitwisseling via bestanden
 
