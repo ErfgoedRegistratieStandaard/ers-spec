@@ -13,9 +13,29 @@ Het is mogelijk om de API-specificatie aan te vullen met lokale uitbreidingen di
 
 In de standaard API-specificatie (en de bijbehorende documentatie) is als voorbeeld van het uitbreidingsmechanisme een invulling van de ErfgoedObject-Extension en een aanvullend endpoint /v1/local/erfgoedobjecten opgenomen. Deze uitbreidingen zijn voorbeeldmatig en zijn geen deel van de standaard-specificatie; bij implementatie moeten deze uitbreidingen worden weggelaten of - indien dat gewenst is - vervangen door een eigen lokale aanvulling.
 
+## Uitwisseling via WFS
+
+Een Web Feature Service (WFS) is een alternatieve methode waarmee snel veel data kan worden uitgewisseld. Daartoe zijn een aantal views ontwikkeld die het datamodel op een slimme manier vereenvoudigen. Het gaat om de volgende views:
+viewObjecten
+viewDeelobjecten
+viewOmgevingen
+gegAdressen
+gegComplexen
+gegPanden
+De drie views bevatten elk eigen geometrie. De drie gegevensbestanden bevatten geen geometrie, maar herhaalbare attributen die verwijzen naar de viewObjecten.
+De url voor de WFS luidt: https://atlas-wddb.delta10-review.nl/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities
+
+Om enkel de gegevens van de eigen gemeente op te halen past men een "XML filter expression" toe. Bijvoorbeeld:
+<Filter> 
+   <PropertyIsEqualTo> 
+      <PropertyName>gemeente</PropertyName>
+      <Literal>Alkmaar</Literal>   
+   </PropertyIsEqualTo> 
+</Filter>
+
 ## Uitwisseling via bestanden
 
-In plaats van met de API kan ook uitwisseling van data plaatsvinden met behulp van bestanden. De mogelijkheden of beperkingen van deze uitwisseling zullen afhangen van het gebruikte bestandsformaat. Per implementatie kunnen daar verschillende keuzes in worden gemaakt. In een apart document [labelsERS](https://erfgoedregistratiestandaard.github.io/ers-spec/documents/labelsERS_20230218.xlsx) worden hiervoor handvatten gegeven.
+In plaats van met de API of WFS kan ook uitwisseling van data plaatsvinden met behulp van bestanden. De mogelijkheden of beperkingen van deze uitwisseling zullen afhangen van het gebruikte bestandsformaat. Per implementatie kunnen daar verschillende keuzes in worden gemaakt. In een apart document [labelsERS](https://erfgoedregistratiestandaard.github.io/ers-spec/documents/labelsERS_20230218.xlsx) worden hiervoor handvatten gegeven.
 
 Bijvoorbeeld: in een shapefile zijn de velnamen in lengte beperkt en kunnen de velden zelf een gelimiteerd aantal karakters bevatten. Lijsten (of subtabellen) worden door de shape niet ondersteund. In het document is een vertaling beschikbaar van de attribuutsoorten naar verkorte veldnamen. De standaard adviseert om deze te gebruiken.
 
