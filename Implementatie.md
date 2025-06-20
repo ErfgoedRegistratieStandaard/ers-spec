@@ -24,7 +24,9 @@ Een Web Feature Service (WFS) is een alternatieve methode waarmee snel veel data
 * gegPanden
 
 De drie views bevatten elk eigen geometrie. De drie gegevensbestanden bevatten geen geometrie, maar herhaalbare attributen die verwijzen naar de viewObjecten.
-De url voor de WFS luidt: https://atlas-wddb.delta10-review.nl/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities
+De url voor de WFS luidt:
+
+[https://atlas-wddb.delta10-review.nl/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities](https://data.erfgoedregistratie.nl/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities)
 
 Om enkel de gegevens van de eigen gemeente op te halen past men een "XML filter expression" toe. Bijvoorbeeld:
 
